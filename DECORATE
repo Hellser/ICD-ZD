@@ -1,0 +1,49 @@
+// Item Pickups
+#include "actors/items/healthbonus.dec"
+#include "actors/items/armorbonus.dec"
+#include "actors/items/stimmedi.dec"
+#include "actors/items/armor.dec"
+
+// "Engine" Core
+#include "actors/core/playerpawn.dec"
+#include "actors/core/base.dec"
+#include "actors/core/gore.dec"
+
+//Weapons
+//Slot #1 (Melee)
+#include "actors/weapons/icd_knife.dec"
+
+//Slot #2 (Pistols)
+#include "actors/weapons/icd_pistol.dec"
+#include "actors/weapons/icd_dualpistol.dec"
+
+//Slot #3 (Shotguns)
+#include "actors/weapons/icd_remington.dec"
+#include "actors/weapons/icd_flakremington.dec"
+#include "actors/weapons/icd_doublebarrel.dec"
+
+//Slot #5 (Michael Bay)
+//#include "actors/weapons/icd_grenades.dec"
+#include "actors/weapons/icd_40mm.dec"
+
+//Slot #6 (Rifles)
+#include "actors/weapons/icd_InfantryRifle.dec"
+
+//Slot #7 (Monster Weapons)
+#include "actors/weapons/icd_sawedoff.dec"
+#include "actors/weapons/icd_minigun.dec"
+
+//Slot # 0 (Accessories)
+#include "actors/weapons/icd_flareweapon.dec"
+//Effects
+
+//Ammo
+#include "actors/ammo/shells.dec"
+
+//Other ICD-SE Stuff
+#include "actors/other/icd_flies.dec"
+
+//Monsters
+#include "actors/monsters/zombieman.dec"
+#include "actors/monsters/doomimp.dec"
+#include "actors/monsters/shotgunguy.dec"

@@ -1,0 +1,97 @@
+// Weapon Sounds
+weapons/generic/holsterup					DSHOLSTR
+
+$random weapons/generic/weaponup { weapons/generic/weaponup1 weapons/generic/weaponup2 }
+weapons/generic/weaponup1					DSWEAPUP
+weapons/generic/weaponup2					DSWEAPU2
+
+//Knife
+weapons/knife/knifehit						DSKNIFE3
+weapons/knife/upsound						DSKNF2
+weapons/knife/knifeslice					DSKNF1
+weapons/knife/knifeslice2					DSKNF3
+weapons/knife/knifegore						DSKNF4
+weapons/knife/knifeswing					DSKNIFE1
+weapons/knife/knifeswing2					DSKNIFE2
+
+weapons/generic/smack						DSSMACK
+weapons/generic/throw						DSTHROW
+weapons/generic/swing1						DSSWING1
+weapons/generic/swing2						DSSWING2
+weapons/generic/emptyclick2					DSCLICK2
+
+$random weapons/generic/swing { weapons/generic/swing1 weapons/generic/swing2 }
+
+//Pistols
+weapons/1911/hammer							DSHAMMR
+weapons/1911/fire							DS1911
+weapons/1911/clipout						DSPOUT
+weapons/1911/clipin							DSPIN
+weapons/1911/slide							DSPSLIDE
+weapons/1911/clipdrop						DSCLP1A
+
+//Sawed Off
+weapons/sawedoff/fire						DSSAWED1
+weapons/sawedoff/cock						DSSAWED2
+
+//Double Barrel
+weapons/doublebarrel/fire					DSSHOTG2
+weapons/doublebarrel/load					DSDBLOAD
+weapons/doublebarrel/close					DSDBCLS
+weapons/doublebarrel/open					DSDBOPN
+
+//Remington
+weapons/remington/fire						DSSHOTG1
+weapons/remington/cock						DSSRACK
+weapons/flakremington/fire					DSSHOTG3
+weapons/flakremington/cock					DSFRACK
+
+//Infantry Rifle
+weapons/infantryrifle/fire					DSM211
+weapons/infantryrifle/reload				DSSNREL
+weapons/infantryrifle/bolt					DSBOLT2
+
+//Flare
+weapons/flare/flareignite					DSFLARE2
+weapons/flare/flaresoftignite				DSFLARE2
+weapons/flare/flarerun						DSFLARE1
+
+//40mm
+weapons/40mm/fire							DSGREN2
+weapons/40mm/open							DS40OPN
+weapons/40mm/load							DS40LOAD
+weapons/40mm/close							DS40CLS
+
+//Minigun
+weapons/minigun/mini2						DSMINI2
+weapons/minigun/mini3						DSMINI3
+weapons/minigun/mini4						DSMINI4
+weapons/minigun/mini5						DSMINI5
+
+//Uzi
+weapons/uzi/suzi2							DSSUZI2
+
+$volume weapons/flare/flaresoftignite		0.5
+$volume weapons/flare/flarerun				0.4
+$rolloff weapons/flare/flaresoftignite 		64 512
+$rolloff weapons/flare/flarerun 			64 512
+
+$random weapons/shellbounce { weapons/effects/shellbounce1 weapons/effects/shellbounce2 weapons/effects/shellbounce3 }
+weapons/effects/shellbounce1				DSSHELL1
+weapons/effects/shellbounce2				DSSHELL2
+weapons/effects/shellbounce3				DSSHELL3
+
+$random weapons/effects/smallcasing	{ weapons/effects/smallcasing1 weapons/effects/smallcasing2 }
+weapons/effects/smallcasing1				DSCASIN2
+weapons/effects/smallcasing2				DSCASIN4
+
+$random weapons/effects/largecasing { weapons/effects/largecasing1 weapons/effects/largecasing2 }
+weapons/effects/largecasing1				DSCASING
+weapons/effects/largecasing2				DSCASIN3
+
+$random weapons/flak/bounce	{ weapons/flak/bounce1 weapons/flak/bounce2 weapons/flak/bounce3 }
+weapons/flak/bounce1						DSTIN2
+weapons/flak/bounce2						DSTIN3
+weapons/flak/bounce3						DSTIN4
+
+

@@ -1,0 +1,38 @@
+/*
+Effects
+*/
+
+$random world/effect/flies { game/null game/null game/null game/null world/effect/flies1 world/effect/flies2 world/effect/flies3 world/effect/flies4 }
+$rolloff world/effect/flies 				64 512
+world/effect/flies1							DSFLY1
+world/effect/flies2							DSFLY2
+world/effect/flies3							DSFLY3
+world/effect/flies4							DSFLY4
+
+$random world/effect/richochet { world/effect/richochet1 world/effect/richochet2 world/effect/richochet3 }
+world/effect/richochet1						DSRICH1
+world/effect/richochet2						DSRICH2
+world/effect/richochet3						DSRICH3
+
+$random world/effect/bullimpact	{ world/effect/bulletimpact1 world/effect/bulletimpact2 world/effect/bulletimpact3 world/effect/bulletimpact4 world/effect/bulletimpact5 world/effect/bulletimpact6 }
+world/effect/bulletimpact1					DSIMPC1A
+world/effect/bulletimpact2					DSIMPC1B
+world/effect/bulletimpact3					DSIMPC1C
+world/effect/bulletimpact4					DSIMPC1D
+world/effect/bulletimpact5					DSIMPC1E
+world/effect/bulletimpact6					DSIMPC1F
+
+/*
+Gore
+*/
+
+$random world/gore/blood { world/gore/blood1 world/gore/blood2 world/gore/blood3 world/gore/blood4 world/gore/blood5 }
+world/gore/blood1							DSBLOOD1
+world/gore/blood2							DSBLOOD2
+world/gore/blood3							DSBLOOD3
+world/gore/blood4							DSBLOOD4
+world/gore/blood5							DSBLOOD5
+
+$random world/gore/splat { world/gore/splat1 world/gore/splat2 }
+world/gore/splat1							DSSPLAT1
+world/gore/splat2							DSSPLAT2

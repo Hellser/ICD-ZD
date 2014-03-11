@@ -1,0 +1,7 @@
+flickerlight ICD_FlareEffect
+{
+    color 1.0 0.0 0.0
+    size 200
+    secondarySize 230
+    chance 0.4
+}

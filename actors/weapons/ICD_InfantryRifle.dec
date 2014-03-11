@@ -1,0 +1,142 @@
+ACTOR ICD_InfantryRifle : BaseWeapon
+{
+  Game Doom
+  Weapon.AmmoUse 1
+  Weapon.AmmoGive2 10
+  Weapon.AmmoType "ICD_InfantryRifleMagazine"
+  Weapon.AmmoType2 "Cell"
+  Inventory.PickupMessage "$GotRifle"
+  Weapon.UpSound "weapons/generic/weaponup"
+  Tag "Infantry Rifle"
+  +NOEXTREMEDEATH
+  +WEAPON.AMMO_OPTIONAL
+  +WEAPON.NOALERT
+  States
+  {
+	Select:
+		RIFL A 1 A_Raise
+		Loop
+	Deselect:
+		RIFL A 1 A_Lower
+		Loop
+	Ready:
+		RIFL A 1 A_WeaponReady(WRF_ALLOWRELOAD)
+		Loop
+	Fire:
+		TNT1 A 0 A_JumpIfInventory("ICD_InfantryRifleMagazine",1,2)
+		TNT1 A 0 A_JumpIfInventory("Cell",1,"Reload")
+		Goto Ready
+		TNT1 A 0 A_AlertMonsters
+		RIFL A 0 // Reload Check
+		TNT1 A 0 A_PlaySound("weapons/infantryrifle/fire")
+		TNT1 A 0 A_GunFlash
+		RIFL A 5 A_FireBullets(0,0,2,12,"ICD_BulletPuff")
+		RIFL A 0 // Smoke
+		RIFL A 0 // Rifle Casing
+		RIFL B 3
+		RIFL A random(2,4)
+		RIFL A 5 A_ReFire
+		TNT1 A 0 // Check Reload, why here?
+		Goto Ready
+	AltFire:
+		BAYG A 2 A_Saw(NULL, NULL, 5, "ICD_BayonetNull", 0, 62)
+		TNT1 A 0 A_PlaySound("weapons/generic/swing",5)
+		BAYG B 3 A_Saw(NULL, NULL, 7, "ICD_BayonetNull", 0, 78)
+		BAYG C 5 A_Saw(NULL, NULL, 5, "AR_BayonetSpark", 0, 96)
+		BAYG B random(3,6)
+		BAYG A 5 A_ReFire
+		Goto Ready
+	Reload:
+		RIFL A 1 A_WeaponReady
+		TNT1 A 0 A_JumpIfInventory("ICD_InfantryRifleMagazine",20,"Ready")
+		TNT1 A 0 A_JumpIfInventory("Cell", 1, 1)
+	Goto Ready
+		RIFL B 3 A_PlaySound("weapons/generic/emptyclick2")
+		RIFL A 2
+		RIFL C 4
+		RIFR A 5
+		RIFR B 5
+		RIFR C 5
+		RIFR D 4 A_PlaySound("weapons/infantryrifle/reload")
+	Reload.InfoPhase:
+		TNT1 A 0 A_TakeInventory("Cell",1)
+		TNT1 A 0 A_GiveInventory("ICD_InfantryRifleMagazine",1)
+		TNT1 A 0 A_JumpIfInventory("ICD_InfantryRifleMagazine",20,2)
+		TNT1 A 0 A_JumpIfInventory("Cell",1,"Reload.Restart")
+		RIFR E 4
+		RIFR A 40
+		RIFR F 4
+		RIFR A 5
+		RIFL C 10 A_PlaySound("weapons/infantryrifle/bolt")
+		Goto Ready
+	Reload.Restart:
+		TNT1 A 0
+		Goto Reload.InfoPhase
+	Flash:
+		RIFF A 2 BRIGHT
+		RIFF B 3 BRIGHT
+		Stop
+	}
+}
+
+ACTOR AR_BayonetSpark : BulletPuff
+{
+  Game Doom
+  +NOBLOCKMAP
+  +NOGRAVITY
+  +ALLOWPARTICLES
+  +PUFFONACTORS
+  +RANDOMIZE
+  +NOEXTREMEDEATH
+  RenderStyle Translucent
+  Alpha 0.5
+  Mass 5
+  scale 0.6
+  States
+  {
+  Crash:
+  Spawn:
+    TNT1 A 0
+	TNT1 A 0 A_PlaySound("weapons/generic/smack")
+	TNT1 A 0 A_SpawnItem("AR_Puff_Spawn_2")
+    SMKE BCDEFGH 2
+	stop
+  XDeath:
+	TNT1 A 0 A_PlaySound("weapons/knife/knifegore")
+	stop
+  }
+}
+
+ACTOR ICD_BayonetNull : BulletPuff
+{
+  Game Doom
+  +NOBLOCKMAP
+  +NOGRAVITY
+  +ALLOWPARTICLES
+  +PUFFONACTORS
+  +RANDOMIZE
+  +NOEXTREMEDEATH
+  RenderStyle Translucent
+  Alpha 0.5
+  Mass 5
+  scale 0.6
+  States
+  {
+  Crash:
+  Spawn:
+    TNT1 A 0
+	stop
+  XDeath:
+	TNT1 A 0 A_PlaySound("weapons/knife/knifegore")
+	stop
+  }
+}
+
+ACTOR ICD_InfantryRifleMagazine : Ammo
+{
+   Inventory.MaxAmount 20
+   Ammo.BackpackAmount 0
+   Ammo.BackpackMaxAmount 20
+   Inventory.Icon SHOTA0
+   +INVENTORY.IGNORESKILL
+}

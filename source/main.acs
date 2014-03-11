@@ -1,0 +1,35 @@
+#library "main"
+#include "zcommon.acs"
+
+int playerpitch,
+	alteredpitch;
+
+//This accepts float, but considering this is ACS. . .
+script "ICD_Recoil" (int kick, int multiplier, int kickforce)
+{
+	playerpitch = GetActorPitch(0);
+    //Kick upwards.
+    for(int i = 0; i < 2; i++){
+        SetActorPitch(0, GetActorPitch(0) - ((kick*multiplier)+(i*kickforce)));
+		alteredpitch = GetActorPitch(0);
+		Log(i:((kick * 100)+i));
+        Delay(1);
+    }
+    //Then smooth back down.
+    //Oh dear.
+    for(int ib = 2; ib > 0; ib--){
+        SetActorPitch(0, GetActorPitch(0) + ((kick*multiplier)+(ib*kickforce)));
+		alteredpitch = GetActorPitch(0);
+		Log(i:((kick * 100)+i));
+        Delay(1);
+    }
+	SetActorPitch(0, playerpitch);
+}
+
+SCRIPT "ICD_RecoilDebug" ENTER
+{
+	while(true){
+		Log(i:alteredpitch);
+		delay(25);
+	}
+}

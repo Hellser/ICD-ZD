@@ -1,0 +1,5 @@
+pointlight ICD_Sparks
+{
+	color 1.0 1.0 0.8
+	size 16
+}

@@ -1,0 +1,13 @@
+pulselight ICD_ArmorBonus
+{
+	color 0.0 1.0 0.0
+	size 16
+	secondarysize 24
+	interval 2
+}
+
+pointlight ICD_HealthBonus
+{
+	color 0.0 0.0 1.0
+	size 16
+}
