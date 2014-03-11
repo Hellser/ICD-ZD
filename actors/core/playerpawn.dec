@@ -1,4 +1,4 @@
-ACTOR AR_DoomPlayer : PlayerPawn replaces DoomPlayer
+ACTOR ICD_DoomPlayer : PlayerPawn replaces DoomPlayer
 {
   Speed 1
   Health 100

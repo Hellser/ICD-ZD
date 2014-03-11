@@ -9,7 +9,7 @@ ACTOR BaseWeapon : Weapon
 
 // Puffs
 
-ACTOR AR_Puff_Spawn_2
+ACTOR ICD_Puff_Spawn_2
 {
   Game Doom
   +NOBLOCKMAP
@@ -29,7 +29,7 @@ ACTOR AR_Puff_Spawn_2
 
 // Sparks (I hate DDF)
 
-ACTOR AR_Gun3_Sparks
+ACTOR ICD_Gun3_Sparks
 {
 	Height 8
 	Radius 8
@@ -53,7 +53,7 @@ ACTOR AR_Gun3_Sparks
 	}
 }
 
-ACTOR AR_Flare_Sparks_Yellow
+ACTOR ICD_Flare_Sparks_Yellow
 {
 	Height 8
 	Radius 8
@@ -77,7 +77,7 @@ ACTOR AR_Flare_Sparks_Yellow
 	}
 }
 
-ACTOR AR_Flare_Sparks_Red
+ACTOR ICD_Flare_Sparks_Red
 {
 	Height 8
 	Radius 8
@@ -105,7 +105,7 @@ ACTOR AR_Flare_Sparks_Red
 
 //Smoke
 
-ACTOR AR_GunSmokeBase
+ACTOR ICD_GunSmokeBase
 {
 	Height 8
 	Radius 8
@@ -135,22 +135,39 @@ ACTOR AR_GunSmokeBase
 	}
 }
 
-ACTOR AR_SSGSmoke1 : AR_GunSmokeBase { }
+ACTOR ICD_SSGSmoke1 : ICD_GunSmokeBase { }
 
-ACTOR AR_PistolSmoke1 : AR_GunSmokeBase
+ACTOR ICD_PistolSmoke1 : ICD_GunSmokeBase
 {
 	Speed 3
 	scale 0.25
 }
 
 
-ACTOR AR_MiniSmoke : AR_GunSmokeBase
+ACTOR ICD_MiniSmoke : ICD_GunSmokeBase
 {
 	Speed 5
 	Scale 0.4
 }
 
-ACTOR AR_FlareSmoke : AR_GunSmokeBase
+ACTOR ICD_RPUFF
+{
+	Scale 0.5
+	Alpha 0.5
+	States
+	{
+	Spawn:
+		TNT1 A 0
+		SMOK A 5
+		SMOK B 5 A_FadeOut
+		SMOK C 5 A_FadeOut
+		SMOK D 5 A_FadeOut
+		SMOK E 5
+		stop
+	}
+}
+
+ACTOR ICD_FlareSmoke : ICD_GunSmokeBase
 {
 	Speed 0.5
 	Scale 0.13
@@ -162,8 +179,8 @@ ACTOR AR_FlareSmoke : AR_GunSmokeBase
 		SMOK A 1 ThrustThingZ(0, 1.2, 0, 1)
 		TNT1 A 0 A_Jump(175, "SpawnJump")
 		TNT1 A 0 A_PlaySound("weapons/flare/flaresoftignite")
-		TNT1 A 0 A_SpawnItemEx("AR_Flare_Sparks_Red",0,0,0,frandom(-2,2), frandom(-2,2), frandom(2,3),0,SXF_NOCHECKPOSITION)
-		TNT1 A 0 A_SpawnItemEx("AR_Flare_Sparks_Yellow",0,0,0,frandom(-2,2), frandom(-2,2), frandom(2,3),0,SXF_NOCHECKPOSITION)
+		TNT1 A 0 A_SpawnItemEx("ICD_Flare_Sparks_Red",0,0,0,frandom(-2,2), frandom(-2,2), frandom(2,3),0,SXF_NOCHECKPOSITION)
+		TNT1 A 0 A_SpawnItemEx("ICD_Flare_Sparks_Yellow",0,0,0,frandom(-2,2), frandom(-2,2), frandom(2,3),0,SXF_NOCHECKPOSITION)
 		SMOK A 2
 		SMOK A 0 // Flare2
 	SpawnJump:
@@ -176,14 +193,14 @@ ACTOR AR_FlareSmoke : AR_GunSmokeBase
 	}
 }
 
-ACTOR AR_FlareSmoke2 : AR_FlareSmoke
+ACTOR ICD_FlareSmoke2 : ICD_FlareSmoke
 {
 	Scale 0.6
 }
 
 // GSA Code! Yay!
 
-ACTOR AR_GS_CasingTemplate
+ACTOR ICD_GS_CasingTemplate
 {
 	Height 2
 	Radius 2
@@ -204,7 +221,7 @@ ACTOR AR_GS_CasingTemplate
 	+FORCEXYBILLBOARD
 }
 
-ACTOR AR_GS_PistolCasing : AR_GS_CasingTemplate
+ACTOR ICD_GS_PistolCasing : ICD_GS_CasingTemplate
 {
 	Scale 0.35
 	BounceSound "weapons/effects/smallcasing"
@@ -213,7 +230,7 @@ ACTOR AR_GS_PistolCasing : AR_GS_CasingTemplate
 	Spawn:
 	   CAS2 A 0 A_Playsound("NULL")
 	   TNT1 A 0 A_ScaleVelocity (frandom(2,3))
-	   CAS2 ABCDEF 2 A_CustomMissile("AR_GS_EmptyCasingSmoke",0,0,0,2,0)
+	   CAS2 ABCDEF 2 A_CustomMissile("ICD_GS_EmptyCasingSmoke",0,0,0,2,0)
 	   Goto Spawn+2
 	Death:
 	   TNT1 A 0 A_Jump(256,"Lie1", "Lie2")
@@ -227,7 +244,7 @@ ACTOR AR_GS_PistolCasing : AR_GS_CasingTemplate
 	}
 }
 
-ACTOR AR_GS_HeavyCal : AR_GS_CasingTemplate
+ACTOR ICD_GS_HeavyCal : ICD_GS_CasingTemplate
 {
 	Scale 0.3
 	BounceSound "weapons/effects/largecasing"
@@ -240,7 +257,7 @@ ACTOR AR_GS_HeavyCal : AR_GS_CasingTemplate
 	   Goto Spawn+2
 	Spin1:
 		TNT1 A 0 A_Jump(128,4)
-		CAS7 FDCBEAF 3 A_CustomMissile("AR_GS_EmptyCasingSmoke",0,0,0,2,0)
+		CAS7 FDCBEAF 3 A_CustomMissile("ICD_GS_EmptyCasingSmoke",0,0,0,2,0)
 		Loop
 	Death:
 		CAS7 B 2500
@@ -249,7 +266,7 @@ ACTOR AR_GS_HeavyCal : AR_GS_CasingTemplate
 	}
 }
 
-ACTOR AR_GS_MinigunSpacer : AR_GS_CasingTemplate
+ACTOR ICD_GS_MinigunSpacer : ICD_GS_CasingTemplate
 {
 	Scale 0.31
 	BounceSound "NULL"
@@ -262,7 +279,7 @@ ACTOR AR_GS_MinigunSpacer : AR_GS_CasingTemplate
 	   Goto Spawn+2
 	Spin1:
 		TNT1 A 0 A_Jump(128,3)
-		SPCR ABCD 3 A_CustomMissile("AR_GS_EmptyCasingSmoke",0,0,0,2,0)
+		SPCR ABCD 3 A_CustomMissile("ICD_GS_EmptyCasingSmoke",0,0,0,2,0)
 		Loop
 	Death:
 		SPCR B 2500
@@ -271,7 +288,7 @@ ACTOR AR_GS_MinigunSpacer : AR_GS_CasingTemplate
 	}
 }
 
-ACTOR AR_GS_EmptyShell : AR_GS_CasingTemplate
+ACTOR ICD_GS_EmptyShell : ICD_GS_CasingTemplate
 {
 	Scale 0.78
 	BounceSound "weapons/shellbounce"
@@ -284,19 +301,19 @@ ACTOR AR_GS_EmptyShell : AR_GS_CasingTemplate
 	   CAS3 A 0 A_Jump(256, "Spin1", "Spin2", "Spin3", "Spin4", "Spin5")
 	   Goto Spawn+1
 	Spin1:
-		CAS3 ABCD 3 A_CustomMissile("AR_GS_EmptyCasingSmoke",0,0,0,2,0)
+		CAS3 ABCD 3 A_CustomMissile("ICD_GS_EmptyCasingSmoke",0,0,0,2,0)
 		Loop
 	Spin2:
-		CAS3 EFCD 3 A_CustomMissile("AR_GS_EmptyCasingSmoke",0,0,0,2,0)
+		CAS3 EFCD 3 A_CustomMissile("ICD_GS_EmptyCasingSmoke",0,0,0,2,0)
 		Loop
 	Spin3:
-		CAS3 DCBA 3 A_CustomMissile("AR_GS_EmptyCasingSmoke",0,0,0,2,0)
+		CAS3 DCBA 3 A_CustomMissile("ICD_GS_EmptyCasingSmoke",0,0,0,2,0)
 		Loop
 	Spin4:
-		CAS3 BCDE 3 A_CustomMissile("AR_GS_EmptyCasingSmoke",0,0,0,2,0)
+		CAS3 BCDE 3 A_CustomMissile("ICD_GS_EmptyCasingSmoke",0,0,0,2,0)
 		Loop
 	Spin5:
-		CAS3 CDEF 3 A_CustomMissile("AR_GS_EmptyCasingSmoke",0,0,0,2,0)
+		CAS3 CDEF 3 A_CustomMissile("ICD_GS_EmptyCasingSmoke",0,0,0,2,0)
 		Loop
 	Death:
 	   	CAS3 A 0 A_Jump(256,"Lie1","Lie2")
@@ -310,7 +327,7 @@ ACTOR AR_GS_EmptyShell : AR_GS_CasingTemplate
 	}
 }
 
-ACTOR AR_GS_EmptyCasingSmoke
+ACTOR ICD_GS_EmptyCasingSmoke
 {
 	Renderstyle Translucent
 	Alpha 0.10
@@ -324,12 +341,12 @@ ACTOR AR_GS_EmptyCasingSmoke
 	}
 }
 
-ACTOR ICD_FlakSmoke : AR_GS_EmptyCasingSmoke
+ACTOR ICD_FlakSmoke : ICD_GS_EmptyCasingSmoke
 {
 	scale 0.7
 }
 
-ACTOR AR_ShellSpawner
+ACTOR ICD_ShellSpawner
 {
 	Radius 1
 	Height 1
@@ -345,50 +362,50 @@ ACTOR AR_ShellSpawner
 	}
 }
 
-ACTOR AR_ShotgunShellSpawner1 : AR_ShellSpawner
+ACTOR ICD_ShotgunShellSpawner1 : ICD_ShellSpawner
 {
    States
    {
    Spawn:
       TNT1 A 1
    Death:
-	  TNT1 A 0 A_CustomMissile("AR_GS_EmptyShell",2,0,90+random(-15,15),2,55+random(-10,10))
+	  TNT1 A 0 A_CustomMissile("ICD_GS_EmptyShell",2,0,90+random(-15,15),2,55+random(-10,10))
       Stop
    }
 }
 
-ACTOR AR_PistolCasingSpawner : AR_ShellSpawner
+ACTOR ICD_PistolCasingSpawner : ICD_ShellSpawner
 {
    States
    {
    Spawn:
       TNT1 A 1
    Death:
-	  TNT1 A 0 A_CustomMissile("AR_GS_PistolCasing",2,0,270+random(-15,15),2,55+random(-10,10))
+	  TNT1 A 0 A_CustomMissile("ICD_GS_PistolCasing",2,0,270+random(-15,15),2,55+random(-10,10))
       Stop
    }
 }
 
-ACTOR AR_MinigunCasingSpawner : AR_ShellSpawner
+ACTOR ICD_MinigunCasingSpawner : ICD_ShellSpawner
 {
 	States
 	{
 	Spawn:
 		TNT1 A 1
 	Death:
-		TNT1 A 0 A_CustomMissile("AR_GS_HeavyCal",2,0,270+random(-15,15),2,55+random(-10,10))
+		TNT1 A 0 A_CustomMissile("ICD_GS_HeavyCal",2,0,270+random(-15,15),2,55+random(-10,10))
 		Stop
 	}
 }
 
-ACTOR AR_MinigunSpacerSpawner : AR_ShellSpawner
+ACTOR ICD_MinigunSpacerSpawner : ICD_ShellSpawner
 {
 	States
 	{
 	Spawn:
 		TNT1 A 1
 	Death:
-		TNT1 A 0 A_CustomMissile("AR_GS_MinigunSpacer",2,0,270+random(-15,15),2,55+random(-10,10))
+		TNT1 A 0 A_CustomMissile("ICD_GS_MinigunSpacer",2,0,270+random(-15,15),2,55+random(-10,10))
 		Stop
 	}
 }

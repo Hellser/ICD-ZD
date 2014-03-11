@@ -24,10 +24,10 @@ ACTOR ICD_Knife : BaseWeapon
 	  Fire:
 	    KNIF B 3
 		KNIF C 2 A_PlaySound("weapons/knife/knifeswing")
-		KNIF D 1 A_Saw(NULL,"weapons/knife/knifehit",random(3,9),"AR_KnifeSpark",0,62,6,6)
+		KNIF D 1 A_Saw(NULL,"weapons/knife/knifehit",random(3,9),"ICD_KnifeSpark",0,62,6,6)
 		TNT1 A 0 A_Jump(127,"Fire.Two")
-		KNIF E 1 A_Saw(NULL,"weapons/knife/knifehit",random(3,9),"AR_KnifeSpark",0,62,6,6)
-		KNIF F 1 A_Saw(NULL,"weapons/knife/knifehit",random(3,9),"AR_KnifeSpark",0,62,6,6)
+		KNIF E 1 A_Saw(NULL,"weapons/knife/knifehit",random(3,9),"ICD_KnifeSpark",0,62,6,6)
+		KNIF F 1 A_Saw(NULL,"weapons/knife/knifehit",random(3,9),"ICD_KnifeSpark",0,62,6,6)
 		KNIF G 2
 		KNIF H 2
 		TNT1 A 3
@@ -35,13 +35,13 @@ ACTOR ICD_Knife : BaseWeapon
 		TNT1 A 3
 	  Fire.Two:
 	    KNIF H 2 A_PlaySound("weapons/knife/knifeswing2")
-		KNIF I 2 A_Saw(NULL,NULL,5,"AR_KnifeSpark2",0,62,6,6)
-		KNIF J 2 A_Saw(NULL,NULL,5,"AR_KnifeSpark2",0,62,6,6)
-		KNIF K 3 A_Saw(NULL,NULL,5,"AR_KnifeSpark2",0,62,6,6)
+		KNIF I 2 A_Saw(NULL,NULL,5,"ICD_KnifeSpark2",0,62,6,6)
+		KNIF J 2 A_Saw(NULL,NULL,5,"ICD_KnifeSpark2",0,62,6,6)
+		KNIF K 3 A_Saw(NULL,NULL,5,"ICD_KnifeSpark2",0,62,6,6)
 	  Fire.Rest:
 		TNT1 A 6
 		TNT1 A 5 A_ReFire
-		THRW L 2 
+		THRW L 2
 		Goto Ready
 	  AltFire:
 		TNT1 A 0 A_JumpIfInventory("ICD_KnifeAmmo",1,1)
@@ -127,7 +127,7 @@ ACTOR ICD_ThrownKnife
   }
 }
 
-ACTOR AR_KnifeSpark
+ACTOR ICD_KnifeSpark
 {
   Game Doom
   +NOBLOCKMAP
@@ -148,7 +148,7 @@ ACTOR AR_KnifeSpark
   }
 }
 
-ACTOR AR_KnifeSpark2 : BulletPuff
+ACTOR ICD_KnifeSpark2 : BulletPuff
 {
   Game Doom
   +NOBLOCKMAP
@@ -166,7 +166,7 @@ ACTOR AR_KnifeSpark2 : BulletPuff
   Spawn:
     TNT1 A 0
 	TNT1 A 0 A_PlaySound("weapons/knife/knifeslice2")
-	TNT1 A 0 A_SpawnItem("AR_Puff_Spawn_2")
+	TNT1 A 0 A_SpawnItem("ICD_Puff_Spawn_2")
     SMKE BCDEFGH 2
 	stop
   XDeath:

@@ -24,8 +24,8 @@ ACTOR ICD_FlakRemington : BaseWeapon
 	Fire:
 		//CheckReload
 		REMG A 1 A_PlaySound("weapons/flakremington/fire", CHAN_WEAPON)
-		REMG AAAA 0 A_FireCustomMissile("AR_Gun3_Sparks", frandom(-5,5),0,5,0,0,frandom(-5,5))
-		REMG AAA 0 A_FireCustomMissile("AR_SSGSmoke1", frandom(-9,9),0,5,0,0,frandom(-5,5))
+		REMG AAAA 0 A_FireCustomMissile("ICD_Gun3_Sparks", frandom(-5,5),0,5,0,0,frandom(-5,5))
+		REMG AAA 0 A_FireCustomMissile("ICD_SSGSmoke1", frandom(-9,9),0,5,0,0,frandom(-5,5))
 		REMG AAAAAAAAA 0 A_FireCustomMissile("ICD_FLAK", frandom(-5,5),0,5,0,0,frandom(-5,5))
 		REMG A 2
 		REMG Q 2

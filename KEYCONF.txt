@@ -1,2 +1,2 @@
 clearplayerclasses
-addplayerclass AR_DoomPlayer
+addplayerclass ICD_DoomPlayer
