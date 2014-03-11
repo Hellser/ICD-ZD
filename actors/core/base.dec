@@ -2,8 +2,8 @@ ACTOR BaseWeapon : Weapon
 {
 	Weapon.BobStyle		Smooth
 	Weapon.BobSpeed		0.75
-	Weapon.BobRangeX    0.2
-	Weapon.BobRangeY    0.4
+	Weapon.BobRangeX		0.2
+	Weapon.BobRangeY		0.4
 	Scale				0.9
 }
 
@@ -11,20 +11,20 @@ ACTOR BaseWeapon : Weapon
 
 ACTOR ICD_Puff_Spawn_2
 {
-  Game Doom
-  +NOBLOCKMAP
-  +NOGRAVITY
-  +ALLOWPARTICLES
-  +RANDOMIZE
-  RenderStyle Translucent
-  Alpha 0.8
-  scale 0.4
-  States
-  {
-  Spawn:
-	SPUF ABCD 1 BRIGHT Light("ICD_Sparks")
-	stop
-  }
+	Game Doom
+	+NOBLOCKMAP
+	+NOGRAVITY
+	+ALLOWPARTICLES
+	+RANDOMIZE
+	RenderStyle Translucent
+	Alpha 0.8
+	scale 0.4
+	States
+	{
+		Spawn:
+			SPUF ABCD 1 BRIGHT Light("ICD_Sparks")
+			stop
+	}
 }
 
 // Sparks (I hate DDF)
@@ -37,7 +37,7 @@ ACTOR ICD_Gun3_Sparks
 	Mass 2
 	+MISSILE
 	+MOVEWITHSECTOR
-    +THRUACTORS
+	+THRUACTORS
 	+NOTELEPORT
 	-NOGRAVITY
 	BounceType Doom
@@ -45,11 +45,11 @@ ACTOR ICD_Gun3_Sparks
 	renderstyle add
 	States
 	{
-	Spawn:
-	   TNT1 A 0
-	   FRAG AAA 2 BRIGHT
-	   FRAG AAAA 2 BRIGHT A_FadeOut
-	   Stop
+		Spawn:
+			TNT1 A 0
+			FRAG AAA 2 BRIGHT
+			FRAG AAAA 2 BRIGHT A_FadeOut
+		 Stop
 	}
 }
 
@@ -61,7 +61,7 @@ ACTOR ICD_Flare_Sparks_Yellow
 	Mass 2
 	+MISSILE
 	+MOVEWITHSECTOR
-    +THRUACTORS
+	+THRUACTORS
 	+NOTELEPORT
 	-NOGRAVITY
 	BounceType Doom
@@ -70,10 +70,10 @@ ACTOR ICD_Flare_Sparks_Yellow
 	States
 	{
 	Spawn:
-	   TNT1 A 0
-	   FRAG AAAAAA 2 BRIGHT
-	   FRAG AAAA 2 BRIGHT A_FadeOut
-	   Stop
+			TNT1 A 0
+			FRAG AAAAAA 2 BRIGHT
+			FRAG AAAA 2 BRIGHT A_FadeOut
+			Stop
 	}
 }
 
@@ -85,7 +85,7 @@ ACTOR ICD_Flare_Sparks_Red
 	Mass 2
 	+MISSILE
 	+MOVEWITHSECTOR
-    +THRUACTORS
+	+THRUACTORS
 	+NOTELEPORT
 	-NOGRAVITY
 	BounceType Doom
@@ -93,11 +93,11 @@ ACTOR ICD_Flare_Sparks_Red
 	renderstyle add
 	States
 	{
-	Spawn:
-	   TNT1 A 0
-	   FRAG FFFFFF 2 BRIGHT
-	   FRAG FFFF 2 BRIGHT A_FadeOut
-	   Stop
+		Spawn:
+			TNT1 A 0
+			FRAG FFFFFF 2 BRIGHT
+			FRAG FFFF 2 BRIGHT A_FadeOut
+			Stop
 	}
 }
 
@@ -114,7 +114,7 @@ ACTOR ICD_GunSmokeBase
 	Scale 0.4
 	+MISSILE
 	+MOVEWITHSECTOR
-    +THRUACTORS
+	+THRUACTORS
 	+NOTELEPORT
 	+NOGRAVITY
 	BounceType Doom
@@ -123,15 +123,15 @@ ACTOR ICD_GunSmokeBase
 	Alpha 0.13
 	States
 	{
-	Spawn:
-	   TNT1 A 0
-	   TNT1 A 0 A_ScaleVelocity(2.5)
-	   TNT1 A 2
-	   TNT1 A 0 A_ScaleVelocity(0.5)
-	   TNT1 A 0 A_ScaleVelocity(frandom(0.5,1))
-	   PUF2 ABCDEFGHIJKLKMNOPQRSTUVWXYZ 1
-	   PUF3 ABC 1 A_FadeOut(0.043)
-	   Stop
+		Spawn:
+			TNT1 A 0
+			TNT1 A 0 A_ScaleVelocity(2.5)
+			TNT1 A 2
+			TNT1 A 0 A_ScaleVelocity(0.5)
+			TNT1 A 0 A_ScaleVelocity(frandom(0.5,1))
+			PUF2 ABCDEFGHIJKLKMNOPQRSTUVWXYZ 1
+			PUF3 ABC 1 A_FadeOut(0.043)
+			Stop
 	}
 }
 
@@ -156,14 +156,14 @@ ACTOR ICD_RPUFF
 	Alpha 0.5
 	States
 	{
-	Spawn:
-		TNT1 A 0
-		SMOK A 5
-		SMOK B 5 A_FadeOut
-		SMOK C 5 A_FadeOut
-		SMOK D 5 A_FadeOut
-		SMOK E 5
-		stop
+		Spawn:
+			TNT1 A 0
+			SMOK A 5
+			SMOK B 5 A_FadeOut
+			SMOK C 5 A_FadeOut
+			SMOK D 5 A_FadeOut
+			SMOK E 5
+			stop
 	}
 }
 
@@ -174,22 +174,22 @@ ACTOR ICD_FlareSmoke : ICD_GunSmokeBase
 	Alpha 0.4
 	States
 	{
-	Spawn:
-		RLSR C 6 BRIGHT
-		SMOK A 1 ThrustThingZ(0, 1.2, 0, 1)
-		TNT1 A 0 A_Jump(175, "SpawnJump")
-		TNT1 A 0 A_PlaySound("weapons/flare/flaresoftignite")
-		TNT1 A 0 A_SpawnItemEx("ICD_Flare_Sparks_Red",0,0,0,frandom(-2,2), frandom(-2,2), frandom(2,3),0,SXF_NOCHECKPOSITION)
-		TNT1 A 0 A_SpawnItemEx("ICD_Flare_Sparks_Yellow",0,0,0,frandom(-2,2), frandom(-2,2), frandom(2,3),0,SXF_NOCHECKPOSITION)
-		SMOK A 2
-		SMOK A 0 // Flare2
-	SpawnJump:
-		SMOK A 2
-		SMOK B 4 A_FadeOut
-		SMOK C 4 A_FadeOut
-		SMOK D 4 A_FadeOut
-		SMOK E 4 A_FadeOut
-		Stop
+		Spawn:
+			RLSR C 6 BRIGHT
+			SMOK A 1 ThrustThingZ(0, 1.2, 0, 1)
+			TNT1 A 0 A_Jump(175, "SpawnJump")
+			TNT1 A 0 A_PlaySound("weapons/flare/flaresoftignite")
+			TNT1 A 0 A_SpawnItemEx("ICD_Flare_Sparks_Red",0,0,0,frandom(-2,2), frandom(-2,2), frandom(2,3),0,SXF_NOCHECKPOSITION)
+			TNT1 A 0 A_SpawnItemEx("ICD_Flare_Sparks_Yellow",0,0,0,frandom(-2,2), frandom(-2,2), frandom(2,3),0,SXF_NOCHECKPOSITION)
+			SMOK A 2
+			SMOK A 0 // Flare2
+		SpawnJump:
+			SMOK A 2
+			SMOK B 4 A_FadeOut
+			SMOK C 4 A_FadeOut
+			SMOK D 4 A_FadeOut
+			SMOK E 4 A_FadeOut
+			Stop
 	}
 }
 
@@ -227,20 +227,20 @@ ACTOR ICD_GS_PistolCasing : ICD_GS_CasingTemplate
 	BounceSound "weapons/effects/smallcasing"
 	States
 	{
-	Spawn:
-	   CAS2 A 0 A_Playsound("NULL")
-	   TNT1 A 0 A_ScaleVelocity (frandom(2,3))
-	   CAS2 ABCDEF 2 A_CustomMissile("ICD_GS_EmptyCasingSmoke",0,0,0,2,0)
-	   Goto Spawn+2
-	Death:
-	   TNT1 A 0 A_Jump(256,"Lie1", "Lie2")
-	   Loop
-	Lie1:
-	   CAS2 A 2500
-	   Stop
-	Lie2:
-	   CAS2 F 2500
-	   Stop
+		Spawn:
+			CAS2 A 0 A_Playsound("NULL")
+			TNT1 A 0 A_ScaleVelocity (frandom(2,3))
+			CAS2 ABCDEF 2 A_CustomMissile("ICD_GS_EmptyCasingSmoke",0,0,0,2,0)
+			Goto Spawn+2
+		Death:
+			TNT1 A 0 A_Jump(256,"Lie1", "Lie2")
+			Loop
+		Lie1:
+			CAS2 A 2500
+			Stop
+		Lie2:
+			CAS2 F 2500
+			Stop
 	}
 }
 
@@ -250,18 +250,18 @@ ACTOR ICD_GS_HeavyCal : ICD_GS_CasingTemplate
 	BounceSound "weapons/effects/largecasing"
 	States
 	{
-	Spawn:
-	   CAS7 A 0 A_Playsound("NULL")
-	   TNT1 A 0 A_ScaleVelocity (frandom(2,3))
-	   CAS7 A 0 A_Jump(256, "Spin1")
-	   Goto Spawn+2
-	Spin1:
-		TNT1 A 0 A_Jump(128,4)
-		CAS7 FDCBEAF 3 A_CustomMissile("ICD_GS_EmptyCasingSmoke",0,0,0,2,0)
-		Loop
-	Death:
-		CAS7 B 2500
-		Stop
+		Spawn:
+			CAS7 A 0 A_Playsound("NULL")
+			TNT1 A 0 A_ScaleVelocity (frandom(2,3))
+			CAS7 A 0 A_Jump(256, "Spin1")
+			Goto Spawn+2
+		Spin1:
+			TNT1 A 0 A_Jump(128,4)
+			CAS7 FDCBEAF 3 A_CustomMissile("ICD_GS_EmptyCasingSmoke",0,0,0,2,0)
+			Loop
+		Death:
+			CAS7 B 2500
+			Stop
 
 	}
 }
@@ -272,18 +272,18 @@ ACTOR ICD_GS_MinigunSpacer : ICD_GS_CasingTemplate
 	BounceSound "NULL"
 	States
 	{
-	Spawn:
-	   TNT1 A 0 A_Playsound("NULL")
-	   TNT1 A 0 A_ScaleVelocity (frandom(2,3))
-	   TNT1 A 0 A_Jump(256, "Spin1")
-	   Goto Spawn+2
-	Spin1:
-		TNT1 A 0 A_Jump(128,3)
-		SPCR ABCD 3 A_CustomMissile("ICD_GS_EmptyCasingSmoke",0,0,0,2,0)
-		Loop
-	Death:
-		SPCR B 2500
-		Stop
+		Spawn:
+			TNT1 A 0 A_Playsound("NULL")
+			TNT1 A 0 A_ScaleVelocity (frandom(2,3))
+			TNT1 A 0 A_Jump(256, "Spin1")
+			Goto Spawn+2
+		Spin1:
+			TNT1 A 0 A_Jump(128,3)
+			SPCR ABCD 3 A_CustomMissile("ICD_GS_EmptyCasingSmoke",0,0,0,2,0)
+			Loop
+		Death:
+			SPCR B 2500
+			Stop
 
 	}
 }
@@ -294,36 +294,36 @@ ACTOR ICD_GS_EmptyShell : ICD_GS_CasingTemplate
 	BounceSound "weapons/shellbounce"
 	States
 	{
-	Spawn:
-	   TNT1 A 0
-	   CAS3 A 0
-	   TNT1 A 0 A_ScaleVelocity (frandom(2,3))
-	   CAS3 A 0 A_Jump(256, "Spin1", "Spin2", "Spin3", "Spin4", "Spin5")
-	   Goto Spawn+1
-	Spin1:
-		CAS3 ABCD 3 A_CustomMissile("ICD_GS_EmptyCasingSmoke",0,0,0,2,0)
-		Loop
-	Spin2:
-		CAS3 EFCD 3 A_CustomMissile("ICD_GS_EmptyCasingSmoke",0,0,0,2,0)
-		Loop
-	Spin3:
-		CAS3 DCBA 3 A_CustomMissile("ICD_GS_EmptyCasingSmoke",0,0,0,2,0)
-		Loop
-	Spin4:
-		CAS3 BCDE 3 A_CustomMissile("ICD_GS_EmptyCasingSmoke",0,0,0,2,0)
-		Loop
-	Spin5:
-		CAS3 CDEF 3 A_CustomMissile("ICD_GS_EmptyCasingSmoke",0,0,0,2,0)
-		Loop
-	Death:
-	   	CAS3 A 0 A_Jump(256,"Lie1","Lie2")
-	   	Loop
-	Lie1:
-		CAS3 C 2500
-		Stop
-	Lie2:
-		CAS3 A 2500
-		stop
+		Spawn:
+			TNT1 A 0
+			CAS3 A 0
+			TNT1 A 0 A_ScaleVelocity (frandom(2,3))
+			CAS3 A 0 A_Jump(256, "Spin1", "Spin2", "Spin3", "Spin4", "Spin5")
+			Goto Spawn+1
+		Spin1:
+			CAS3 ABCD 3 A_CustomMissile("ICD_GS_EmptyCasingSmoke",0,0,0,2,0)
+			Loop
+		Spin2:
+			CAS3 EFCD 3 A_CustomMissile("ICD_GS_EmptyCasingSmoke",0,0,0,2,0)
+			Loop
+		Spin3:
+			CAS3 DCBA 3 A_CustomMissile("ICD_GS_EmptyCasingSmoke",0,0,0,2,0)
+			Loop
+		Spin4:
+			CAS3 BCDE 3 A_CustomMissile("ICD_GS_EmptyCasingSmoke",0,0,0,2,0)
+			Loop
+		Spin5:
+			CAS3 CDEF 3 A_CustomMissile("ICD_GS_EmptyCasingSmoke",0,0,0,2,0)
+			Loop
+		Death:
+			CAS3 A 0 A_Jump(256,"Lie1","Lie2")
+		 	Loop
+		Lie1:
+			CAS3 C 2500
+			Stop
+		Lie2:
+			CAS3 A 2500
+			stop
 	}
 }
 
@@ -335,9 +335,9 @@ ACTOR ICD_GS_EmptyCasingSmoke
 	+NOINTERACTION
 	States
 	{
-	Spawn:
-		SMKE ABCDEFGH 2
-		stop
+		Spawn:
+			SMKE ABCDEFGH 2
+			stop
 	}
 }
 
@@ -354,47 +354,47 @@ ACTOR ICD_ShellSpawner
 	PROJECTILE
 	States
 	{
-	Spawn:
-		TNT1 A 1
-	Death:
-		TNT1 A 0
-	Stop
+		Spawn:
+			TNT1 A 1
+		Death:
+			TNT1 A 0
+		Stop
 	}
 }
 
 ACTOR ICD_ShotgunShellSpawner1 : ICD_ShellSpawner
 {
-   States
-   {
-   Spawn:
-      TNT1 A 1
-   Death:
-	  TNT1 A 0 A_CustomMissile("ICD_GS_EmptyShell",2,0,90+random(-15,15),2,55+random(-10,10))
-      Stop
-   }
+	 States
+	 {
+		Spawn:
+			TNT1 A 1
+		Death:
+			TNT1 A 0 A_CustomMissile("ICD_GS_EmptyShell",2,0,90+random(-15,15),2,55+random(-10,10))
+			Stop
+	 }
 }
 
 ACTOR ICD_PistolCasingSpawner : ICD_ShellSpawner
 {
-   States
-   {
-   Spawn:
-      TNT1 A 1
-   Death:
-	  TNT1 A 0 A_CustomMissile("ICD_GS_PistolCasing",2,0,270+random(-15,15),2,55+random(-10,10))
-      Stop
-   }
+	 States
+	 {
+		Spawn:
+			TNT1 A 1
+		Death:
+			TNT1 A 0 A_CustomMissile("ICD_GS_PistolCasing",2,0,270+random(-15,15),2,55+random(-10,10))
+			Stop
+	 }
 }
 
 ACTOR ICD_MinigunCasingSpawner : ICD_ShellSpawner
 {
 	States
 	{
-	Spawn:
-		TNT1 A 1
-	Death:
-		TNT1 A 0 A_CustomMissile("ICD_GS_HeavyCal",2,0,270+random(-15,15),2,55+random(-10,10))
-		Stop
+		Spawn:
+			TNT1 A 1
+		Death:
+			TNT1 A 0 A_CustomMissile("ICD_GS_HeavyCal",2,0,270+random(-15,15),2,55+random(-10,10))
+			Stop
 	}
 }
 
@@ -402,51 +402,51 @@ ACTOR ICD_MinigunSpacerSpawner : ICD_ShellSpawner
 {
 	States
 	{
-	Spawn:
-		TNT1 A 1
-	Death:
-		TNT1 A 0 A_CustomMissile("ICD_GS_MinigunSpacer",2,0,270+random(-15,15),2,55+random(-10,10))
-		Stop
+		Spawn:
+			TNT1 A 1
+		Death:
+			TNT1 A 0 A_CustomMissile("ICD_GS_MinigunSpacer",2,0,270+random(-15,15),2,55+random(-10,10))
+			Stop
 	}
 }
 
 ACTOR ICD_BulletPuff : BulletPuff
 {
 	VSpeed 0.5
-  +NOEXTREMEDEATH
-  Renderstyle Translucent
-  Alpha 1
-  States
-  {
-  Spawn:
-    TNT1 A 0
-	TNT1 A 0 A_PlaySound("world/effect/bullimpact", 6)
-	PUFF AB 2 BRIGHT
-	TNT1 AAAA 0 A_SpawnItemEx("ICD_BulletPuffSpark", 0,0,0,random(-5,5),random(-5,5),random(-5,5),0,SXF_NOCHECKPOSITION)
-	TNT1 A 0 A_Jump(179, 3)
-	TNT1 A 0 A_Jump(179, 2)
-	TNT1 A 0 A_PlaySound("world/effect/richochet", 5)
-	TNT1 A 0 A_FadeOut(0.8,0)
-	SMKE BCDEFGH 2
-    Stop
-  }
+	+NOEXTREMEDEATH
+	Renderstyle Translucent
+	Alpha 1
+	States
+	{
+		Spawn:
+			TNT1 A 0
+			TNT1 A 0 A_PlaySound("world/effect/bullimpact", 6)
+			PUFF AB 2 BRIGHT
+			TNT1 AAAA 0 A_SpawnItemEx("ICD_BulletPuffSpark", 0,0,0,random(-5,5),random(-5,5),random(-5,5),0,SXF_NOCHECKPOSITION)
+			TNT1 A 0 A_Jump(179, 3)
+			TNT1 A 0 A_Jump(179, 2)
+			TNT1 A 0 A_PlaySound("world/effect/richochet", 5)
+			TNT1 A 0 A_FadeOut(0.8,0)
+			SMKE BCDEFGH 2
+			Stop
+	}
 }
 
 ACTOR ICD_ShotgunBulletPuff : BulletPuff
 {
 	VSpeed 0.5
-  +NOEXTREMEDEATH
-  Renderstyle Translucent
-  Alpha 0.2
-  States
-  {
-  Spawn:
-    TNT1 A 0
-	TNT1 A 0 A_PlaySound("world/effect/bullimpact", 6)
-	TNT1 AAAA 0 A_SpawnItemEx("ICD_BulletPuffDust", 0,0,0,random(-5,5),random(-5,5),random(-5,5),0,SXF_NOCHECKPOSITION,75)
-	SMKE ABCDEFGH 2
-    Stop
-  }
+	+NOEXTREMEDEATH
+	Renderstyle Translucent
+	Alpha 0.2
+	States
+	{
+		Spawn:
+			TNT1 A 0
+			TNT1 A 0 A_PlaySound("world/effect/bullimpact", 6)
+			TNT1 AAAA 0 A_SpawnItemEx("ICD_BulletPuffDust", 0,0,0,random(-5,5),random(-5,5),random(-5,5),0,SXF_NOCHECKPOSITION,75)
+			SMKE ABCDEFGH 2
+			Stop
+	}
 }
 
 ACTOR ICD_BulletPuffSpark
@@ -457,7 +457,7 @@ ACTOR ICD_BulletPuffSpark
 	Mass 2
 	+MISSILE
 	+MOVEWITHSECTOR
-    +THRUACTORS
+	+THRUACTORS
 	+NOTELEPORT
 	+NODAMAGETHRUST
 	-NOGRAVITY
@@ -466,14 +466,14 @@ ACTOR ICD_BulletPuffSpark
 	//renderstyle add
 	States
 	{
-	Spawn:
-	   TNT1 A 0
-	   FRAG A 1 BRIGHT
-	   TNT1 A 0 A_Jump(179, 2)
-	   TNT1 A 0 A_Explode(1, 32, 1, 0, 1)
-	   FRAG A 1 BRIGHT
-	   FRAG AAAA 2 BRIGHT A_FadeOut
-	   Stop
+		Spawn:
+			TNT1 A 0
+			FRAG A 1 BRIGHT
+			TNT1 A 0 A_Jump(179, 2)
+			TNT1 A 0 A_Explode(1, 32, 1, 0, 1)
+			FRAG A 1 BRIGHT
+			FRAG AAAA 2 BRIGHT A_FadeOut
+			Stop
 	}
 }
 
@@ -500,13 +500,13 @@ ACTOR ICD_BulletPuffDust
 	Alpha 0.75
 	States
 	{
-	Spawn:
-	   TNT1 A 0
-	   FRAG B 1
-	   Loop
-	Death:
-	   FRAG B 350
-	   FRAG BBBB 105 A_FadeOut
-	   Stop
+		Spawn:
+			TNT1 A 0
+			FRAG B 1
+			Loop
+		Death:
+			FRAG B 350
+			FRAG BBBB 105 A_FadeOut
+			Stop
 	}
 }

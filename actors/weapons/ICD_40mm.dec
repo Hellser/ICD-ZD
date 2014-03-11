@@ -97,11 +97,11 @@ ACTOR ICD_40mm : BaseWeapon
 
 ACTOR ICD_40mmMagazine : Ammo
 {
-   Inventory.MaxAmount 5
-   Ammo.BackpackAmount 0
-   Ammo.BackpackMaxAmount 5
-   Inventory.Icon SHOTA0
-   +INVENTORY.IGNORESKILL
+	Inventory.MaxAmount 5
+	Ammo.BackpackAmount 0
+	Ammo.BackpackMaxAmount 5
+	Inventory.Icon SHOTA0
+	+INVENTORY.IGNORESKILL
 }
 
 ACTOR ICD_40mmGrenade
@@ -120,10 +120,7 @@ ACTOR ICD_40mmGrenade
 	States
 	{
 		Spawn:
-			GRNL A 1 //A_SpawnItemEx("ICD_40mm_Smoke")
-			Loop
-		Bounce:
-			GRNL AA 1 //A_SpawnItemEx("ICD_40mm_Smoke")
+			GRNL A 1 A_SpawnItemEx("ICD_RPUFF")
 			Loop
 		Death:
 			BFE1 G 2

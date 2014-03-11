@@ -1,87 +1,87 @@
 ACTOR ICD_BoxOfShells : Shell replaces ShellBox
 {
-  SpawnID 143
-  Inventory.PickupMessage "$GotShellBox" // "Picked up a box of shotgun shells."
-  Inventory.PickupFlash "ICD_BoxOfShells1"
-  Inventory.PickupSound "weapons/generic/weaponup2"
-  Inventory.Amount 4
-  Scale 0.85
-  Radius 20
-  Height 16
-  States
-  {
-  Spawn:
-    SBOX B -1
-    Stop
-  }
+	SpawnID 143
+	Inventory.PickupMessage "$GotShellBox" // "Picked up a box of shotgun shells."
+	Inventory.PickupFlash "ICD_BoxOfShells1"
+	Inventory.PickupSound "weapons/generic/weaponup2"
+	Inventory.Amount 4
+	Scale 0.85
+	Radius 20
+	Height 16
+	States
+	{
+		Spawn:
+			SBOX B -1
+			Stop
+	}
 }
 
 ACTOR ICD_BoxOfShells1 : Shell
 {
-  Inventory.PickupMessage "$GOTSHELLBOX" // "Picked up a box of shotgun shells."
-  Inventory.PickupFlash "ICD_BoxOfShells2"
-  Inventory.PickupSound "weapons/generic/weaponup2"
-  Inventory.Amount 4
-  Scale 0.85
-  Radius 20
-  Height 16
-  States
-  {
-  Spawn:
-    SBOX A -1
-    Stop
-  }
+	Inventory.PickupMessage "$GOTSHELLBOX" // "Picked up a box of shotgun shells."
+	Inventory.PickupFlash "ICD_BoxOfShells2"
+	Inventory.PickupSound "weapons/generic/weaponup2"
+	Inventory.Amount 4
+	Scale 0.85
+	Radius 20
+	Height 16
+	States
+	{
+		Spawn:
+			SBOX A -1
+			Stop
+	}
 }
 
 ACTOR ICD_BoxOfShells2 : Shell
 {
-  Inventory.PickupMessage "$GOTSHELLBOX" // "Picked up a box of shotgun shells."
-  Inventory.PickupFlash "ICD_BoxOfShells3"
-  Inventory.PickupSound "weapons/generic/weaponup2"
-  Inventory.Amount 4
-  Scale 0.85
-  Radius 20
-  Height 16
-  States
-  {
-  Spawn:
-    SBOX A -1
-    Stop
-  }
+	Inventory.PickupMessage "$GOTSHELLBOX" // "Picked up a box of shotgun shells."
+	Inventory.PickupFlash "ICD_BoxOfShells3"
+	Inventory.PickupSound "weapons/generic/weaponup2"
+	Inventory.Amount 4
+	Scale 0.85
+	Radius 20
+	Height 16
+	States
+	{
+		Spawn:
+			SBOX A -1
+			Stop
+	}
 }
 
 ACTOR ICD_BoxOfShells3 : Shell
 {
-  Inventory.PickupMessage "$GOTSHELLBOX" // "Picked up a box of shotgun shells."
-  Inventory.PickupFlash "ICD_BoxOfShells4"
-  Inventory.PickupSound "weapons/generic/weaponup2"
-  Inventory.Amount 4
-  Scale 0.85
-  Radius 20
-  Height 16
-  States
-  {
-  Spawn:
-    SBOX A -1
-    Stop
-  }
+	Inventory.PickupMessage "$GOTSHELLBOX" // "Picked up a box of shotgun shells."
+	Inventory.PickupFlash "ICD_BoxOfShells4"
+	Inventory.PickupSound "weapons/generic/weaponup2"
+	Inventory.Amount 4
+	Scale 0.85
+	Radius 20
+	Height 16
+	States
+	{
+		Spawn:
+			SBOX A -1
+			Stop
+	}
 }
 
 ACTOR ICD_BoxOfShells4 : Shell
 {
-  Inventory.PickupMessage "$GOTSHELLBOX2" // "Emptied."
-  Inventory.PickupFlash "ICD_BoxOfShellsEmpty"
-  Inventory.PickupSound "weapons/generic/weaponup2"
-  Inventory.Amount 4
-  Scale 0.85
-  Radius 20
-  Height 16
-  States
-  {
-  Spawn:
-    SBOX A -1
-    Stop
-  }
+	Inventory.PickupMessage "$GOTSHELLBOX2" // "Emptied."
+	Inventory.PickupFlash "ICD_BoxOfShellsEmpty"
+	Inventory.PickupSound "weapons/generic/weaponup2"
+	Inventory.Amount 4
+	Scale 0.85
+	Radius 20
+	Height 16
+	States
+	{
+		Spawn:
+			SBOX A -1
+			Stop
+	}
 }
 
 ACTOR ICD_BoxOfShellsEmpty : AR_GS_UsedItemTemplate
@@ -91,9 +91,9 @@ ACTOR ICD_BoxOfShellsEmpty : AR_GS_UsedItemTemplate
 	Height 16
 	States
 	{
-		Spawn:
-		SBOX C 200
-		SBOX CCCC 110 A_FadeOut
-		Stop
+			Spawn:
+			SBOX C 200
+			SBOX CCCC 110 A_FadeOut
+			Stop
 	}
 }

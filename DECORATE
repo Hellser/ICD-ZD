@@ -3,6 +3,7 @@
 #include "actors/items/armorbonus.dec"
 #include "actors/items/stimmedi.dec"
 #include "actors/items/armor.dec"
+#include "actors/items/weaponpickups.dec"
 
 // "Engine" Core
 #include "actors/core/playerpawn.dec"
