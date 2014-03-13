@@ -72,11 +72,15 @@ weapons/minigun/mini5						DSMINI5
 weapons/uzi/suzi2							DSSUZI2
 
 //Flak40mm >.>;
+weapons/40mm/bounce							DSGREN4
 weapons/40mm/gren2							DSGREN2
 weapons/40mm/gren3							DSGREN3
 weapons/40mm/open							DS40OPN
 weapons/40mm/load							DS40LOAD
 weapons/40mm/close							DS40CLS
+weapons/40mm/gashiss						DSGAS2
+weapons/40mm/gasbounce						DSGAS3
+weapons/40mm/gasopen						DSGAS1
 
 $volume weapons/flare/flaresoftignite		0.5
 $volume weapons/flare/flarerun				0.4
