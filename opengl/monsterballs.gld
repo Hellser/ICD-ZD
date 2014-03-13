@@ -1,0 +1,23 @@
+pointlight ICD_ImpBall
+{
+	color 1.0 0.2 0.0
+	size 64
+}
+
+pointlight ICD_ImpBallExp1
+{
+	color 1.0 0.2 0.0
+	size 64
+}
+
+pointlight ICD_ImpBallExp2
+{
+	color 0.7 0.1 0.0
+	size 48
+}
+
+pointlight ICD_ImpBallExp3
+{
+	color 0.4 0.0 0.0
+	size 48
+}

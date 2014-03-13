@@ -84,10 +84,12 @@ ACTOR ICD_ImpBall replaces DoomImpBall
 	States
 	{
 		Spawn:
-			BAL1 AB 3 Bright A_SpawnItem("ICD_ImpBallsPuff")
+			BAL1 AB 3 Bright Light("ICD_ImpBall") A_SpawnItem("ICD_ImpBallsPuff")
 			Loop
 		Death:
-			BAL1 CDE 6 Bright
+			BAL1 C 6 Bright Light("ICD_ImpBallExp1")
+			BAL1 D 6 Bright Light("ICD_ImpBallExp2")
+			BAL1 E 6 Bright Light("ICD_ImpBallExp3")
 			Stop
 	}
 }

@@ -230,7 +230,7 @@ ACTOR ICD_GS_PistolCasing : ICD_GS_CasingTemplate
 		Spawn:
 			CAS2 A 0 A_Playsound("NULL")
 			TNT1 A 0 A_ScaleVelocity (frandom(2,3))
-			CAS2 ABCDEF 2 A_CustomMissile("ICD_GS_EmptyCasingSmoke",0,0,0,2,0)
+			CAS2 ABCDEF 2 //A_CustomMissile("ICD_GS_EmptyCasingSmoke",0,0,0,2,0)
 			Goto Spawn+2
 		Death:
 			TNT1 A 0 A_Jump(256,"Lie1", "Lie2")
@@ -421,8 +421,10 @@ ACTOR ICD_BulletPuff : BulletPuff
 		Spawn:
 			TNT1 A 0
 			TNT1 A 0 A_PlaySound("world/effect/bullimpact", 6)
-			PUFF AB 2 BRIGHT
+			PUFF A 2 BRIGHT Light("ICD_Sparks")
+			PUFF B 2 BRIGHT
 			TNT1 AAAA 0 A_SpawnItemEx("ICD_BulletPuffSpark", 0,0,0,random(-5,5),random(-5,5),random(-5,5),0,SXF_NOCHECKPOSITION)
+			TNT1 AA 0 A_SpawnItemEx("ICD_BulletPuffDust", 0,0,0,random(-5,5),random(-5,5),random(-5,5),0,SXF_NOCHECKPOSITION)
 			TNT1 A 0 A_Jump(179, 3)
 			TNT1 A 0 A_Jump(179, 2)
 			TNT1 A 0 A_PlaySound("world/effect/richochet", 5)
