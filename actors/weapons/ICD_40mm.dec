@@ -161,7 +161,42 @@ ACTOR ICD_40mmGrenade
 	States
 	{
 		Spawn:
-			GRNL A 1 A_SpawnItemEx("ICD_RPUFF",0,0,-2)
+			GRNL A 1 A_SpawnItemEx("ICD_RPUFF",0,0,-4)
+			Loop
+		Death:
+			TNT1 A 0 A_PlaySound("weapons/boom")
+			TNT1 A 0 A_ChangeFlag("NOGRAVITY", 1)
+			// An ever knowing glitch in ICD, dropping explosions.
+			// This is an updated port. So some things are better.
+			BFE1 G 2
+			BFE1 H 2 BRIGHT A_Explode(150,64)
+			TNT1 A 0 A_Mushroom("ICD_40mmMushroom", 4, 8)
+			BFE1 IJKLM 2 BRIGHT
+			BFE1 N 2 BRIGHT //A_SpawnItemEx("ICD_Explosion_Smoke")
+			BFE1 OPQRSTUVW 2 BRIGHT
+			Stop
+
+	}
+}
+
+ACTOR ICD_40mmSmokenade
+{
+	Radius 8
+	Height 8
+	Speed 30
+	Damage 20
+	ReactionTime 75
+	BounceType "Doom"
+	BounceSound "weapon/40mm/bounce"
+	Scale 0.8
+	PROJECTILE
+	-NOGRAVITY
+	BounceType Doom
+	BounceFactor 0.5
+	States
+	{
+		Spawn:
+			GRNL A 2 A_SpawnItemEx("ICD_FlakSmoke",0,0,-4)
 			Loop
 		Death:
 			TNT1 A 0 A_PlaySound("weapons/boom")

@@ -5,3 +5,5 @@ flickerlight ICD_FlareEffect
     secondarySize 230
     chance 0.4
 }
+
+// Need to add more effects.
