@@ -3,10 +3,10 @@ ACTOR ICD_Knife : BaseWeapon
 	Game Doom
 	Tag "$ICDKNIFE"
 	Weapon.SelectionOrder 1900
-		//Weapon.AmmoGive2 1
-		Weapon.AmmoType2 "ICD_KnifeAmmo"
-		Obituary "$OB_MPPISTOL"
-		Inventory.Pickupmessage "$ICDKNIFEPICKUP"
+	//Weapon.AmmoGive2 1
+	Weapon.AmmoType2 "ICD_KnifeAmmo"
+	Obituary "$OB_MPPISTOL"
+	Inventory.Pickupmessage "$ICDKNIFEPICKUP"
 	+WEAPON.NOALERT
 	//+WEAPON.AMMO_OPTIONAL
 	Weapon.UpSound "weapons/knife/upsound"

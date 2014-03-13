@@ -150,7 +150,7 @@ ACTOR ICD_MiniSmoke : ICD_GunSmokeBase
 	Scale 0.4
 }
 
-ACTOR ICD_RPUFF
+ACTOR ICD_RPUFF : ICD_GunSmokeBase
 {
 	Scale 0.5
 	Alpha 0.5

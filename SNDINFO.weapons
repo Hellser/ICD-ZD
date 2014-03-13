@@ -71,10 +71,23 @@ weapons/minigun/mini5						DSMINI5
 //Uzi
 weapons/uzi/suzi2							DSSUZI2
 
+//Flak40mm >.>;
+weapons/40mm/gren2							DSGREN2
+weapons/40mm/gren3							DSGREN3
+weapons/40mm/open							DS40OPN
+weapons/40mm/load							DS40LOAD
+weapons/40mm/close							DS40CLS
+
 $volume weapons/flare/flaresoftignite		0.5
 $volume weapons/flare/flarerun				0.4
 $rolloff weapons/flare/flaresoftignite 		64 512
 $rolloff weapons/flare/flarerun 			64 512
+
+$random weapons/boom	{ weapons/boom1 weapons/boom2 weapons/boom3 weapons/boom4 }
+weapons/boom1								DSBOOM1
+weapons/boom2								DSBOOM2
+weapons/boom3								DSBOOM3
+weapons/boom4								DSBOOM4
 
 $random weapons/shellbounce { weapons/effects/shellbounce1 weapons/effects/shellbounce2 weapons/effects/shellbounce3 }
 weapons/effects/shellbounce1				DSSHELL1
