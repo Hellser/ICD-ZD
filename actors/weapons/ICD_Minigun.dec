@@ -172,6 +172,6 @@ ACTOR ICD_MinigunMagazine : Ammo
 	Inventory.MaxAmount 100
 	Ammo.BackpackAmount 0
 	Ammo.BackpackMaxAmount 100
-	Inventory.Icon CLIPA1
+	Inventory.Icon CLIPA0
 	+INVENTORY.IGNORESKILL
 }

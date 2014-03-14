@@ -10,6 +10,7 @@ ACTOR ICD_Knife : BaseWeapon
 	+WEAPON.NOALERT
 	//+WEAPON.AMMO_OPTIONAL
 	Weapon.UpSound "weapons/knife/upsound"
+	Tag "Knife"
 	States
 	{
 		Select:

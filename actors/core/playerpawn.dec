@@ -10,6 +10,7 @@ ACTOR ICD_DoomPlayer : PlayerPawn replaces DoomPlayer
 	Player.CrouchSprite "PLYC"
 	Player.StartItem "ICD_Pistol"
 	Player.StartItem "ICD_Knife"
+	Player.StartItem "ICD_FlareWeapon"
 	Player.StartItem "ICD_PistolMagazine", 12
 	Player.StartItem "Fist"
 	Player.StartItem "ICD_Bullets", 38
@@ -19,7 +20,7 @@ ACTOR ICD_DoomPlayer : PlayerPawn replaces DoomPlayer
 	Player.WeaponSlot 1, ICD_Knife, Chainsaw
 	Player.WeaponSlot 2, ICD_Pistol, ICD_DualPistol
 	Player.WeaponSlot 3, ICD_Remington, ICD_FlakRemington, ICD_DoubleBarrel
-	Player.WeaponSlot 4, Chaingun
+	Player.WeaponSlot 4, ICD_SingleUzi
 	Player.WeaponSlot 5, ICD_40mm
 	Player.WeaponSlot 6, ICD_AssaultRifle, ICD_InfantryRifle
 	Player.WeaponSlot 7, ICD_SawedOff, ICD_Minigun

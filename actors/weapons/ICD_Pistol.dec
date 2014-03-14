@@ -8,7 +8,7 @@ ACTOR ICD_Pistol : BaseWeapon
 	Weapon.AmmoType2 "ICD_Bullets"
 	Obituary "$OB_MPPISTOL"
 	Inventory.Pickupmessage "$PICKUP_PISTOL_DROPPED"
-	Tag "$ICDPISTOL"
+	Tag "M1911"
 	+WEAPON.NOALERT
 	+WEAPON.AMMO_OPTIONAL
 	States

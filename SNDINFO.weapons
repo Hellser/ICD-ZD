@@ -74,8 +74,11 @@ weapons/minigun/mini4						DSMINI4
 weapons/minigun/mini5						DSMINI5
 
 //Uzi
+weapons/uzi/fire							DSUZI1
+weapons/uzi/uzi3							DSUZI3
 weapons/uzi/suzi2							DSSUZI2
 weapons/uzi/suzi3							DSSUZI3
+weapons/uzi/suzi4							DSSUZI4
 
 //Flak40mm >.>;
 weapons/40mm/bounce							DSGREN4

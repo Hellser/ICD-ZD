@@ -8,7 +8,7 @@ ACTOR ICD_DualPistol : BaseWeapon
 	Weapon.AmmoType2 "ICD_Bullets"
 	Obituary "$OB_MPPISGOL"
 	Inventory.Pickupmessage "$PICKUP_PISGOL_DROPPED"
-	Tag "$ICDPISGOL"
+	Tag "Dual M1911"
 	+WEAPON.NOALERT
 	+WEAPON.AMMO_OPTIONAL
 	States

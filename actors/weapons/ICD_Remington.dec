@@ -10,6 +10,7 @@ ACTOR ICD_Remington : BaseWeapon
 	Weapon.UpSound "weapons/generic/weaponup"
 	+WEAPON.AMMO_OPTIONAL
 	+WEAPON.NOALERT
+	Tag "Remington Shotgun"
 	States
 	{
 		Select:

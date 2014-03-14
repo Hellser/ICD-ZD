@@ -38,6 +38,7 @@ Actor ICD_BoxOfBullets : CustomInventory replaces ClipBox 2048
 	Scale 0.85
 	Inventory.PickupSound "weapons/generic/weaponup"
 	Inventory.PickupMessage "$GotClipBox"
+	Inventory.PickupFlash "ICD_BoxOfBulletsDrop"
 	States
 	{
 		Spawn:
@@ -46,9 +47,19 @@ Actor ICD_BoxOfBullets : CustomInventory replaces ClipBox 2048
 		Pickup:
 			AMME A 2 A_PlaySound("weapons/1911/clipin")
 			AMME A 2 A_PlaySound("weapons/doublebarrel/load")
-			AMME A 200
-			AMME AAAA 110 A_FadeOut
 			Stop
 	}
 }
 
+Actor ICD_BoxOfBulletsDrop
+{
+	-SOLID
+	Scale 0.85
+	States
+	{
+		Spawn:
+			AMME A 200
+			AMME AAAAAAAAAA 1 A_FadeOut
+			Stop
+	}
+}

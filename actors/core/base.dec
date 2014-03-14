@@ -149,6 +149,12 @@ ACTOR ICD_M16_Smoke : ICD_GunSmokeBase
 	Scale 0.5
 }
 
+ACTOR ICD_UziSmoke : ICD_GunSmokeBase
+{
+	Speed 4
+	Scale 0.4
+}
+
 ACTOR ICD_MiniSmoke : ICD_GunSmokeBase
 {
 	Speed 5

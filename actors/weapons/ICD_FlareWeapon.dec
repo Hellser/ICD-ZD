@@ -5,7 +5,7 @@ ACTOR ICD_FlareWeapon : BaseWeapon
 	Weapon.AmmoGive 0
 	Weapon.AmmoType "Clip"
 	Inventory.PickupMessage "$GotSawedOff"
-	Tag "Flare"
+	Tag "Flares"
 	+WEAPON.NOALERT
 	States
 	{

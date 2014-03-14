@@ -9,6 +9,7 @@ ACTOR ICD_AssaultRifle : BaseWeapon
 	+WEAPON.NOALERT
 	+WEAPON.AMMO_OPTIONAL
 	Weapon.UpSound "weapons/generic/weaponup"
+	Tag "Assault Rifle"
 	States
 	{
 		Select:
@@ -91,6 +92,6 @@ ACTOR ICD_AssaultRifleMagazine : Ammo
 	Inventory.MaxAmount 45
 	Ammo.BackpackAmount 0
 	Ammo.BackpackMaxAmount 45
-	Inventory.Icon CLIPA1
+	Inventory.Icon CLIPA0
 	+INVENTORY.IGNORESKILL
 }

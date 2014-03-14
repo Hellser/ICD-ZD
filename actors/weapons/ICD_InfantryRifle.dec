@@ -137,6 +137,6 @@ ACTOR ICD_InfantryRifleMagazine : Ammo
 	Inventory.MaxAmount 20
 	Ammo.BackpackAmount 0
 	Ammo.BackpackMaxAmount 20
-	Inventory.Icon CLIPA1
+	Inventory.Icon CLIPA0
 	+INVENTORY.IGNORESKILL
 }
