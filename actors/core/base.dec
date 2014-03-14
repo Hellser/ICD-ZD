@@ -143,6 +143,11 @@ ACTOR ICD_PistolSmoke1 : ICD_GunSmokeBase
 	scale 0.25
 }
 
+ACTOR ICD_M16_Smoke : ICD_GunSmokeBase
+{
+	Speed 6
+	Scale 0.5
+}
 
 ACTOR ICD_MiniSmoke : ICD_GunSmokeBase
 {
@@ -386,6 +391,18 @@ ACTOR ICD_PistolCasingSpawner : ICD_ShellSpawner
 	 }
 }
 
+ACTOR ICD_AssaultCasingSpawner : ICD_ShellSpawner
+{
+	States
+	{
+		Spawn:
+			TNT1 A 1
+		Death:
+			TNT1 A 0 A_CustomMissile("ICD_GS_HeavyCal",2,0,270+random(-15,15),2,32+random(-10,10))
+			Stop
+	}
+}
+
 ACTOR ICD_MinigunCasingSpawner : ICD_ShellSpawner
 {
 	States
@@ -393,7 +410,7 @@ ACTOR ICD_MinigunCasingSpawner : ICD_ShellSpawner
 		Spawn:
 			TNT1 A 1
 		Death:
-			TNT1 A 0 A_CustomMissile("ICD_GS_HeavyCal",2,0,270+random(-15,15),2,55+random(-10,10))
+			TNT1 A 0 A_CustomMissile("ICD_GS_HeavyCal",2,0,270+random(-15,15),2,20+random(-10,10))
 			Stop
 	}
 }
@@ -405,7 +422,7 @@ ACTOR ICD_MinigunSpacerSpawner : ICD_ShellSpawner
 		Spawn:
 			TNT1 A 1
 		Death:
-			TNT1 A 0 A_CustomMissile("ICD_GS_MinigunSpacer",2,0,270+random(-15,15),2,55+random(-10,10))
+			TNT1 A 0 A_CustomMissile("ICD_GS_MinigunSpacer",2,0,270+random(-15,15),2,20+random(-10,10))
 			Stop
 	}
 }
@@ -509,6 +526,25 @@ ACTOR ICD_BulletPuffDust
 		Death:
 			FRAG B 350
 			FRAG BBBB 105 A_FadeOut
+			Stop
+	}
+}
+
+ACTOR ICD_TRACER1
+{
+	Height 6
+	Radius 6
+	Speed 100
+	Scale 0.5
+	Damage 0
+	Projectile
+	States
+	{
+		Spawn:
+			PUFF A 1 BRIGHT
+			Loop
+		Death:
+			PUFF A 1 BRIGHT A_SpawnItem("ICD_FlakSmoke")
 			Stop
 	}
 }

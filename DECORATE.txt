@@ -28,7 +28,8 @@
 #include "actors/weapons/icd_40mm.dec"
 
 //Slot #6 (Rifles)
-#include "actors/weapons/icd_InfantryRifle.dec"
+#include "actors/weapons/icd_assaultrifle.dec"
+#include "actors/weapons/icd_infantryrifle.dec"
 
 //Slot #7 (Monster Weapons)
 #include "actors/weapons/icd_sawedoff.dec"

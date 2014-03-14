@@ -19,5 +19,3 @@ decal ICD_ShotMark
    randomflipx
    randomflipy
 }
-
-generator

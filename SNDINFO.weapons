@@ -51,6 +51,11 @@ weapons/infantryrifle/fire					DSM211
 weapons/infantryrifle/reload				DSSNREL
 weapons/infantryrifle/bolt					DSBOLT2
 
+//Assault Rifle
+weapons/assaultrifle/fire					DSASSLT
+weapons/assaultrifle/clipdrop				DSM4OUT
+weapons/assaultrifle/clipin					DSUZI2
+
 //Flare
 weapons/flare/flareignite					DSFLARE2
 weapons/flare/flaresoftignite				DSFLARE2
