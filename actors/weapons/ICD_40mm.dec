@@ -38,26 +38,77 @@ ACTOR ICD_40mm : BaseWeapon
 			GREN A 5 A_Refire
 			Goto Ready
 		Reload:
+			GREN A 1 A_WeaponReady
+			TNT1 A 0 A_JumpIfInventory("ICD_40mmMagazine",5,"Ready")
+			TNT1 A 0 A_JumpIfInventory("RocketAmmo", 1, "Reload.StateCheck")
+			Goto Ready
+		Reload.StateCheck:
+			TNT1 A 0 A_JumpIfInventory("ICD_40mmMagazine", 4, "Reload.Pre5")
+			TNT1 A 0 A_JumpIfInventory("ICD_40mmMagazine", 3, "Reload.Pre4")
+			TNT1 A 0 A_JumpIfInventory("ICD_40mmMagazine", 2, "Reload.Pre3")
+			TNT1 A 0 A_JumpIfInventory("ICD_40mmMagazine", 1, "Reload.Pre2")
+			Goto Reload.Actual
+		Reload.Pre5:
+			GREN GH 4
+			GREL A 4 A_PlaySound("weapons/40mm/open",CHAN_WEAPON,1.0,0,ATTN_NORM)
+			Goto Reload.Actual5
+		Reload.Pre4:
+			GREN GH 4
+			GREL A 4 A_PlaySound("weapons/40mm/open",CHAN_WEAPON,1.0,0,ATTN_NORM)
+			Goto Reload.Actual4
+		Reload.Pre3:
+			GREN GH 4
+			GREL A 4 A_PlaySound("weapons/40mm/open",CHAN_WEAPON,1.0,0,ATTN_NORM)
+			Goto Reload.Actual3
+		Reload.Pre2:
+			GREN GH 4
+			GREL A 4 A_PlaySound("weapons/40mm/open",CHAN_WEAPON,1.0,0,ATTN_NORM)
+			Goto Reload.Actual2
+		Reload.Actual:
 			GREN A 5 A_PlaySound("weapons/generic/emptyclick2",CHAN_WEAPON,1.0,0,ATTN_NORM)
 			GREN GH 4
+		Reload.Actual1:
 			GREL A 8 A_PlaySound("weapons/40mm/open",CHAN_WEAPON,1.0,0,ATTN_NORM)
 			GREL J 2 A_PlaySound("weapons/40mm/load",CHAN_WEAPON,1.0,0,ATTN_NORM)
+			TNT1 A 0 A_TakeInventory("RocketAmmo",1,TIF_NOTAKEINFINITE)
+			TNT1 A 0 A_GiveInventory("ICD_40mmMagazine",1)
+		Reload.Actual2:
 			GREL AB 2
 			GREL C 3
 			GREL A 4
 			GREL J 2 A_PlaySound("weapons/40mm/load",CHAN_WEAPON,1.0,0,ATTN_NORM)
+			TNT1 A 0 A_JumpIfInventory("RocketAmmo", 1, 1)
+			Goto Reload.Finish
+			TNT1 A 0 A_TakeInventory("RocketAmmo",1,TIF_NOTAKEINFINITE)
+			TNT1 A 0 A_GiveInventory("ICD_40mmMagazine",1)
 			GREL A 2
+		Reload.Actual3:
 			GREL DE 3
 			GREL A 4
 			GREL J 2 A_PlaySound("weapons/40mm/load",CHAN_WEAPON,1.0,0,ATTN_NORM)
+			TNT1 A 0 A_JumpIfInventory("RocketAmmo", 1, 1)
+			Goto Reload.Finish
+			TNT1 A 0 A_TakeInventory("RocketAmmo",1,TIF_NOTAKEINFINITE)
+			TNT1 A 0 A_GiveInventory("ICD_40mmMagazine",1)
 			GREL A 2
+		Reload.Actual4:
 			GREL FG 3
 			GREL A 4
 			GREL J 2 A_PlaySound("weapons/40mm/load",CHAN_WEAPON,1.0,0,ATTN_NORM)
+			TNT1 A 0 A_JumpIfInventory("RocketAmmo", 1, 1)
+			Goto Reload.Finish
+			TNT1 A 0 A_TakeInventory("RocketAmmo",1,TIF_NOTAKEINFINITE)
+			TNT1 A 0 A_GiveInventory("ICD_40mmMagazine",1)
 			GREL A 2
+		Reload.Actual5:
 			GREL HI 3
 			GREL A 4
 			GREL J 2 A_PlaySound("weapons/40mm/load",CHAN_WEAPON,1.0,0,ATTN_NORM)
+			TNT1 A 0 A_JumpIfInventory("RocketAmmo", 1, 1)
+			Goto Reload.Finish
+			TNT1 A 0 A_TakeInventory("RocketAmmo",1,TIF_NOTAKEINFINITE)
+			TNT1 A 0 A_GiveInventory("ICD_40mmMagazine",1)
+		Reload.Finish:
 			GREL A 10
 			GREN H 3 A_PlaySound("weapons/40mm/close",CHAN_WEAPON,1.0,0,ATTN_NORM)
 			GREN G 3
