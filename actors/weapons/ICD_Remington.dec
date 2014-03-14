@@ -4,7 +4,7 @@ ACTOR ICD_Remington : BaseWeapon
 	Weapon.AmmoUse 1
 	Weapon.AmmoGive 0
 	Weapon.AmmoType "ICD_RemingtonMagazine"
-	Weapon.AmmoType2 "Shell"
+	Weapon.AmmoType2 "ICD_Shells"
 	Inventory.PickupMessage "$GotRemington"
 	Tag "$TAG_Remington"
 	Weapon.UpSound "weapons/generic/weaponup"
@@ -25,7 +25,7 @@ ACTOR ICD_Remington : BaseWeapon
 			Loop
 		Fire:
 			TNT1 A 0 A_JumpIfInventory("ICD_RemingtonMagazine",1,2)
-			TNT1 A 0 A_JumpIfInventory("Shell", 1, "Reload")
+			TNT1 A 0 A_JumpIfInventory("ICD_Shells", 1, "Reload")
 			Goto Ready
 			TNT1 A 0 A_AlertMonsters
 			TNT1 A 0 A_Gunflash
@@ -50,7 +50,7 @@ ACTOR ICD_Remington : BaseWeapon
 		Reload:
 			SHTG A 1 A_WeaponReady
 			TNT1 A 0 A_JumpIfInventory("ICD_RemingtonMagazine",8,"Ready")
-			TNT1 A 0 A_JumpIfInventory("Shell", 1, 1)
+			TNT1 A 0 A_JumpIfInventory("ICD_Shells", 1, 1)
 			Goto Ready
 			TNT1 A 0 A_PlaySound("weapons/generic/emptyclick2")
 			SHTG A 1
@@ -66,12 +66,12 @@ ACTOR ICD_Remington : BaseWeapon
 			SHTG K 3
 			SHTG L 3
 			TNT1 A 0 A_PlaySound("weapons/doublebarrel/load", 6)
-			TNT1 A 0 A_TakeInventory("Shell",1,TIF_NOTAKEINFINITE)
+			TNT1 A 0 A_TakeInventory("ICD_Shells",1,TIF_NOTAKEINFINITE)
 			TNT1 A 0 A_GiveInventory("ICD_RemingtonMagazine",1)
 			SHTG N 3 A_WeaponReady(WRF_NOBOB)
 			SHTG J random(2,4) A_WeaponReady(WRF_NOBOB)
 			TNT1 A 0 A_JumpIfInventory("ICD_RemingtonMagazine", 8, "Reload.Done")
-			TNT1 A 0 A_JumpIfInventory("Shell", 1, "Reload.Actual")
+			TNT1 A 0 A_JumpIfInventory("ICD_Shells", 1, "Reload.Actual")
 		Reload.Done:
 			SHTG I 2
 			TNT1 A 2
@@ -114,6 +114,6 @@ ACTOR ICD_RemingtonMagazine : Ammo
 	Inventory.MaxAmount 8
 	Ammo.BackpackAmount 0
 	Ammo.BackpackMaxAmount 8
-	Inventory.Icon SHOTA0
+	Inventory.Icon SHELA0
 	+INVENTORY.IGNORESKILL
 }

@@ -5,7 +5,7 @@ ACTOR ICD_Minigun : BaseWeapon
 	Weapon.AmmoType1 "ICD_MinigunMagazine"
 	Weapon.AmmoUse1 1
 	Weapon.AmmoGive2 6
-	Weapon.AmmoType2 "Cell"
+	Weapon.AmmoType2 "ICD_RifleAmmo"
 	Inventory.Pickupmessage "$GotMinigun"
 	Weapon.UpSound "weapons/generic/weaponup"
 	Tag "Minigun"
@@ -25,7 +25,7 @@ ACTOR ICD_Minigun : BaseWeapon
 			Loop
 		Fire:
 			MING B 0 A_JumpIfInventory("ICD_MinigunMagazine",1,2)
-			MING B 0 A_JumpIfInventory("Cell",1,"Reload")
+			MING B 0 A_JumpIfInventory("ICD_RifleAmmo",1,"Reload")
 			Goto Ready
 			TNT1 A 0 A_AlertMonsters
 			MING A 0 A_PlaySound("weapons/minigun/mini2", CHAN_BODY, 1, 1) //Minigunner wuz here
@@ -46,7 +46,7 @@ ACTOR ICD_Minigun : BaseWeapon
 		Fire.SlowDown:
 			TNT1 A 0 A_StopSound(CHAN_BODY)
 			MING B 0 A_JumpIfInventory("ICD_MinigunMagazine",1,2)
-			MING B 0 A_JumpIfInventory("Cell",1,"Reload")
+			MING B 0 A_JumpIfInventory("ICD_RifleAmmo",1,"Reload")
 			Goto Reload
 			MING A 2 A_PlaySound("weapons/minigun/Mini3")
 			MING BABABAB 2
@@ -55,7 +55,7 @@ ACTOR ICD_Minigun : BaseWeapon
 			Goto Ready
 		Hold:
 			MING B 0 A_JumpIfInventory("ICD_MinigunMagazine",1,2)
-			MING B 0 A_JumpIfInventory("Cell",1,"Reload")
+			MING B 0 A_JumpIfInventory("ICD_RifleAmmo",1,"Reload")
 			Goto Fire.SlowDown
 			TNT1 A 0 A_AlertMonsters
 			MING A 0 A_PlaySound("weapons/minigun/mini2", CHAN_BODY, 1, 1) //Minigunner wuz here
@@ -76,7 +76,7 @@ ACTOR ICD_Minigun : BaseWeapon
 			Goto Fire.SlowDown
 		Altfire:
 			MING B 0 A_JumpIfInventory("ICD_MinigunMagazine",1,2)
-			MING B 0 A_JumpIfInventory("Cell",1,"Reload")
+			MING B 0 A_JumpIfInventory("ICD_RifleAmmo",1,"Reload")
 			Goto Ready
 			TNT1 A 0 A_AlertMonsters
 			MING A 0 A_PlaySound("weapons/minigun/mini2", CHAN_BODY, 1, 1) //Minigunner wuz here
@@ -101,7 +101,7 @@ ACTOR ICD_Minigun : BaseWeapon
 		Altfire.SlowDown:
 			TNT1 A 0 A_StopSound(CHAN_BODY)
 			MING B 0 A_JumpIfInventory("ICD_MinigunMagazine",1,2)
-			MING B 0 A_JumpIfInventory("Cell",1,"Reload")
+			MING B 0 A_JumpIfInventory("ICD_RifleAmmo",1,"Reload")
 			Goto Reload
 			MING A 1 A_PlaySound("weapons/minigun/Mini3",0)
 			MING BAB 1
@@ -114,7 +114,7 @@ ACTOR ICD_Minigun : BaseWeapon
 			Goto Ready
 		AltHold:
 			MING B 0 A_JumpIfInventory("ICD_MinigunMagazine",1,2)
-			MING B 0 A_JumpIfInventory("Cell",1,"Reload")
+			MING B 0 A_JumpIfInventory("ICD_RifleAmmo",1,"Reload")
 			Goto Altfire.SlowDown
 			TNT1 A 0 A_AlertMonsters
 			MING A 0 A_PlaySound("weapons/minigun/mini2", CHAN_BODY, 1, 1) //Minigunner wuz here
@@ -153,10 +153,10 @@ ACTOR ICD_Minigun : BaseWeapon
 			MING D 4
 			TNT1 A 80 A_PlaySound("weapons/minigun/Mini5")
 		Reload.InfoPhase:
-			TNT1 A 0 A_TakeInventory("Cell",1)
+			TNT1 A 0 A_TakeInventory("ICD_RifleAmmo",1)
 			TNT1 A 0 A_GiveInventory("ICD_MinigunMagazine",1)
 			TNT1 A 0 A_JumpIfInventory("ICD_MinigunMagazine",100,2)
-			TNT1 A 0 A_JumpIfInventory("Cell",1,"Reload.Restart")
+			TNT1 A 0 A_JumpIfInventory("ICD_RifleAmmo",1,"Reload.Restart")
 			MING D 3
 			MING C 3
 			MING A 5 A_PlaySound("weapons/doublebarrel/close", CHAN_WEAPON)
@@ -172,6 +172,6 @@ ACTOR ICD_MinigunMagazine : Ammo
 	Inventory.MaxAmount 100
 	Ammo.BackpackAmount 0
 	Ammo.BackpackMaxAmount 100
-	Inventory.Icon CLIPB0
+	Inventory.Icon CLIPA1
 	+INVENTORY.IGNORESKILL
 }

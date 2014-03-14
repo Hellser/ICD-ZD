@@ -1,6 +1,25 @@
-ACTOR ICD_BoxOfShells : Shell replaces ShellBox
+ACTOR ICD_Shells : Ammo replaces Shell 2008
 {
-	SpawnID 143
+	Inventory.PickupMessage "$GotShells"
+	Inventory.PickupSound "weapons/doublebarrel/load"
+	Inventory.Amount 4
+	Inventory.MaxAmount 36
+	Ammo.BackpackAmount 4
+	Ammo.BackpackMaxAmount 52
+	Radius 20
+	Height 16
+	Scale 0.9
+	States
+	{
+		Spawn:
+			SHEL A -1
+			Stop
+	}
+}
+
+
+ACTOR ICD_BoxOfShells : ICD_Shells replaces ShellBox 2049
+{
 	Inventory.PickupMessage "$GotShellBox" // "Picked up a box of shotgun shells."
 	Inventory.PickupFlash "ICD_BoxOfShells1"
 	Inventory.PickupSound "weapons/generic/weaponup2"

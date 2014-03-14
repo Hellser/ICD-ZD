@@ -41,6 +41,8 @@
 
 //Ammo
 #include "actors/ammo/shells.dec"
+#include "actors/ammo/cells.dec"
+#include "actors/ammo/bullets.dec"
 
 //Other ICD-SE Stuff
 #include "actors/other/icd_flies.dec"

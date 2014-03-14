@@ -12,7 +12,7 @@ ACTOR ICD_DoomPlayer : PlayerPawn replaces DoomPlayer
 	Player.StartItem "ICD_Knife"
 	Player.StartItem "ICD_PistolMagazine", 12
 	Player.StartItem "Fist"
-	Player.StartItem "Clip", 38
+	Player.StartItem "ICD_Bullets", 38
 	Player.StartItem "ICD_ArmorStart", 1
 	Player.StartItem "ICD_KnifeAmmo", 2
 	Player.AttackZOffset 12
