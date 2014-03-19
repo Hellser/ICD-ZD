@@ -1,6 +1,5 @@
 ACTOR ICD_RemingtonPickup : CustomInventory replaces Shotgun
 {
-	Game Doom
 	Radius 20
 	Height 16
 	Scale 0.85
@@ -25,7 +24,6 @@ ACTOR ICD_RemingtonPickup : CustomInventory replaces Shotgun
 
 ACTOR ICD_UziPickup : CustomInventory replaces Chaingun
 {
-	Game Doom
 	Radius 20
 	Height 16
 	Scale 0.56
@@ -45,7 +43,6 @@ ACTOR ICD_UziPickup : CustomInventory replaces Chaingun
 
 ACTOR ICD_MinigunPickup : CustomInventory replaces RocketLauncher
 {
-	Game Doom
 	Radius 20
 	Height 16
 	Scale 0.66
@@ -59,6 +56,25 @@ ACTOR ICD_MinigunPickup : CustomInventory replaces RocketLauncher
 		Pickup:
 			TNT1 A 0 A_GiveInventory("ICD_AssaultRifle", 1)
 			TNT1 A 0 A_GiveInventory("ICD_RifleAmmo", 45)
+			Stop
+	}
+}
+
+ACTOR ICD_DualiesPickup : CustomInventory replaces GreenArmor
+{
+	Radius 20
+	Height 16
+	Scale 0.8
+	Inventory.PickupMessage "$GotArmour"
+	Inventory.PickupSound "weapons/1911/slide"
+	States
+	{
+		Spawn:
+			HGUN A -1
+			Stop
+		Pickup:
+			TNT1 A 0 A_GiveInventory("ICD_DualPistol", 1)
+			TNT1 A 0 A_GiveInventory("ICD_Bullets", 15)
 			Stop
 	}
 }

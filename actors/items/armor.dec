@@ -1,4 +1,4 @@
-ACTOR AR_GearArmor : BasicArmorPickup replaces BlueArmor
+ACTOR ICD_GearArmor : BasicArmorPickup replaces BlueArmor
 {
 	Game Doom
 	Radius 20
@@ -6,7 +6,7 @@ ACTOR AR_GearArmor : BasicArmorPickup replaces BlueArmor
 	Inventory.PickupMessage "$GotGear"
 	Inventory.PickupSound "items/gearpickup"
 	Inventory.Icon "ARM1A0"
-	Armor.SavePercent 75
+	Armor.SavePercent 85
 	Armor.SaveAmount 100
 	scale 0.9
 	States

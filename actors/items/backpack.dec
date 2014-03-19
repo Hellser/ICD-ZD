@@ -1,0 +1,18 @@
+ACTOR ICD_Backpack : CustomInventory replaces Backpack
+{
+	Radius 20
+	Height 16
+	Scale 0.82
+	Inventory.PickupSound "items/item1"
+	Inventory.PickupMessage "$GotBackpack"
+	States
+	{
+		Spawn:
+			BPAK A -1
+			Stop
+		Pickup:
+			TNT1 A 0 A_GiveInventory("ICD_BackpackArmor", 1)
+			TNT1 A 0 A_GiveInventory("Backpack", 1)
+			Stop
+	}
+}

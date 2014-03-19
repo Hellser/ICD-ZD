@@ -1,4 +1,4 @@
-ACTOR AR_ArmorBonusFlash
+ACTOR ICD_ArmorBonusFlash
 {
 	+NOGRAVITY
 	+NOBLOCKMAP
@@ -17,13 +17,13 @@ ACTOR AR_ArmorBonusFlash
 	}
 }
 
-ACTOR AR_ArmorBonus : BasicArmorBonus replaces ArmorBonus
+ACTOR ICD_ArmorBonus : BasicArmorBonus replaces ArmorBonus
 {
 	Game Doom
 	Radius 20
 	Height 16
 	Inventory.PickupMessage "$GOTArmourHelmet" // "Picked up an armor bonus."
-	Inventory.PickupFlash "AR_ArmorBonusFlash"
+	Inventory.PickupFlash "ICD_ArmorBonusFlash"
 	Inventory.PickupSound "items/armorbonuspickup"
 	Inventory.Icon "ARM1A0"
 	Armor.SavePercent 85
@@ -40,8 +40,14 @@ ACTOR AR_ArmorBonus : BasicArmorBonus replaces ArmorBonus
 	}
 }
 
-ACTOR AR_ArmorStart : AR_ArmorBonus
+ACTOR ICD_ArmorStart : ICD_ArmorBonus
 {
 	Armor.SaveAmount 30
+	-COUNTITEM
+}
+
+ACTOR ICD_BackpackArmor : ICD_ArmorBonus
+{
+	Armor.SaveAmount 50
 	-COUNTITEM
 }

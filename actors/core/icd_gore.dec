@@ -1,0 +1,94 @@
+/*
+This is for my best bud, Ryan. He loves ICD's blood system.
+He also desires for the blood sound to sound.. 'beefy' when used
+with the shotguns, as it did in ICD. Here's my attempt, Ryan.
+*/
+
+ACTOR ICD_Blood replaces Blood
+{
+	Mass 5
+	+NOBLOCKMAP
+	+NOTELEPORT
+	+ALLOWPARTICLES
+	Renderstyle Translucent
+	Alpha 0.90
+	States
+	{
+		Spawn:
+			BLUD A 1
+			BLUD B 1 A_PlaySound("world/gore/blood")
+			TNT1 A 0 A_SpawnItemEx("ICD_Blood_Splat",0,0,-2,1,1,0,random(300,-59),SXF_TRANSFERTRANSLATION | SXF_NOCHECKPOSITION | SXF_ABSOLUTEANGLE | SXF_USEBLOODCOLOR)
+			BLUD C 3
+			BLUD B 2
+			BLUD A 2
+			Stop
+	}
+}
+
+ACTOR ICD_Blood_Splat
+{
+	Height 4
+	Radius 4
+	Speed 2.2
+	Scale 0.37
+	PROJECTILE
+	+NOBLOCKMAP
+	+NOTELEPORT
+	+THRUACTORS
+	+CORPSE
+	+MOVEWITHSECTOR
+	-NOGRAVITY
+	Renderstyle Translucent
+	Alpha 0.8
+	States
+	{
+		Spawn:
+			BLUD C 6
+			BLUD B 3
+			Goto Spawn+2
+		Death:
+			BLUD B 2 A_FadeTo(0, 0.68)
+			TNT1 A 0 A_Jump(179, "Death.True")
+			TNT1 A 0 A_Jump(154, "Death.Splash")
+			TNT1 A 0 A_Jump(154, "Death.Splash2")
+			TNT1 A 0 A_SpawnItemEx("ICD_Blood_Splash",0,0,1,random(-3,3),random(-3,3),random(-3,3),random(0,90),SXF_TRANSFERTRANSLATION | SXF_NOCHECKPOSITION)
+		Death.Splash2:
+			TNT1 A 0 A_SpawnItemEx("ICD_Blood_Splash",0,0,1,random(-3,3),random(-3,3),random(-3,3),random(0,90),SXF_TRANSFERTRANSLATION | SXF_NOCHECKPOSITION)
+		Death.Splash:
+			TNT1 A 0 A_SpawnItemEx("ICD_Blood_Splash",0,0,1,random(-3,3),random(-3,3),random(-3,3),random(0,90),SXF_TRANSFERTRANSLATION | SXF_NOCHECKPOSITION)
+		Death.True:
+			SPLR A 3
+			SPLR A 2000
+			SPLR AAAA 105 A_FadeOut
+			Stop
+	}
+}
+
+ACTOR ICD_Blood_Splash
+{
+	Height 4
+	Radius 4
+	Speed 1.5
+	PROJECTILE
+	+NOBLOCKMAP
+	+DROPOFF
+	+THRUACTORS
+	+CORPSE
+	+MOVEWITHSECTOR
+	-NOGRAVITY
+	Renderstyle Translucent
+	Alpha 0.58
+	States
+	{
+		Spawn:
+			TNT1 A 0 NoDelay A_PlaySound("world/gore/splat")
+			BLUD B 3
+			Goto Spawn+2
+		Death:
+			TNT1 A 0 A_PlaySound("world/gore/splat")
+			BLUD C 1
+			SPLR D 1120
+			SPLR DDDD 105 A_FadeOut
+			Stop
+	}
+}

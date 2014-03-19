@@ -1,4 +1,4 @@
-ACTOR AR_HealthBonusFlash
+ACTOR ICD_HealthBonusFlash
 {
 	+NOGRAVITY
 	+NOBLOCKMAP
@@ -17,7 +17,7 @@ ACTOR AR_HealthBonusFlash
 	}
 }
 
-ACTOR AR_HealthBonus : Health replaces HealthBonus
+ACTOR ICD_HealthBonus : Health replaces HealthBonus
 {
 	Game Doom
 	+COUNTITEM
@@ -25,7 +25,7 @@ ACTOR AR_HealthBonus : Health replaces HealthBonus
 	Inventory.Amount 2
 	Inventory.MaxAmount 200
 	Inventory.PickupMessage "$GOTHTHBONUS"
-	Inventory.PickupFlash "AR_HealthBonusFlash"
+	Inventory.PickupFlash "ICD_HealthBonusFlash"
 	Inventory.PickupSound "items/healthbonuspickup"
 	Renderstyle Translucent
 	Alpha 0.75

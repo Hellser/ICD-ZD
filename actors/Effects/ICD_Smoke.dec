@@ -1,0 +1,105 @@
+/*----------------------------------------
+ WEAPON SMOKE
+----------------------------------------*/
+
+ACTOR ICD_SSGSmoke1 : ICD_GunSmokeBase { }
+
+ACTOR ICD_PistolSmoke1 : ICD_GunSmokeBase
+{
+	Speed 3
+	scale 0.25
+}
+
+ACTOR ICD_M16_Smoke : ICD_GunSmokeBase
+{
+	Speed 6
+	Scale 0.5
+}
+
+ACTOR ICD_UziSmoke : ICD_GunSmokeBase
+{
+	Speed 4
+	Scale 0.4
+}
+
+ACTOR ICD_MiniSmoke : ICD_GunSmokeBase
+{
+	Speed 5
+	Scale 0.4
+}
+
+ACTOR ICD_RPUFF : ICD_GunSmokeBase
+{
+	Scale 0.5
+	Alpha 0.5
+	States
+	{
+		Spawn:
+			TNT1 A 0
+			SMOK A 5
+			SMOK B 5 A_FadeOut
+			SMOK C 5 A_FadeOut
+			SMOK D 5 A_FadeOut
+			SMOK E 5
+			stop
+	}
+
+}
+
+ACTOR ICD_FlakSmoke : ICD_GS_EmptyCasingSmoke
+{
+	scale 0.7
+}
+
+/*----------------------------------------
+ EXPLOSION SMOKE
+----------------------------------------*/
+
+ACTOR ICD_Explosion_Smoke : ICD_GunSmokeBase
+{
+	Scale 2.3
+	Alpha 0.7
+	States
+	{
+		Spawn:
+			TNT1 A 0
+			PUF5 B 5
+			PUF5 CDEFGHIJKLMNOP 7 A_FadeOut(0.05)
+			stop
+	}
+}
+
+/*----------------------------------------
+ FLARE SMOKE
+----------------------------------------*/
+
+ACTOR ICD_FlareSmoke : ICD_GunSmokeBase
+{
+	Speed 0.5
+	Scale 0.13
+	Alpha 0.4
+	States
+	{
+		Spawn:
+			RLSR C 6 BRIGHT
+			SMOK A 1 ThrustThingZ(0, 1.2, 0, 1)
+			TNT1 A 0 A_Jump(175, "SpawnJump")
+			TNT1 A 0 A_PlaySound("weapons/flare/flaresoftignite")
+			TNT1 A 0 A_SpawnItemEx("ICD_Flare_Sparks_Red",0,0,0,frandom(-2,2), frandom(-2,2), frandom(2,3),0,SXF_NOCHECKPOSITION)
+			TNT1 A 0 A_SpawnItemEx("ICD_Flare_Sparks_Yellow",0,0,0,frandom(-2,2), frandom(-2,2), frandom(2,3),0,SXF_NOCHECKPOSITION)
+			SMOK A 2
+			SMOK A 0 // Flare2
+		SpawnJump:
+			SMOK A 2
+			SMOK B 4 A_FadeOut
+			SMOK C 4 A_FadeOut
+			SMOK D 4 A_FadeOut
+			SMOK E 4 A_FadeOut
+			Stop
+	}
+}
+
+ACTOR ICD_FlareSmoke2 : ICD_FlareSmoke
+{
+	Scale 0.6
+}

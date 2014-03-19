@@ -1,0 +1,17 @@
+ACTOR ICD_RadSuit : PowerupGiver replaces RadSuit
+{
+	Radius 20
+	Height 60
+	Scale 0.82
+	+INVENTORY.AUTOACTIVATE
+	+INVENTORY.ALWAYSPICKUP
+	Powerup.Type "IronFeet"
+	Inventory.PickupMessage "$GotSuit"
+	Inventory.PickupSound "items/item1"
+	States
+	{
+		Spawn:
+			SUIT A -1
+			Stop
+	}
+}

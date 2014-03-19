@@ -4,11 +4,14 @@
 #include "actors/items/stimmedi.dec"
 #include "actors/items/armor.dec"
 #include "actors/items/weaponpickups.dec"
+#include "actors/items/items.dec" // Standard Items
+#include "actors/items/radsuit.dec"
+#include "actors/items/backpack.dec"
 
 // "Engine" Core
-#include "actors/core/playerpawn.dec"
-#include "actors/core/base.dec"
-#include "actors/core/gore.dec"
+#include "actors/core/icd_playerpawn.dec"
+#include "actors/core/icd_base.dec"
+#include "actors/core/icd_gore.dec"
 
 //Weapons
 //Slot #1 (Melee)
@@ -42,6 +45,11 @@
 #include "actors/weapons/icd_flareweapon.dec"
 
 //Effects
+#include "actors/effects/icd_flareeffect.dec"
+#include "actors/effects/icd_smoke.dec"
+#include "actors/effects/icd_casings.dec"
+#include "actors/effects/icd_bulletpuff.dec"
+#include "actors/effects/icd_tracers.dec"
 
 //Ammo
 #include "actors/ammo/shells.dec"

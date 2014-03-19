@@ -119,7 +119,7 @@ ACTOR ICD_BoxOfShells4 : Shell
 	}
 }
 
-ACTOR ICD_BoxOfShellsEmpty : AR_GS_UsedItemTemplate
+ACTOR ICD_BoxOfShellsEmpty : ICD_GS_UsedItemTemplate
 {
 	Scale 0.85
 	Radius 20

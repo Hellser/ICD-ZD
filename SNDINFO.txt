@@ -3,5 +3,6 @@ items/armorbonuspickup						DSARMOR
 items/healthbonuspickup						DSBONUS
 items/stimpackmedikitpickup					DSHEALTH
 items/gearpickup							DSITEM4
+items/item1									DSITEM1
 
 game/null									DSNULL
