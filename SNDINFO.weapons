@@ -55,6 +55,7 @@ weapons/infantryrifle/bolt					DSBOLT2
 weapons/assaultrifle/fire					DSASSLT
 weapons/assaultrifle/clipdrop				DSM4OUT
 weapons/assaultrifle/clipin					DSUZI2
+weapons/assaultrifle/grenfire				DSGREN
 
 //Flare
 weapons/flare/flareignite					DSFLARE2

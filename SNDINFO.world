@@ -36,3 +36,8 @@ world/gore/blood5							DSBLOOD5
 $random world/gore/splat { world/gore/splat1 world/gore/splat2 }
 world/gore/splat1							DSSPLAT1
 world/gore/splat2							DSSPLAT2
+
+/*
+Objects
+*/
+world/barrel								DSBARRL

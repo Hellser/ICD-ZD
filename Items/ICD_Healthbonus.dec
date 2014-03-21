@@ -1,0 +1,39 @@
+ACTOR ICD_HealthBonusFlash
+{
+	+NOGRAVITY
+	+NOBLOCKMAP
+	+DONTSPLASH
+	+NOINTERACTION
+	Radius 1
+	Height 1
+	Renderstyle Translucent
+	Alpha 0.50
+	Scale 0.9
+	States
+	{
+		Spawn:
+			ACLO AABBBCCCDDDCCBBAA 1 bright
+			stop
+	}
+}
+
+ACTOR ICD_HealthBonus : Health replaces HealthBonus
+{
+	Game Doom
+	+COUNTITEM
+	+INVENTORY.ALWAYSPICKUP
+	Inventory.Amount 2
+	Inventory.MaxAmount 200
+	Inventory.PickupMessage "$GOTHTHBONUS"
+	Inventory.PickupFlash "ICD_HealthBonusFlash"
+	Inventory.PickupSound "items/healthbonuspickup"
+	Renderstyle Translucent
+	Alpha 0.75
+	Scale 0.9
+	States
+	{
+		Spawn:
+			BON1 ABCDCB 6 bright Light("ICD_HealthBonus")
+			Loop
+	}
+}

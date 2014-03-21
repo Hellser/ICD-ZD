@@ -1,0 +1,32 @@
+ACTOR ICD_Chainsaw : BaseWeapon
+{
+	+WEAPON.NOALERT
+	Inventory.PickupMessage "$GotChainsaw"
+	Tag "Chainsaw"
+	States
+	{
+		Select:
+			SAWG I 1 A_Raise
+			Loop
+		Deselect:
+			SAWG C 1 A_Raise
+			Loop
+		Ready:
+			SAWG E 4
+			SAWG F 2
+			TNT1 A 0 // Smoke
+			SAWG H 2 A_Jump(107,3)// Jump Below
+			SAWG G 4
+			SAWG F 6
+			SAWG H 2 // Jumps Here
+			Goto Ready+2
+			SAWG G 3
+			SAWG F 2
+			SAWG D 4
+			SAWG C 4
+			Goto Ready // I don't get it. What's going on?
+			TNT1 A 0
+			TNT1 A 0
+			TNT1 A 0
+			SAWG D 3 // Saw off?
+			Goto Ready+12

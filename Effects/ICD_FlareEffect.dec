@@ -1,0 +1,47 @@
+ACTOR ICD_Flare_Sparks_Yellow
+{
+	Height 8
+	Radius 8
+	Speed 32
+	Mass 2
+	+MISSILE
+	+MOVEWITHSECTOR
+	+THRUACTORS
+	+NOTELEPORT
+	-NOGRAVITY
+	BounceType Doom
+	BounceFactor 0.4
+	renderstyle add
+	States
+	{
+	Spawn:
+			TNT1 A 0
+			FRAG AAAAAA 2 BRIGHT
+			FRAG AAAA 2 BRIGHT A_FadeOut
+			Stop
+	}
+}
+
+ACTOR ICD_Flare_Sparks_Red
+{
+	Height 8
+	Radius 8
+	Speed 32
+	Mass 2
+	+MISSILE
+	+MOVEWITHSECTOR
+	+THRUACTORS
+	+NOTELEPORT
+	-NOGRAVITY
+	BounceType Doom
+	BounceFactor 0.4
+	renderstyle add
+	States
+	{
+		Spawn:
+			TNT1 A 0
+			FRAG FFFFFF 2 BRIGHT
+			FRAG FFFF 2 BRIGHT A_FadeOut
+			Stop
+	}
+}

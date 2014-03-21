@@ -1,0 +1,102 @@
+ACTOR ICD_BulletPuff : BulletPuff
+{
+	VSpeed 0.5
+	+NOEXTREMEDEATH
+	Renderstyle Translucent
+	Alpha 1
+	States
+	{
+		Spawn:
+			TNT1 A 0
+			TNT1 A 0 A_PlaySound("world/effect/bullimpact", 6)
+			PUFF A 2 BRIGHT Light("ICD_Sparks")
+			PUFF B 2 BRIGHT
+			TNT1 AAAA 0 A_SpawnItemEx("ICD_BulletPuffSpark", 0,0,0,random(-5,5),random(-5,5),random(-5,5),0,SXF_NOCHECKPOSITION)
+			TNT1 AA 0 A_SpawnItemEx("ICD_BulletPuffDust", 0,0,0,random(-5,5),random(-5,5),random(-5,5),0,SXF_NOCHECKPOSITION)
+			TNT1 A 0 A_Jump(179, 3)
+			TNT1 A 0 A_Jump(179, 2)
+			TNT1 A 0 A_PlaySound("world/effect/richochet", 5)
+			TNT1 A 0 A_FadeOut(0.8,0)
+			SMKE BCDEFGH 2
+			Stop
+	}
+}
+
+ACTOR ICD_ShotgunBulletPuff : BulletPuff
+{
+	VSpeed 0.5
+	+NOEXTREMEDEATH
+	Renderstyle Translucent
+	Alpha 0.2
+	States
+	{
+		Spawn:
+			TNT1 A 0
+			TNT1 A 0 A_PlaySound("world/effect/bullimpact", 6)
+			TNT1 AAAA 0 A_SpawnItemEx("ICD_BulletPuffDust", 0,0,0,random(-5,5),random(-5,5),random(-5,5),0,SXF_NOCHECKPOSITION,75)
+			SMKE ABCDEFGH 2
+			Stop
+	}
+}
+
+ACTOR ICD_BulletPuffSpark
+{
+	Height 8
+	Radius 8
+	Speed 32
+	Mass 2
+	+MISSILE
+	+MOVEWITHSECTOR
+	+THRUACTORS
+	+NOTELEPORT
+	+NODAMAGETHRUST
+	-NOGRAVITY
+	BounceType Doom
+	BounceFactor 0.4
+	//renderstyle add
+	States
+	{
+		Spawn:
+			TNT1 A 0
+			FRAG A 1 BRIGHT
+			TNT1 A 0 A_Jump(179, 2)
+			TNT1 A 0 A_Explode(1, 32, 1, 0, 1)
+			FRAG A 1 BRIGHT
+			FRAG AAAA 2 BRIGHT A_FadeOut
+			Stop
+	}
+}
+
+ACTOR ICD_BulletPuffDust
+{
+	Height 8
+	Radius 8
+	Speed 10
+	Mass 2
+	BounceType "None"
+	BounceFactor 0.5
+	WallBounceFactor 0.5
+	BounceCount 4
+	+MISSILE
+	-NOGRAVITY
+	+THRUACTORS
+	+MOVEWITHSECTOR
+	+BOUNCEONWALLS
+	+BOUNCEONFLOORS
+	+BOUNCEONCEILINGS
+	+NOTELEPORT
+	+FORCEXYBILLBOARD
+	renderstyle translucent
+	Alpha 0.75
+	States
+	{
+		Spawn:
+			TNT1 A 0
+			FRAG B 1
+			Loop
+		Death:
+			FRAG B 350
+			FRAG BBBB 105 A_FadeOut
+			Stop
+	}
+}

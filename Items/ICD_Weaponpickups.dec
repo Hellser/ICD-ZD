@@ -1,0 +1,118 @@
+ACTOR ICD_RemingtonPickup : CustomInventory replaces Shotgun
+{
+	Radius 20
+	Height 16
+	Scale 0.85
+	Inventory.PickupMessage "$GotShotgun"
+	Inventory.PickupSound "weapons/remington/cock"
+	States
+	{
+		Spawn:
+			SHOT A -1
+			Stop
+		Pickup:
+			TNT1 A 0 A_JumpIfInventory("ICD_RemingtonUpgrade", 1, "Pickup.Ammo")
+			TNT1 A 0 A_JumpIfInventory("ICD_Remington", 1, "Pickup.Ammo")
+			TNT1 A 0 A_GiveInventory("ICD_Remington", 1)
+			TNT1 A 0 A_GiveInventory("ICD_REmingtonMagazine", 8)
+			Stop
+		Pickup.Ammo:
+			TNT1 A 0 A_GiveInventory("Shell", 8)
+			Stop
+	}
+}
+
+ACTOR ICD_UziPickup : CustomInventory replaces Chaingun
+{
+	Radius 20
+	Height 16
+	Scale 0.56
+	Inventory.PickupMessage "$GotChainGun"
+	Inventory.PickupSound "weapons/uzi/uzi3"
+	States
+	{
+		Spawn:
+			USMG A -1
+			Stop
+		Pickup:
+			TNT1 A 0 A_GiveInventory("ICD_SingleUzi", 1)
+			TNT1 A 0 A_GiveInventory("ICD_Bullets", 30)
+			Stop
+	}
+}
+
+ACTOR ICD_MinigunPickup : CustomInventory replaces RocketLauncher
+{
+	Radius 20
+	Height 16
+	Scale 0.66
+	Inventory.PickupMessage "$GotRocketLauncher"
+	Inventory.PickupSound "weapons/assaultrifle/clipdrop"
+	States
+	{
+		Spawn:
+			MGUN A -1
+			Stop
+		Pickup:
+			TNT1 A 0 A_GiveInventory("ICD_AssaultRifle", 1)
+			TNT1 A 0 A_GiveInventory("ICD_RifleAmmo", 45)
+			Stop
+	}
+}
+
+ACTOR ICD_DualiesPickup : CustomInventory replaces GreenArmor
+{
+	Radius 20
+	Height 16
+	Scale 0.8
+	Inventory.PickupMessage "$GotArmour"
+	Inventory.PickupSound "weapons/1911/slide"
+	States
+	{
+		Spawn:
+			HGUN A -1
+			Stop
+		Pickup:
+			TNT1 A 0 A_GiveInventory("ICD_DualPistol", 1)
+			TNT1 A 0 A_GiveInventory("ICD_Bullets", 15)
+			Stop
+	}
+}
+
+ACTOR ICD_SawedOffPickup : CustomInventory
+{
+	Radius 20
+	Height 16
+	Scale 1.0
+	Inventory.PickupMessage "$GotSawedOff"
+	Inventory.PickupSound "weapons/sawedoff/cock"
+	States
+	{
+		Spawn:
+			SAWD L -1
+			Stop
+		Pickup:
+			TNT1 A 0 A_GiveInventory("ICD_SawedOff", 1)
+			TNT1 A 0 A_GiveInventory("ICD_Shells",3)
+			Stop
+	}
+}
+
+ACTOR ICD_SuperShotgunPickup : CustomInventory replaces SuperShotgun
+{
+	Radius 20
+	Height 16
+	Scale 0.77
+	Inventory.PickupMessage "$GotDoubleBarrel"
+	Inventory.PickupSound "weapons/doublebarrel/close"
+	States
+	{
+		Spawn:
+			SGN2 B -1
+			Stop
+		Pickup:
+			TNT1 A 0 A_GiveInventory("ICD_DoubleBarrel", 1)
+			TNT1 A 0 A_GiveInventory("ICD_Shells",2)
+			Stop
+	}
+}
