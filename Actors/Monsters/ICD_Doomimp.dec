@@ -11,6 +11,7 @@ ACTOR ICD_Impse	replaces DoomImp
 	Speed 8
 	PainChance 200
 	Monster
+	BloodType "ICD_Blood"
 	+FLOORCLIP
 	+DOHARMSPECIES
 	SeeSound "imp/sight"

@@ -26,7 +26,7 @@ ACTOR ICD_DoomPlayer : PlayerPawn replaces DoomPlayer
 	Player.StartItem "ICD_AssaultRifleMagazine", 22
 	Player.StartItem "ICD_40mmMagazine", 3
 	Player.AttackZOffset 12
-	Player.WeaponSlot 1, ICD_Knife, Chainsaw
+	Player.WeaponSlot 1, ICD_Knife, ICD_Chainsaw
 	Player.WeaponSlot 2, ICD_Pistol, ICD_DualPistol
 	Player.WeaponSlot 3, ICD_Remington, ICD_FlakRemington, ICD_DoubleBarrel
 	Player.WeaponSlot 4, ICD_SingleUzi

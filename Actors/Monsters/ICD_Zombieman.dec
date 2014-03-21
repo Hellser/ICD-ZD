@@ -8,6 +8,7 @@ ACTOR ICD_ZombieMan replaces Zombieman
 	Speed 8
 	PainChance 200
 	Monster
+	BloodType "ICD_Blood"
 	+FLOORCLIP
 	SeeSound "grunt/sight"
 	AttackSound "grunt/attack"
@@ -34,7 +35,7 @@ ACTOR ICD_ZombieMan replaces Zombieman
 	Missile:
 		POSS E 10 A_FaceTarget
 		TNT1 A 0 //A_PlaySound
-		POSS F 3 Bright A_CustomBulletAttack(9,9,1,4,"ICD_BulletPuff",500)
+		POSS F 3 Bright A_CustomBulletAttack(9,9,1,(4*random(1,4)),"ICD_BulletPuff",500)
 		TNT1 A 0 A_CustomMissile("ICD_SSGSmoke1", 30,5,frandom(-5,5),CMF_OFFSETPITCH,frandom(-5,5))
 		POSS F 2 Bright
 		POSS E 5 A_Jump(253,"See")

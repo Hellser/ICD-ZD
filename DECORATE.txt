@@ -16,6 +16,7 @@
 //Weapons
 //Slot #1 (Melee)
 #include "actors/weapons/icd_knife.dec"
+#include "actors/weapons/icd_chainsaw.dec"
 
 //Slot #2 (Pistols)
 #include "actors/weapons/icd_pistol.dec"
@@ -65,3 +66,4 @@
 #include "actors/monsters/icd_zombieman.dec"
 #include "actors/monsters/icd_doomimp.dec"
 #include "actors/monsters/icd_shotgunguy.dec"
+#include "actors/monsters/icd_demon.dec"

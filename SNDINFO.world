@@ -26,16 +26,18 @@ world/effect/bulletimpact6					DSIMPC1F
 Gore
 */
 
-$random world/gore/blood { world/gore/blood1 world/gore/blood2 world/gore/blood3 world/gore/blood4 world/gore/blood5 }
+$random world/gore/blood { world/gore/blood1 world/gore/blood3 world/gore/blood4 }
 world/gore/blood1							DSBLOOD1
-world/gore/blood2							DSBLOOD2
 world/gore/blood3							DSBLOOD3
 world/gore/blood4							DSBLOOD4
-world/gore/blood5							DSBLOOD5
+
+$limit world/gore/blood 0
 
 $random world/gore/splat { world/gore/splat1 world/gore/splat2 }
 world/gore/splat1							DSSPLAT1
 world/gore/splat2							DSSPLAT2
+
+$limit world/gore/splat 0
 
 /*
 Objects
