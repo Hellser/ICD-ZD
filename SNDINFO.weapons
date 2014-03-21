@@ -20,6 +20,15 @@ weapons/generic/swing1						DSSWING1
 weapons/generic/swing2						DSSWING2
 weapons/generic/emptyclick2					DSCLICK2
 
+$limit weapons/generic/smack 0
+
+//Chainsaw
+weapons/chainsaw/sawidle2					DSSAWIDL
+weapons/chainsaw/sawup2						DSSAWUP
+weapons/chainsaw/sawful2					DSSAWFUL
+weapons/chainsaw/gas						DSSAWGAS
+weapons/chainsaw/hit2						DSSAWHIT
+
 $random weapons/generic/swing { weapons/generic/swing1 weapons/generic/swing2 }
 
 //Pistols

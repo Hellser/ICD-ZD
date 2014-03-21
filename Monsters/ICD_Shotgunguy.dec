@@ -17,7 +17,7 @@ ACTOR ICD_ShotgunGuy replaces ShotgunGuy
 	DeathSound "shotguy/death"
 	ActiveSound "shotguy/active"
 	Obituary "$OB_SHOTGUY"
-	DropItem "ICD_SawedOff"
+	DropItem "ICD_SawedOffPickup"
 	States
 	{
 	Spawn:

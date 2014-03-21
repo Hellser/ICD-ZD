@@ -1,0 +1,61 @@
+ACTOR ICD_ExplosiveJizzum replaces ExplosiveBarrel //It's more than sour. It's barrels!
+{
+	Radius 14
+	Height 32
+	Health 20
+	DeathHeight 0
+	+SOLID
+	+SHOOTABLE
+	+NOBLOOD
+	+ACTIVATEMCROSS
+	+DONTGIB
+	+NOICEDEATH
+	Obituary "%o is now married to a barrel."
+	States
+	{
+		Spawn:
+			BAR1 C 35
+			TNT1 A 0 A_Jump(180,"Spawn")
+			BAR1 A 8 A_PlaySound("world/barrel")
+			BAR1 C 9
+			BAR1 B 8
+			BAR1 A 9
+			Loop
+		Death:
+			TNT1 A 0 A_ChangeFlag("Solid",0)
+			BEXP A 2
+			BEXP B 6
+			TNT1 A 0 A_Explode
+			TNT1 A 0 A_Jump(128,2)
+			TNT1 A 0 A_SpawnItem("ICD_BarrelExplosion")
+			TNT1 A 0 A_SpawnItem("ICD_BarrelExplosion")
+			BEXP C 6 Bright
+			BEXP D 6 Bright
+			BEXP E 6 Bright
+			BEXP F -1
+			Stop
+	}
+}
+
+ACTOR ICD_BarrelExplosion
+{
+	Radius 6
+	Height 6
+	Renderstyle translucent
+	Alpha 0.80
+	-SOLID
+	+NOBLOCKMAP
+	+NOGRAVITY
+	+CORPSE
+	+DROPOFF
+	States
+	{
+		Spawn:
+			BFE1 G 2 BRIGHT NoDelay A_PlaySound("weapons/boom")
+			BFE1 H 2 BRIGHT
+			TNT1 A 0 A_Mushroom("ICD_40mmMushroom", 4, 0, frandom(4,8),1.5)
+			TNT1 A 0 A_SpawnItemEx("ICD_Explosion_Smoke")
+			BFE1 JKLMNOPQRSTUVW 2 BRIGHT
+			stop
+	}
+}

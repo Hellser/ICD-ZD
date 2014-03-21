@@ -78,3 +78,41 @@ ACTOR ICD_DualiesPickup : CustomInventory replaces GreenArmor
 			Stop
 	}
 }
+
+ACTOR ICD_SawedOffPickup : CustomInventory
+{
+	Radius 20
+	Height 16
+	Scale 1.0
+	Inventory.PickupMessage "$GotSawedOff"
+	Inventory.PickupSound "weapons/sawedoff/cock"
+	States
+	{
+		Spawn:
+			SAWD L -1
+			Stop
+		Pickup:
+			TNT1 A 0 A_GiveInventory("ICD_SawedOff", 1)
+			TNT1 A 0 A_GiveInventory("ICD_Shells",3)
+			Stop
+	}
+}
+
+ACTOR ICD_SuperShotgunPickup : CustomInventory replaces SuperShotgun
+{
+	Radius 20
+	Height 16
+	Scale 0.77
+	Inventory.PickupMessage "$GotDoubleBarrel"
+	Inventory.PickupSound "weapons/doublebarrel/close"
+	States
+	{
+		Spawn:
+			SGN2 B -1
+			Stop
+		Pickup:
+			TNT1 A 0 A_GiveInventory("ICD_DoubleBarrel", 1)
+			TNT1 A 0 A_GiveInventory("ICD_Shells",2)
+			Stop
+	}
+}

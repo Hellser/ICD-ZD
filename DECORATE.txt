@@ -1,4 +1,5 @@
 // Item Pickups
+<<<<<<< HEAD
 #include "actors/items/healthbonus.dec"
 #include "actors/items/armorbonus.dec"
 #include "actors/items/stimmedi.dec"
@@ -7,6 +8,16 @@
 #include "actors/items/items.dec" // Standard Items
 #include "actors/items/radsuit.dec"
 #include "actors/items/backpack.dec"
+=======
+#include "actors/items/icd_healthbonus.dec"
+#include "actors/items/icd_armorbonus.dec"
+#include "actors/items/icd_stimmedi.dec"
+#include "actors/items/icd_armor.dec"
+#include "actors/items/icd_weaponpickups.dec"
+#include "actors/items/icd_items.dec" // Standard Items
+#include "actors/items/icd_radsuit.dec"
+#include "actors/items/icd_backpack.dec"
+>>>>>>> origin/beta
 
 // "Engine" Core
 #include "actors/core/icd_playerpawn.dec"
@@ -16,6 +27,7 @@
 //Weapons
 //Slot #1 (Melee)
 #include "actors/weapons/icd_knife.dec"
+#include "actors/weapons/icd_chainsaw.dec"
 
 //Slot #2 (Pistols)
 #include "actors/weapons/icd_pistol.dec"
@@ -52,15 +64,17 @@
 #include "actors/effects/icd_tracers.dec"
 
 //Ammo
-#include "actors/ammo/shells.dec"
-#include "actors/ammo/cells.dec"
-#include "actors/ammo/bullets.dec"
+#include "actors/ammo/icd_shells.dec"
+#include "actors/ammo/icd_cells.dec"
+#include "actors/ammo/icd_bullets.dec"
 
 //Other ICD-SE Stuff
 #include "actors/other/icd_flies.dec"
 #include "actors/other/icd_gibbed.dec"
+#include "actors/other/icd_barrels.dec"
 
 //Monsters
-#include "actors/monsters/zombieman.dec"
-#include "actors/monsters/doomimp.dec"
-#include "actors/monsters/shotgunguy.dec"
+#include "actors/monsters/icd_zombieman.dec"
+#include "actors/monsters/icd_doomimp.dec"
+#include "actors/monsters/icd_shotgunguy.dec"
+#include "actors/monsters/icd_demon.dec"

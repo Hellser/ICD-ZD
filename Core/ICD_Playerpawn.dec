@@ -8,14 +8,23 @@ ACTOR ICD_DoomPlayer : PlayerPawn replaces DoomPlayer
 	PainChance 255
 	Player.DisplayName "Marine"
 	Player.CrouchSprite "PLYC"
+	// Player.StartItem "Fist"
 	Player.StartItem "ICD_Pistol"
 	Player.StartItem "ICD_Knife"
 	Player.StartItem "ICD_FlareWeapon"
 	Player.StartItem "ICD_PistolMagazine", 12
-	Player.StartItem "Fist"
 	Player.StartItem "ICD_Bullets", 38
 	Player.StartItem "ICD_ArmorStart", 1
 	Player.StartItem "ICD_KnifeAmmo", 2
+	Player.StartItem "ICD_SawedOffMagazine", 3
+	Player.StartItem "ICD_UziMagazine", 15
+	Player.StartItem "ICD_RemingtonMagazine", 4
+	Player.StartItem "ICD_MinigunMagazine", 50
+	Player.StartItem "ICD_InfantryRifleMagazine", 10
+	Player.StartItem "ICD_DualPistolMagazine", 12
+	Player.StartItem "ICD_SSGAmmo", 2
+	Player.StartItem "ICD_AssaultRifleMagazine", 22
+	Player.StartItem "ICD_40mmMagazine", 3
 	Player.AttackZOffset 12
 	Player.WeaponSlot 1, ICD_Knife, Chainsaw
 	Player.WeaponSlot 2, ICD_Pistol, ICD_DualPistol

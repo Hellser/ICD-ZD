@@ -25,6 +25,8 @@ ACTOR ICD_Blood replaces Blood
 	}
 }
 
+ACTOR ICD_BloodSplatter : ICD_Blood replaces Bloodsplatter {}
+
 ACTOR ICD_Blood_Splat
 {
 	Height 4
