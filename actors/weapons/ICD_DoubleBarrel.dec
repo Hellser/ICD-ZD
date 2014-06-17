@@ -1,0 +1,117 @@
+ACTOR ICD_DoubleBarrel : BaseWeapon
+{
+	Game Doom
+	Weapon.AmmoUse 1
+	Weapon.AmmoGive 0
+	Weapon.AmmoType "ICD_SSGAmmo"
+	Weapon.AmmoType2 "ICD_Shells"
+	Inventory.PickupMessage "$GotDoubleBarrel"
+	Tag "Double Barrel Shotgun"
+	Weapon.UpSound "weapons/generic/weaponup"
+	Obituary "%o received a wide shot from $k!"
+	+WEAPON.AMMO_OPTIONAL
+	+WEAPON.NOALERT
+	States
+	{
+		Select:
+			SHT2 A 1 A_Raise
+			Loop
+		Deselect:
+			SHT2 A 1 A_Lower
+			Loop
+		Ready:
+			SHT2 A 1 A_WeaponReady(WRF_ALLOWRELOAD)
+			Loop
+		Fire:
+			TNT1 A 0 A_JumpIfInventory("ICD_SSGMechanic",1,"Fire.Alternative")
+			TNT1 A 0 A_JumpIfInventory("ICD_SSGAmmo",1,2)
+			TNT1 A 0 A_JumpIfInventory("ICD_Shells", 1, "Reload")
+			Goto Ready
+			TNT1 A 0 A_AlertMonsters
+			TNT1 A 0 A_PlaySound("weapons/doublebarrel/fire", CHAN_WEAPON)
+			SHT2 P 2 bright A_FireBullets(6,6,10,4,"ICD_ShotgunBulletPuff")
+			TNT1 AAAA 0 A_FireCustomMissile("ICD_Gun3_Sparks", frandom(-5,5),0,1,0,0,frandom(-5,5))
+			TNT1 AAAA 0 A_FireCustomMissile("ICD_SSGSmoke1", frandom(-9,9),0,1,0,0,frandom(-5,5))
+			SHT2 Q 2 bright
+			SHT2 A 2
+			TNT1 A 0 A_GiveInventory("ICD_SSGMechanic")
+			Goto Ready
+		Fire.Alternative:
+			TNT1 A 0 A_JumpIfInventory("ICD_SSGAmmo",1,2)
+			TNT1 A 0 A_JumpIfInventory("ICD_Shells", 1, "Reload")
+			Goto Ready
+			TNT1 A 0 A_AlertMonsters
+			TNT1 A 0 A_PlaySound("weapons/doublebarrel/fire", 5)
+			SHT2 R 2 bright A_FireBullets(6,6,10,4,"ICD_ShotgunBulletPuff")
+			TNT1 AAAA 0 A_FireCustomMissile("ICD_Gun3_Sparks", frandom(-5,5),0,-1,0,0,frandom(-5,5))
+			TNT1 AAAA 0 A_FireCustomMissile("ICD_SSGSmoke1", frandom(-9,9),0,-1,0,0,frandom(-5,5))
+			SHT2 S 2 bright
+			SHT2 A 2
+			TNT1 A 0 A_TakeInventory("ICD_SSGMechanic")
+			Goto Reload
+		AltFire:
+			TNT1 A 0 A_JumpIfInventory("ICD_SSGMechanic", 1, "Fire")
+			TNT1 A 0 A_JumpIfInventory("ICD_SSGAmmo",0,2)
+			TNT1 A 0 A_JumpIfInventory("ICD_Shells", 1, "Reload")
+			Goto Ready
+			TNT1 A 0 A_AlertMonsters
+			TNT1 A 0 A_PlaySound("weapons/doublebarrel/fire", CHAN_WEAPON)
+			SHT2 R 1 bright A_FireBullets(6,6,10,4,"ICD_ShotgunBulletPuff")
+			TNT1 A 0 A_TakeInventory("ICD_SSGAmmo", 1, TIF_NOTAKEINFINITE)
+			TNT1 AAAA 0 A_FireCustomMissile("ICD_Gun3_Sparks", frandom(-5,5),0,-1,0,0,frandom(-5,5))
+			TNT1 AAAA 0 A_FireCustomMissile("ICD_SSGSmoke1", frandom(-9,9),0,-1,0,0,frandom(-5,5))
+			SHT2 S 1 bright
+			TNT1 A 0 A_PlaySound("weapons/doublebarrel/fire", 5)
+			SHT2 P 1 bright A_FireBullets(6,6,10,4,"ICD_ShotgunBulletPuff")
+			TNT1 A 0 A_TakeInventory("ICD_SSGAmmo", 1, TIF_NOTAKEINFINITE)
+			TNT1 AAAA 0 A_FireCustomMissile("ICD_Gun3_Sparks", frandom(-5,5),0,1,0,0,frandom(-5,5))
+			TNT1 AAAA 0 A_FireCustomMissile("ICD_SSGSmoke1", frandom(-9,9),0,1,0,0,frandom(-5,5))
+			SHT2 Q 1 bright
+			SHT2 A 2
+			Goto Reload
+		Reload:
+			SHT2 A 1 A_WeaponReady
+			TNT1 A 0 A_JumpIfInventory("ICD_SSGAmmo",2,"Ready")
+			TNT1 A 0 A_JumpIfInventory("ICD_Shells", 1, 1)
+			Goto Ready
+			SHT2 B 6
+			SHT2 C 6
+			SHT2 B 5
+			SHT2 D 5 A_PlaySound("weapons/doublebarrel/open", CHAN_WEAPON)
+			SHT2 O 1 A_FireCustomMissile("ICD_ShotgunShellSpawner1", 0, 0, -5, -4)
+			SHT2 O 5 A_FireCustomMissile("ICD_ShotgunShellSpawner1", 0, 0, -4, -4)
+			SHT2 E 6
+			//TNT1 A 0 A_TakeInventory("ICD_SSGAmmo", 2)
+		Reload.Actual:
+			TNT1 A 0 A_TakeInventory("ICD_Shells",1,TIF_NOTAKEINFINITE)
+			TNT1 A 0 A_GiveInventory("ICD_SSGAmmo",1)
+			TNT1 A 0 A_JumpIfInventory("ICD_SSGAmmo", 2, "Reload.Done")
+			TNT1 A 0 A_JumpIfInventory("ICD_Shells", 1, "Reload.Actual")
+		Reload.Done:
+			SHT2 F 6 A_PlaySound("weapons/doublebarrel/load", 6)
+			SHT2 G 5
+			SHT2 H 5 A_PlaySound("weapons/doublebarrel/close", CHAN_WEAPON)
+			SHT2 A 5
+			TNT1 A 0 A_TakeInventory("ICD_SSGMechanic", 1)
+			Goto Ready
+		Pickup:
+			TNT1 A -1
+			stop
+	}
+}
+
+ACTOR ICD_SSGMechanic : Inventory
+{
+	Inventory.MaxAmount 1
+	+INVENTORY.IGNORESKILL
+	-INVBAR
+}
+
+ACTOR ICD_SSGAmmo : Ammo
+{
+	Inventory.MaxAmount 2
+	Ammo.BackpackAmount 0
+	Ammo.BackpackMaxAmount 2
+	Inventory.Icon SHELA0
+	+INVENTORY.IGNORESKILL
+}

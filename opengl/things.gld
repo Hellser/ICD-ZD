@@ -1,0 +1,67 @@
+pulselight ICD_ArmorBonus
+{
+	color 0.0 1.0 0.0
+	size 16
+	secondarysize 24
+	interval 2
+}
+
+pointlight ICD_HealthBonus
+{
+	color 0.0 0.0 1.0
+	size 16
+}
+
+flickerlight2 ICD_BigRedTorch
+{
+    color 1.0 0.0 0.0
+    size 100
+    secondarySize 150
+    interval 0.00875
+	offset 0 42 0
+}
+
+flickerlight2 ICD_BigGreenTorch
+{
+    color 0.0 0.85 0.0
+    size 100
+    secondarySize 150
+    interval 0.00875
+	offset 0 42 0
+}
+
+flickerlight2 ICD_BigBlueTorch
+{
+    color 0.0 0.0 0.85
+    size 100
+    secondarySize 150
+    interval 0.00875
+	offset 0 42 0
+}
+
+flickerlight2 ICD_SmallRedTorch
+{
+    color 1.0 0.0 0.0
+    size 100
+    secondarySize 150
+    interval 0.00875
+	offset 0 26 0
+}
+
+flickerlight2 ICD_SmallGreenTorch
+{
+    color 0.0 0.85 0.0
+    size 100
+    secondarySize 150
+    interval 0.00875
+	offset 0 26 0
+}
+
+flickerlight2 ICD_SmallBlueTorch
+{
+    color 0.0 0.0 0.85
+    size 100
+    secondarySize 120
+    interval 0.00875
+	offset 0 26 0
+}

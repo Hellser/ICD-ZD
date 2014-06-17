@@ -1,0 +1,65 @@
+ACTOR ICD_Bullets : Ammo replaces Clip
+{
+	Inventory.PickupSound "weapons/1911/clipin"
+	Inventory.PickupMessage "$GotClip"
+	Inventory.Amount 12
+	Inventory.MaxAmount 180
+	Ammo.BackpackAmount 30
+	Ammo.BackpackMaxAmount 240
+	Radius 20
+	Height 16
+	Scale 0.64
+	States
+	{
+		Spawn:
+			CLIP B -1
+			Stop
+	}
+}
+
+ACTOR ICD_9mmClip : ICD_Bullets
+{
+	Inventory.Amount 30
+	Inventory.PickupMessage "$Got9mmClip"
+	Inventory.PickupSound "weapons/uzi/suzi3"
+	Scale 0.6
+	States
+	{
+		Spawn:
+			CLIP C -1
+			Stop
+	}
+}
+
+Actor ICD_BoxOfBullets : CustomInventory replaces ClipBox
+{
+	Radius 20
+	Height 16
+	Scale 0.85
+	Inventory.PickupSound "weapons/generic/weaponup"
+	Inventory.PickupMessage "$GotClipBox"
+	Inventory.PickupFlash "ICD_BoxOfBulletsDrop"
+	States
+	{
+		Spawn:
+			AMMO A -1
+			Stop
+		Pickup:
+			AMME A 2 A_PlaySound("weapons/1911/clipin")
+			AMME A 2 A_PlaySound("weapons/doublebarrel/load")
+			Stop
+	}
+}
+
+Actor ICD_BoxOfBulletsDrop
+{
+	-SOLID
+	Scale 0.85
+	States
+	{
+		Spawn:
+			AMME A 200
+			AMME AAAAAAAAAA 1 A_FadeOut
+			Stop
+	}
+}

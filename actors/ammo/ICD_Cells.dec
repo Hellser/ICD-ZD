@@ -1,0 +1,18 @@
+ACTOR ICD_RifleAmmo : Ammo replaces Cell
+{
+	Inventory.PickupMessage "$GotCell"
+	Inventory.PickupSound "weapons/assaultrifle/clipin"
+	Inventory.Amount 20
+	Inventory.MaxAmount 135
+	Ammo.BackpackAmount 45
+	Ammo.BackpackMaxAmount 200
+	Scale 0.9
+	Radius 20
+	Height 16
+	States
+	{
+		Spawn:
+			CLIP B -1
+			Stop
+	}
+}

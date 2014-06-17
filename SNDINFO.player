@@ -1,0 +1,24 @@
+$random player/pain/breath { player/pain/breath1 player/pain/breath2 player/pain/breath3 player/pain/breath4 player/pain/breath5 }
+player/pain/breath1							DSBRETH1
+player/pain/breath2							DSBRETH2
+player/pain/breath3							DSBRETH3
+player/pain/breath4							DSBRETH4
+player/pain/breath5							DSBRETH5
+
+$volume player/pain/breath 1.5
+
+$random player/pain/gargle { player/pain/gargle1 player/pain/gargle2}
+player/pain/gargle1							DSGURGL1
+player/pain/gargle2							DSGURGL2
+
+$random player/pain/smoke { player/pain/smoke1 player/pain/smoke2 }
+player/pain/smoke1 							DSCOUGH1
+player/pain/smoke2							DSCOUGH2
+
+$volume player/pain/gargle 0.7
+
+$random player/grunt/grunt { player/grunt/grunt1 player/grunt/grunt2 }
+player/grunt/grunt1							DSGRUNT2
+player/grunt/grunt2							DSGRUNT2
+
+player/death/drowned						DSDRWN

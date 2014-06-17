@@ -1,0 +1,18 @@
+ACTOR ICD_LightAmp : Infrared replaces Infrared
+{
+	+COUNTITEM
+	+INVENTORY.AutoActivate
+	+INVENTORY.AlwaysPickup
+	Inventory.MaxAmount 0
+	Inventory.PickupMessage "$GotNight"
+	Inventory.PickupSound "items/item3"
+	Scale 0.64
+	Radius 20
+	Height 16
+	States
+	{
+		Spawn:
+		PVIS B -1
+		Stop
+	}
+}

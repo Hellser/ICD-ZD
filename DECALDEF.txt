@@ -1,0 +1,21 @@
+decal ICD_BulletMark
+{
+   pic BLTHOL
+   shade "00 00 00"
+   translucent 0.8
+   x-scale 0.15
+   y-scale 0.15
+   randomflipx
+   randomflipy
+}
+
+decal ICD_ShotMark
+{
+   pic BLTHOL
+   shade "00 00 00"
+   translucent 0.8
+   x-scale 0.08
+   y-scale 0.08
+   randomflipx
+   randomflipy
+}

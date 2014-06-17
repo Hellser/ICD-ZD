@@ -1,0 +1,178 @@
+ACTOR ICD_GS_UsedItemTemplate
+{
+	Game Doom
+	+CORPSE
+	+CANNOTPUSH
+	+NOTELEPORT
+	+DONTSPLASH
+	-NOGRAVITY
+}
+
+ACTOR ICD_GS_EmptyHealthkit : ICD_GS_UsedItemTemplate
+{
+	Game Doom
+	scale 0.9
+	States
+	{
+		Spawn:
+			MEDI D -1
+			stop
+	}
+}
+
+ACTOR ICD_SoulEmptyMedikit : ICD_GS_UsedItemTemplate
+{
+	Game Doom
+	scale 0.9
+	States
+	{
+		Spawn:
+			MEDI C -1
+			stop
+	}
+}
+
+ACTOR ICD_GS_EmptyStimPack : ICD_GS_UsedItemTemplate
+{
+	Game Doom
+	scale 0.9
+	States
+	{
+		Spawn:
+			TNT1 A 0
+			TNT1 A 0 A_Jump(170, "Spawn.Pack1", "Spawn.Pack2")
+			STIM D -1
+			stop
+		Spawn.Pack1:
+			STIM C -1
+			stop
+		Spawn.Pack2:
+			STIM B -1
+			stop
+	}
+}
+
+ACTOR ICD_Stimpack : Health replaces Stimpack
+{
+	Game Doom
+	Inventory.Amount 10
+	Inventory.PickupSound "items/stimpackmedikitpickup"
+	Inventory.PickupMessage "$GotStim"
+	Inventory.PickupFlash "ICD_GS_EmptyStimPack"
+	Scale 0.9
+	States
+	{
+		Spawn:
+			STIM A -1
+			Stop
+	}
+}
+
+ACTOR ICD_Medikit : Health replaces Medikit
+{
+	Game Doom
+	Inventory.Amount 25
+	Inventory.PickupSound "items/stimpackmedikitpickup"
+	Inventory.PickupFlash "ICD_GS_EmptyHealthkit"
+	Inventory.PickupMessage "$GotMedi" // "Picked up a medikit."
+	Health.LowMessage 25, "$ICDGOTMEDINEED" // "Picked up a medikit that you REALLY need!"
+	scale 0.9
+	States
+	{
+		Spawn:
+			MEDI B -1
+			Stop
+	}
+}
+
+// I like how he did this, it's rather funny. You're essentially picking up
+// 6 items at once. Nifty!
+
+ACTOR ICD_SoulMedikit1 : Health replaces Soulsphere
+{
+	Game Doom
+	Inventory.Amount 15
+	Inventory.MaxAmount 150
+	Inventory.PickupFlash "ICD_SoulMedikit2"
+	Inventory.PickupMessage "$GotSoul"
+	Inventory.PickupSound "items/stimpackmedikitpickup"
+	scale 0.9
+	States
+	{
+		Spawn:
+			MEDI A -1
+			Stop
+	}
+}
+
+ACTOR ICD_SoulMedikit2 : Health
+{
+	Game Doom
+	Inventory.Amount 15
+	Inventory.MaxAmount 150
+	Inventory.PickupFlash "ICD_SoulMedikit3"
+	Inventory.PickupMessage "$GotSoul2"
+	Inventory.PickupSound "items/stimpackmedikitpickup"
+	scale 0.9
+	States
+	{
+		Spawn:
+			MEDI E 40
+			MEDI A -1
+			Stop
+	}
+}
+
+ACTOR ICD_SoulMedikit3 : Health
+{
+	Game Doom
+	Inventory.Amount 15
+	Inventory.MaxAmount 150
+	Inventory.PickupFlash "ICD_SoulMedikit4"
+	Inventory.PickupMessage "$GotSoul2"
+	Inventory.PickupSound "items/stimpackmedikitpickup"
+	scale 0.9
+	States
+	{
+		Spawn:
+			MEDI E 40
+			MEDI A -1
+			Stop
+	}
+}
+
+ACTOR ICD_SoulMedikit4 : Health
+{
+	Game Doom
+	Inventory.Amount 15
+	Inventory.MaxAmount 150
+	Inventory.PickupFlash "ICD_SoulMedikit5"
+	Inventory.PickupMessage "$GotSoul2"
+	Inventory.PickupSound "items/stimpackmedikitpickup"
+	scale 0.9
+	States
+	{
+		Spawn:
+			MEDI E 40
+			MEDI A -1
+			Stop
+	}
+}
+
+ACTOR ICD_SoulMedikit5 : Health
+{
+	Game Doom
+	Inventory.Amount 15
+	Inventory.MaxAmount 150
+	Inventory.PickupFlash "ICD_SoulEmptyMedikit"
+	Inventory.PickupMessage "$GotSoul2"
+	Inventory.PickupSound "items/stimpackmedikitpickup"
+	scale 0.9
+	States
+	{
+		Spawn:
+			MEDI E 40
+			MEDI A -1
+			Stop
+	}
+}

@@ -1,0 +1,2 @@
+clearplayerclasses
+addplayerclass ICD_DoomPlayer

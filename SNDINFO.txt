@@ -1,0 +1,9 @@
+// Item Sounds
+items/armorbonuspickup						DSARMOR
+items/healthbonuspickup						DSBONUS
+items/stimpackmedikitpickup					DSHEALTH
+items/gearpickup							DSITEM4
+items/item1									DSITEM1
+items/item3									DSITEM3
+
+game/null									DSNULL

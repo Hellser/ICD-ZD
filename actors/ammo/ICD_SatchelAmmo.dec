@@ -1,0 +1,23 @@
+ACTOR ICD_SatchelAmmo : Ammo
+{
+	Inventory.PickupMessage "$GotShells"
+	Inventory.PickupSound "weapons/doublebarrel/load"
+	Inventory.MaxAmount 5
+}
+
+Actor ICD_SatchelPickup : CustomInventory replaces RocketAmmo
+{
+	Radius 20
+	Height 16
+	Scale 0.8
+	States
+	{
+		Spawn:
+			CHRG I -1
+			Stop
+		Pickup:
+			TNT1 A 0 A_GiveInventory("ICD_Satchel", 1)
+			TNT1 A 0 A_GiveInventory("ICD_SatchelAmmo", 1)
+			Stop
+	}
+}

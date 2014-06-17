@@ -1,0 +1,145 @@
+ACTOR ICD_FlareWeapon : BaseWeapon
+{
+	Game Doom
+	Inventory.PickupMessage "$GotSawedOff"
+	Tag "Flares"
+	+WEAPON.NOALERT
+	+WEAPON.AMMO_OPTIONAL
+	States
+	{
+		Select:
+			FLRG A 1 A_Raise
+			Loop
+		Deselect:
+			FLRG A 1 A_Lower
+			Loop
+		Ready:
+			FLRG A 1 A_WeaponReady
+			Loop
+		Fire:
+			FLRG B 2
+			FLR2 A 2
+			FLR2 B 3
+			FLR2 C 0 A_PlaySound("weapons/flare/flareignite", 5)
+			TNT1 A 0 A_PlaySound("weapons/flare/flarerun", CHAN_WEAPON, 1, 1)
+			FLR2 C 2 A_FireCustomMissile("ICD_FlareSmoke", frandom(-6.5,6.5), 0, 0, 2)
+			TNT1 A 0 A_FireCustomMissile("ICD_FlareEffect", 0, 0)
+			FLR2 D 2 A_FireCustomMissile("ICD_FlareSmoke", frandom(-6.5,6.5), 0, 0, 2)
+			TNT1 A 0 A_FireCustomMissile("ICD_FlareEffect", 0, 0)
+			FLRG C 2 A_FireCustomMissile("ICD_FlareSmoke", frandom(-6.5,6.5), 0, 0, 2)
+			TNT1 A 0 A_FireCustomMissile("ICD_FlareEffect", 0, 0)
+			FLRG D 2 A_FireCustomMissile("ICD_FlareSmoke", frandom(-6.5,6.5), 0, 0, 2)
+			TNT1 A 0 A_FireCustomMissile("ICD_FlareEffect", 0, 0)
+			FLRG E 2 A_FireCustomMissile("ICD_FlareSmoke", frandom(-6.5,6.5), 0, 0, 2)
+			TNT1 A 0 A_FireCustomMissile("ICD_FlareEffect", 0, 0)
+			FLRG F 2
+			TNT1 A 0 A_FireCustomMissile("ICD_FlareEffect", 0, 0)
+			FLRG G 2 A_FireCustomMissile("ICD_FlareSmoke", frandom(-6.5,6.5), 0, 0, 2)
+			TNT1 A 0 A_FireCustomMissile("ICD_FlareEffect", 0, 0)
+			FLRG H 2
+			TNT1 A 0 A_FireCustomMissile("ICD_ThrownFlare")
+			TNT1 A 0 A_StopSound(CHAN_WEAPON)
+			TNT1 A 8
+			FLRG B 2 A_PlaySound("weapons/generic/holsterup",5)
+			FLRG A 2
+			Goto Ready
+		AltFire:
+			TNT1 A 0 A_PlaySound("weapons/flare/flarerun", CHAN_WEAPON, 1, 1)
+			TNT1 A 0 A_FireCustomMissile("ICD_FlareEffect", 0, 0)
+			FLRG C 2 BRIGHT A_FireCustomMissile("ICD_FlareSmoke", frandom(-6.5,6.5), 0, 0, 2)
+			TNT1 A 0 A_FireCustomMissile("ICD_FlareEffect", 0, 0)
+			FLRG D 0
+			FLRG D 2 BRIGHT A_FireCustomMissile("ICD_FlareSmoke", frandom(-6.5,6.5), 0, 0, 2)
+			TNT1 A 0 A_FireCustomMissile("ICD_FlareEffect", 0, 0)
+			FLRG E 2 BRIGHT A_FireCustomMissile("ICD_FlareSmoke", frandom(-6.5,6.5), 0, 0, 2)
+			TNT1 A 0 A_FireCustomMissile("ICD_FlareEffect", 0, 0)
+			FLRG C 2 BRIGHT A_FireCustomMissile("ICD_FlareSmoke", frandom(-6.5,6.5), 0, 0, 2)
+			TNT1 A 0 A_FireCustomMissile("ICD_FlareEffect", 0, 0)
+			FLRG D 0
+			FLRG D 2 BRIGHT A_FireCustomMissile("ICD_FlareSmoke", frandom(-6.5,6.5), 0, 0, 2)
+			TNT1 A 0 A_FireCustomMissile("ICD_FlareEffect", 0, 0)
+			FLRG E 2 BRIGHT A_FireCustomMissile("ICD_FlareSmoke", frandom(-6.5,6.5), 0, 0, 2)
+			FLRG C 0 A_ReFire
+			TNT1 A 0 A_FireCustomMissile("ICD_FlareEffect2", 0, 0)
+			FLRG F 3 BRIGHT A_FireCustomMissile("ICD_FlareSmoke", frandom(-6.5,6.5), 0, 0, 2)
+			TNT1 A 0 A_FireCustomMissile("ICD_FlareEffect2", 0, 0)
+			FLRG G 3 BRIGHT A_FireCustomMissile("ICD_FlareSmoke", frandom(-6.5,6.5), 0, 0, 2)
+			TNT1 A 0 A_FireCustomMissile("ICD_FlareEffect2", 0, 0)
+			FLRG H 3 BRIGHT A_FireCustomMissile("ICD_FlareSmoke", frandom(-6.5,6.5), 0, 0, 2)
+			TNT1 A 0 A_FireCustomMissile("ICD_ThrownFlare", -180)
+			TNT1 A 0 A_StopSound(CHAN_WEAPON)
+			TNT1 A 20
+			FLRG B 2 A_PlaySound("weapons/generic/holsterup",5)
+			FLRG B 2
+			Goto Ready
+		Pickup:
+			TNT1 A 0
+			Loop
+	}
+}
+
+ACTOR ICD_FlareEffect
+{
+	+NOINTERACTION
+	-SOLID
+	+NOGRAVITY
+	States
+	{
+		Spawn:
+			TNT1 A 2 Light("ICD_FlareEffect")
+			Stop
+	}
+}
+
+ACTOR ICD_FlareEffect2
+{
+	+NOINTERACTION
+	-SOLID
+	+NOGRAVITY
+	States
+	{
+		Spawn:
+			TNT1 A 3 Light("ICD_FlareEffect")
+			Stop
+	}
+}
+
+// Stop being lazy!
+
+ACTOR ICD_ThrownFlare
+{
+	Radius 8
+	Height 8
+	Speed 8
+	Damage (0)
+	+NONSHOOTABLE
+	+CORPSE
+	+RELATIVETOFLOOR
+	Obituary "%o stood on a flare."
+	var int user_flarelife;
+	Scale 0.8
+	States
+	{
+		Spawn:
+			TNT1 A 0
+			TNT1 A 0 A_PlaySound("weapons/generic/throw", 6)
+			TNT1 A 0 A_PlaySound("weapons/flare/flarerun", 5, 1, 1)
+			FLAR DDEEDDEE 1 BRIGHT Light("ICD_FlareEffect") // Deedee! Get out of my lab-or-a-tory!
+			Goto Spawn+3
+		Crash:
+			Goto Death
+		Death:
+			TNT1 A 0 A_Explode(2,42)
+			TNT1 A 0 A_SetUserVar("user_flarelife",user_flarelife+1)
+			TNT1 A 0 A_JumpIf(user_flarelife==15000,"True.Death")
+			FLAR ABAC 2  Light("ICD_FlareEffect") BRIGHT A_SpawnItemEx("ICD_FlareSmoke2", 0, 0, 0, frandom(-0.3,0.3), frandom(-0.3,0.3), frandom(0,1))
+			TNT1 A 0 A_Jump(90,"Death")
+			Goto Death+2
+		True.Death:
+			TNT1 A 0 A_StopSound(5)
+			FLAR F 0
+			FLAR F 1
+			FLAR F -1
+			Stop
+	}
+}
