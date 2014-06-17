@@ -45,4 +45,8 @@ world/ambient/heartbeat						DSHEART
 $rolloff world/ambient/heartbeat 			64 256
 $random world/ambient/killme { world/ambient/killme1 NULL NULL NULL NULL }
 world/ambient/killme1						DSKILLME
+world/ambient/squish						DSSQUISH
 $rolloff world/ambient/killme 				64 256
+world/ambient/skulls						DSSKULLS
+world/ambient/fire5							DSFIRE3
+$rolloff world/ambient/fire5				64 256

@@ -141,6 +141,7 @@ ACTOR ICD_GoreStick3
 	+NOBLOOD
 	States
 	{
+		Spawn:
 		POL4 B -1
 		Stop
 	}
@@ -178,7 +179,7 @@ ACTOR ICD_Skewered_Bloke replaces DeadStick
 			Stop
 		Death:
 			TNT1 A 0 A_SpawnItemEx("ICD_GoreStick2",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION)
-			TROO O 3
+			TROO O 3 A_NoBlocking
 			TROO O 3 A_PlaySound("misc/gibbed")
 			TROO PQRST 5
 			TROO U -1
@@ -204,7 +205,7 @@ ACTOR ICD_Dying_Skewered_Bloke replaces LiveStick
 			Loop
 		Death:
 			TNT1 A 0 A_SpawnItemEx("ICD_GoreStick",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION)
-			TROO O 3
+			TROO O 3 A_NoBlocking
 			TROO O 3 A_PlaySound("misc/gibbed")
 			TROO PQRST 5
 			TROO U -1
@@ -226,10 +227,143 @@ ACTOR ICD_Skull_On_A_Stick replaces HeadOnAStick
 			POL4 A -1
 			Stop
 		Death:
-			TNT1 A 0 A_PlaySound("misc/gibbed")
+			TNT1 A 0 A_PlaySound("world/ambient/squish")
+			TNT1 A 0 A_NoBlocking
 			TNT1 A 0 A_SpawnItemEx("ICD_GoreStick3",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION)
 			POB1 A -1
 			Stop
 	}
 }
-	
+
+ACTOR ICD_Heads_On_A_Stick replaces HeadsOnAStick
+{
+	Radius 14
+	Height 64
+	Mass 0x7FFFFFFF
+	Health 30
+	+SOLID
+	+SHOOTABLE
+	States
+	{
+		Spawn:
+			POL2 A -1
+			Stop
+		Death:
+			POL2 C 4 A_PlaySound("world/ambient/skulls")
+			POL2 D 4 A_NoBlocking
+			TNT1 A 0 A_SpawnItem("ICD_GoreStick4")
+			POL2 E 4
+			POL2 F -1
+			Stop
+	}
+}
+
+ACTOR ICD_Skull_Centerpiece replaces HeadCandles
+{
+	Radius 20
+	Height 36
+	Scale 0.87
+	+SOLID
+	+SHOOTABLE
+	+NODAMAGE
+	+NOBLOOD
+	States
+	{
+		Spawn:
+			POL3 AB 6 Light ("ICD_SkullColumn") Bright
+			Loop
+	}
+}
+
+ACTOR ICD_ColumnTemplate
+{
+	+SOLID
+	+SHOOTABLE
+	+NODAMAGE
+	+NOBLOOD
+}
+
+ACTOR ICD_Tall_Green_Column : ICD_ColumnTemplate replaces TallGreenColumn
+{
+	Radius 16
+	Height 50
+	States
+	{
+		Spawn:
+			COL1 A -1
+			Stop
+	}
+}
+
+ACTOR ICD_Short_Green_Column : ICD_ColumnTemplate replaces ShortGreenColumn
+{
+	Radius 16
+	Height 38
+	States
+	{
+		Spawn:
+			COL2 A -1
+			Stop
+	}
+}
+
+ACTOR ICD_Tall_Red_Column : ICD_ColumnTemplate replaces TallRedColumn
+{
+	Radius 16
+	Height 50
+	States
+	{
+		Spawn:
+			COL3 A -1
+			Stop
+	}
+}
+
+ACTOR ICD_Short_Red_Column : ICD_ColumnTemplate replaces ShortRedColumn
+{
+	Radius 16
+	Height 38
+	States
+	{
+		Spawn:
+			COL4 A -1
+			Stop
+	}
+}
+
+ACTOR ICD_Skull_On_Column : ICD_ColumnTemplate replaces SkullColumn
+{
+	Radius 16
+	Height 38
+	States
+	{
+		Spawn:
+			COL6 A -1
+			Stop
+	}
+}
+
+ACTOR ICD_Eye_Symbol : ICD_ColumnTemplate replaces EvilEye
+{
+	Radius 16
+	Height 56
+	States
+	{
+		Spawn:
+			CEYE ABCB 6 Light("ICD_EvilEye") Bright
+			Loop
+	}
+}
+
+ACTOR ICD_Floating_SkullRock : ICD_ColumnTemplate replaces FloatingSkull
+{
+	Radius 16
+	Height 40
+	States
+	{
+		Spawn:
+			TNT1 A 0 A_PlaySound("world/ambient/fire5", 0, 1, 1)
+			FSKU ABC 8
+			Loop
+	}
+}
