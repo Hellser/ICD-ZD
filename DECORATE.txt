@@ -69,6 +69,7 @@
 #include "actors/other/icd_gibbed.dec"
 #include "actors/other/icd_barrels.dec"
 #include "actors/other/icd_hellobjects.dec"
+#include "actors/other/icd_techobjects.dec"
 
 //Monsters
 #include "actors/monsters/icd_zombieman.dec"

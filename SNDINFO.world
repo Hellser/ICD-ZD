@@ -38,15 +38,46 @@ world/gore/splat1							DSSPLAT1
 world/gore/splat2							DSSPLAT2
 
 /*
-Objects
+Objects LHUM2
 */
 world/barrel								DSBARRL
+
 world/ambient/heartbeat						DSHEART
 $rolloff world/ambient/heartbeat 			64 256
+
 $random world/ambient/killme { world/ambient/killme1 NULL NULL NULL NULL }
 world/ambient/killme1						DSKILLME
-world/ambient/squish						DSSQUISH
 $rolloff world/ambient/killme 				64 256
+
+world/ambient/squish						DSSQUISH
+
 world/ambient/skulls						DSSKULLS
+
 world/ambient/fire5							DSFIRE3
+$volume world/ambient/fire5					0.5
 $rolloff world/ambient/fire5				64 256
+
+world/ambient/tech							DSTECH
+$rolloff world/ambient/tech					64 256
+$volume world/ambient/tech					0.86
+
+world/ambient/yellowlamp					DSLHUM2
+$rolloff world/ambient/yellowlamp			64 256
+
+world/ambient/bust							DSBUST
+
+world/ambient/techlamp2						DSLHUM1
+$rolloff world/ambient/techlamp2			64 256
+
+world/ambient/techlamp  					DSLHUM3
+$rolloff world/ambient/techlamp				64 256
+
+world/ambient/spark							DSBUZZ
+
+world/ambient/magicbigfire					DSFIRE3
+world/ambient/bigfire						DSFIRE4
+
+$rolloff world/ambient/magicbigfire			64 256
+$rolloff world/ambient/bigfire				64 256
+$volume world/ambient/magicbigfire			0.62
+$volume world/ambient/bigfire				0.66

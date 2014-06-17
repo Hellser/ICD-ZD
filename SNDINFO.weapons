@@ -113,6 +113,7 @@ weapons/satchel/satch2						DSSATCH2
 
 //Beretta
 weapons/beretta/fire						DSBPIST
+weapons/beretta/slide						DSBSLIDE
 
 
 $volume weapons/flare/flaresoftignite		0.5

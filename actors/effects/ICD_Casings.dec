@@ -114,26 +114,38 @@ ACTOR ICD_GS_EmptyShell : ICD_GS_CasingTemplate
 
 ACTOR ICD_ShotgunShellSpawner1 : ICD_ShellSpawner
 {
-	 States
+	States
 	 {
 		Spawn:
 			TNT1 A 1
 		Death:
 			TNT1 A 0 A_CustomMissile("ICD_GS_EmptyShell",2,0,90+random(-15,15),2,55+random(-10,10))
 			Stop
-	 }
+	}
+}
+
+ACTOR ICD_BerettaCasingSpawner : ICD_ShellSpawner
+{
+	States
+	{
+		Spawn:
+			TNT1 A 1
+		Death:
+			TNT1 A 0 A_CustomMissile("ICD_GS_PistolCasing",2,0,90+random(-15,15),2,45+random(-10,10))
+			Stop
+	}
 }
 
 ACTOR ICD_PistolCasingSpawner : ICD_ShellSpawner
 {
-	 States
-	 {
+	States
+	{
 		Spawn:
 			TNT1 A 1
 		Death:
 			TNT1 A 0 A_CustomMissile("ICD_GS_PistolCasing",2,0,270+random(-15,15),2,55+random(-10,10))
 			Stop
-	 }
+	}
 }
 
 ACTOR ICD_AssaultCasingSpawner : ICD_ShellSpawner

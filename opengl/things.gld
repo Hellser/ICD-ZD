@@ -30,7 +30,7 @@ pointlight ICD_EvilEye
 flickerlight2 ICD_BigRedTorch
 {
     color 1.0 0.0 0.0
-    size 50
+    size 70
     secondarySize 75
     interval 0.00875
 	offset 0 42 0
@@ -39,7 +39,7 @@ flickerlight2 ICD_BigRedTorch
 flickerlight2 ICD_BigGreenTorch
 {
     color 0.0 0.85 0.0
-    size 50
+    size 70
     secondarySize 75
     interval 0.00875
 	offset 0 42 0
@@ -48,7 +48,7 @@ flickerlight2 ICD_BigGreenTorch
 flickerlight2 ICD_BigBlueTorch
 {
     color 0.0 0.0 0.85
-    size 50
+    size 70
     secondarySize 75
     interval 0.00875
 	offset 0 42 0
@@ -57,7 +57,7 @@ flickerlight2 ICD_BigBlueTorch
 flickerlight2 ICD_SmallRedTorch
 {
     color 1.0 0.0 0.0
-    size 50
+    size 70
     secondarySize 75
     interval 0.00875
 	offset 0 26 0
@@ -66,7 +66,7 @@ flickerlight2 ICD_SmallRedTorch
 flickerlight2 ICD_SmallGreenTorch
 {
     color 0.0 0.85 0.0
-    size 50
+    size 70
     secondarySize 75
     interval 0.00875
 	offset 0 26 0
@@ -75,9 +75,29 @@ flickerlight2 ICD_SmallGreenTorch
 flickerlight2 ICD_SmallBlueTorch
 {
     color 0.0 0.0 0.85
-    size 50
+    size 70
     secondarySize 75
     interval 0.00875
 	offset 0 26 0
 }
 
+pointlight ICD_YellowLamp
+{
+	color 1.0 1.0 0.4
+	size 80
+	offset 0 26 0
+}
+
+pointlight ICD_TechLamp2
+{
+	color 0.5 0.5 1
+	size 90
+	offset 0 26 0
+}
+
+pointlight ICD_TechLamp
+{
+	color 0.5 0.5 1
+	size 128
+	offset 0 48 0
+}
