@@ -1,3 +1,28 @@
+ACTOR ICD_DeadPlayer replaces DeadMarine
+{
+	States
+	{
+		Spawn:
+			PLAY N 1
+			TNT1 A 0 A_Jump(250, 2)
+			TNT1 A 0  A_SpawnItemEx("ICD_RevolverPickup", frandom(-8,8), frandom(-8,8), 0)
+			TNT1 A 0 A_Jump(153, 2)
+			TNT1 A 0 A_SpawnItemEx("ICD_9mmClip", frandom(-8,8), frandom(-8,8), 0)
+			TNT1 A 0 A_Jump(153, 2)
+			TNT1 A 0 A_SpawnItemEx("ICD_KnifeAmmo", frandom(-8,8), frandom(-8,8), 0)
+			TNT1 A 0 A_Jump(77,"Spawn.Dead2")
+			TNT1 A 0 A_Jump(102,"Spawn.Dead3")
+		Spawn.Dead1:
+			PLAY N -1
+			Stop
+		Spawn.Dead2:
+			PLAY N 1 A_SpawnItem("ICD_Flies")
+		Spawn.Dead3:
+			PLAY N -1 A_SpawnItem("ICD_Flies")
+	}
+}
+
+
 ACTOR ICD_Dead_Gibbed_Player1 replaces GibbedMarine
 {
 	States
@@ -240,3 +265,180 @@ ACTOR ICD_Heads_On_A_Stick replaces HeadsOnAStick
 			Stop
 	}
 }
+
+ACTOR ICD_Gore
+{
+	Radius 8
+	Height 16
+	Scale 0.8
+	Projectile
+	+THRUACTORS
+	-NOGRAVITY
+	States
+	{
+		Spawn:
+			TROO P 5 NoDelay A_PlaySound("misc/gibbed")
+		SpawnLoop:
+			TROO P 1
+			Loop
+		Crash:
+		Death:
+			TROO P 5 A_PlaySound("misc/gibbed")
+			TROO QRST 5
+			TROO U -1
+			Stop
+	}
+}
+
+ACTOR ICD_Twitching_Bloke_I replaces BloodyTwitch // BLOODY TWITCH.TV!
+{
+	Radius 16
+	Height 68
+	Health 90
+	+SOLID
+	+SHOOTABLE
+	+SPAWNCEILING
+	+NOGRAVITY
+	Mass 0x7FFFFFF
+	DeathHeight 68
+	States
+	{
+		Spawn:
+			TNT1 A 0 NoDelay A_Jump(77,2)
+			GOR1 A 100 A_PlaySound("world/ambient/killme")
+			GOR1 B 15
+			GOR1 C 8
+			GOR1 B 6
+			TNT1 A 0 //A_Jump(204, "Spawn")
+			TNT1 A 0 A_SpawnItemEx("ICD_Blood_Splat_Gore",random(-9,9),random(-9,9),-4,0,0,0,0,SXF_NOCHECKPOSITION)
+			Loop
+		Death:
+			TNT1 A 0 A_ChangeFlag("NOGRAVITY", 1)
+			TNT1 A 0 A_ChangeFlag("SHOOTABLE", 1)
+			TNT1 A 0 A_ChangeFlag("NOBLOOD", 1)
+			TNT1 A 0 A_ChangeFlag("NODAMAGE", 1)
+			GOR1 A 1
+			TNT1 A 0 A_SpawnItemEx("ICD_Gore")
+			GOR1 D 1
+			GOR1 D -1
+			Stop
+	}
+}
+
+ACTOR ICD_Hanging_Dead_Bloke_I replaces Meat2
+{
+	Radius 16
+	Height 84
+	Health 90
+	+SOLID
+	+SHOOTABLE
+	+SPAWNCEILING
+	+NOGRAVITY
+	Mass 0x7FFFFFF
+	DeathHeight 84
+	States
+	{
+		Spawn:
+			GOR2 A -1
+			Stop
+		Death:
+			TNT1 A 0 A_ChangeFlag("NOGRAVITY", 1)
+			TNT1 A 0 A_ChangeFlag("SHOOTABLE", 1)
+			TNT1 A 0 A_ChangeFlag("NOBLOOD", 1)
+			TNT1 A 0 A_ChangeFlag("NODAMAGE", 1)
+			GOR2 A 1
+			TNT1 A 0 A_SpawnItemEx("ICD_Gore")
+			GOR2 B -1
+			Stop
+	}
+}
+
+ACTOR ICD_Hanging_Dead_Bloke_II replaces Meat3
+{
+	Radius 16
+	Height 79
+	Health 90
+	+SOLID
+	+SHOOTABLE
+	+SPAWNCEILING
+	+NOGRAVITY
+	Mass 0x7FFFFFF
+	DeathHeight 79
+	States
+	{
+		Spawn:
+			GOR3 A -1
+			Stop
+		Death:
+			TNT1 A 0 A_ChangeFlag("NOGRAVITY", 1)
+			TNT1 A 0 A_ChangeFlag("SHOOTABLE", 1)
+			TNT1 A 0 A_ChangeFlag("NOBLOOD", 1)
+			TNT1 A 0 A_ChangeFlag("NODAMAGE", 1)
+			GOR3 A 1
+			TNT1 A 0 A_SpawnItemEx("ICD_Gore")
+			GOR3 B -1
+			Stop
+	}
+}
+
+ACTOR ICD_Hanging_Dead_Bloke_III replaces Meat4
+{
+	Radius 16
+	Height 67
+	Health 90
+	+SOLID
+	+SHOOTABLE
+	+SPAWNCEILING
+	+NOGRAVITY
+	Mass 0x7FFFFFF
+	DeathHeight 67
+	States
+	{
+		Spawn:
+			GOR4 A -1
+			Stop
+		Death:
+			TNT1 A 0 A_ChangeFlag("NOGRAVITY", 1)
+			TNT1 A 0 A_ChangeFlag("SHOOTABLE", 1)
+			TNT1 A 0 A_ChangeFlag("NOBLOOD", 1)
+			TNT1 A 0 A_ChangeFlag("NODAMAGE", 1)
+			GOR4 A 1
+			TNT1 A 0 A_SpawnItemEx("ICD_Gore")
+			GOR4 B -1
+			Stop
+	}
+}
+
+ACTOR ICD_Hanging_Dead_Bloke_IV replaces Meat5
+{
+	Radius 16
+	Height 53
+	Health 90
+	+SOLID
+	+SHOOTABLE
+	+SPAWNCEILING
+	+NOGRAVITY
+	Mass 0x7FFFFFF
+	DeathHeight 53
+	States
+	{
+		Spawn:
+			GOR5 A -1
+			Stop
+		Death:
+			TNT1 A 0 A_ChangeFlag("NOGRAVITY", 1)
+			TNT1 A 0 A_ChangeFlag("SHOOTABLE", 1)
+			TNT1 A 0 A_ChangeFlag("NOBLOOD", 1)
+			TNT1 A 0 A_ChangeFlag("NODAMAGE", 1)
+			GOR5 A 1
+			TNT1 A 0 A_SpawnItemEx("ICD_Gore")
+			GOR5 B -1
+			Stop
+	}
+}
+
+ACTOR ICD_Twitching_Bloke_II : ICD_Twitching_Bloke_I replaces NonSolidTwitch { -SOLID }
+ACTOR ICD_Hanging_Dead_Bloke_V : ICD_Hanging_Dead_Bloke_I replaces NonSolidMeat2 { -SOLID }
+ACTOR ICD_Hanging_Dead_Bloke_VI : ICD_Hanging_Dead_Bloke_II replaces NonSolidMeat3 { -SOLID }
+ACTOR ICD_Hanging_Dead_Bloke_VII : ICD_Hanging_Dead_Bloke_III replaces NonSolidMeat4 { -SOLID }
+ACTOR ICD_Hanging_Dead_Bloke_VIII : ICD_Hanging_Dead_Bloke_IV replaces NonSolidMeat5 { -SOLID }

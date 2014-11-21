@@ -153,7 +153,7 @@ ACTOR ICD_40mmMushroom
 	Radius 8
 	Height 8
 	Speed 8
-	Damage 20
+	Damage 5
 	ReactionTime 75
 	BounceType "Doom"
 	BounceSound "weapon/40mm/bounce"
@@ -169,7 +169,7 @@ ACTOR ICD_40mmMushroom
 			Loop
 		Death:
 			TNT1 A 0 A_Explode(60)
-			SMPF ABCDE 4 BRIGHT
+			SMPF ABCDE 4 BRIGHT A_FadeOut
 			Stop
 	}
 }

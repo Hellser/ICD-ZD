@@ -44,36 +44,3 @@ GotShotgun="You got the shotgun!";
 GotMinigun="You got the minigun!";
 GotBeretta="You got the 9mm pistol!";
 GotMagnum="You got the magnum!";
-
-E1TEXT =
-	"Once you beat the big badasses and\n"
-	"clean out the moon base you're supposed\n"
-	"to win, aren't you? Aren't you? Where's\n"
-	"your fat reward and ticket home? What\n"
-	"the hell is this? It's not supposed to\n"
-	"end this way!\n"
-	"\n"
-	"It stinks like rotten meat, but looks\n"
-	"like the lost Deimos base.  Looks like\n"
-	"you're stuck on The Shores of Hell.\n"
-	"The only way out is through.\n"
-	"\n"
-	"And how does that make you feel?\n";
-E3TEXT =
-	"The loathsome spiderdemon that\n"
-	"masterminded the invasion of the moon\n"
-	"bases and caused so much death has had\n"
-	"its ass kicked for all time.\n"
-	"\n"
-	"A hidden doorway opens and you enter.\n"
-	"You've proven too tough for Hell to\n"
-	"contain, and now Hell at last plays\n"
-	"fair -- for you emerge from the door\n"
-	"to see the green fields of Earth!\n"
-	"Home at last.\n"
-	"\n"
-	"You wonder what's been happening on\n"
-	"Earth while you were battling evil\n"
-	"unleashed. It's good that no Hell-\n"
-	"spawn could have come through that\n"
-	"door with you ... Oh dear.\n";

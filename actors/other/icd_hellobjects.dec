@@ -65,7 +65,10 @@ ACTOR ICD_WoodenBlueTorch : ICD_LittleTorchBase replaces ShortBlueTorch
 	States
 	{
 		Spawn:
-			SMBT ABCD 4 Bright Light("ICD_SmallBlueTorch")
+			SMBT AB 4 Bright Light("ICD_SmallBlueTorch")
+			TNT1 A 0 A_Explode(5,16)
+			TNT1 A 0 A_PlaySound("world/ambient/magicbigfire")
+			SMBT CD 4 Bright Light("ICD_SmallBlueTorch")
 	}
 }
 
@@ -74,7 +77,10 @@ ACTOR ICD_WoodenGreenTorch : ICD_LittleTorchBase replaces ShortGreenTorch
 	States
 	{
 		Spawn:
-			SMGT ABCD 4 Bright Light("ICD_SmallGreenTorch")
+			SMGT AB 4 Bright Light("ICD_SmallGreenTorch")
+			TNT1 A 0 A_Explode(5,16)
+			TNT1 A 0 A_PlaySound("world/ambient/magicbigfire")
+			SMGT CD 4 Bright Light("ICD_SmallGreenTorch")
 	}
 }
 
@@ -83,9 +89,21 @@ ACTOR ICD_WoodenRedTorch : ICD_LittleTorchBase replaces ShortRedTorch
 	States
 	{
 		Spawn:
-			SMRT ABCD 4 Bright Light("ICD_SmallRedTorch")
+			SMRT AB 4 Bright Light("ICD_SmallRedTorch")
+			TNT1 A 0 A_Explode(5,16)
+			TNT1 A 0 A_PlaySound("world/ambient/bigfire")
+			SMRT CD 4 Bright Light("ICD_SmallRedTorch")
+			SMRT AB 4 Bright Light("ICD_SmallRedTorch")
+			TNT1 A 0 A_Explode(5,16)
+			TNT1 A 0 A_PlaySound("world/ambient/bigfire")
+			SMRT C 4 Bright Light("ICD_SmallRedTorch")
+			TNT1 A 0 A_Jump(150, 2)
+			TNT1 A 0 A_SpawnItemEx("ICD_FireSmoke4", 0,0,40,0,0,0.05)
+			SMRT D 4 Bright Light("ICD_SmallRedTorch")
 	}
 }
+
+
 
 ACTOR ICD_BeatingHeartColumn : ICD_ObjectTemplate replaces HeartColumn
 {

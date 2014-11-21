@@ -17,7 +17,7 @@ ACTOR ICD_RemingtonPickup : CustomInventory replaces Shotgun
 			TNT1 A 0 A_GiveInventory("ICD_RemingtonMagazine", 8)
 			Stop
 		Pickup.Ammo:
-			TNT1 A 0 A_GiveInventory("Shell", 4)
+			TNT1 A 0 A_GiveInventory("ICD_Shells", 4)
 			Stop
 	}
 }
@@ -35,9 +35,15 @@ ACTOR ICD_SawedOffPickup : CustomInventory
 			SAWD L -1
 			Stop
 		Pickup:
+			TNT1 A 0 A_JumpIfInventory("ICD_Shells", 0, "Pickup.Fail")
+			TNT1 A 0 A_JumpIfInventory("ICD_SawedOff", 1, "Pickup.Ammo")
 			TNT1 A 0 A_GiveInventory("ICD_SawedOff", 1)
-			TNT1 A 0 A_GiveInventory("Shell", 3)
+		Pickup.Ammo:
+			TNT1 A 0 A_GiveInventory("ICD_Shells", 3)
 			Stop
+		Pickup.Fail:
+			TNT1 A 0
+			Fail
 	}
 }
 
@@ -75,6 +81,25 @@ ACTOR ICD_MinigunPickup : CustomInventory replaces RocketLauncher
 		Pickup:
 			TNT1 A 0 A_GiveInventory("ICD_AssaultRifle", 1)
 			TNT1 A 0 A_GiveInventory("ICD_RifleAmmo", 23)
+			Stop
+	}
+}
+
+Actor ICD_RevolverPickup : CustomInventory
+{
+	Radius 20
+	Height 16
+	Scale 0.65
+	Inventory.PickupMessage "$GotMagnum"
+	Inventory.PickupSound "weapons/revolver/min"
+	States
+	{
+		Spawn:
+			HGUN C -1
+			Stop
+		Pickup:
+			TNT1 A 0 A_GiveInventory("ICD_Revolver", 1)
+			TNT1 A 0 A_GiveInventory("ICD_Bullets", 12)
 			Stop
 	}
 }

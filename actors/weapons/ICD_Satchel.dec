@@ -5,6 +5,7 @@ ACTOR ICD_Satchel : BaseWeapon
 	Weapon.UpSound "weapons/generic/weaponup"
 	Tag "40mm Grenade Launcher"
 	Inventory.PickupMessage "$Got40mm"
+	Weapon.AmmoType "ICD_SatchelAmmo"
 	+WEAPON.AMMO_OPTIONAL
 	States
 	{
@@ -18,6 +19,9 @@ ACTOR ICD_Satchel : BaseWeapon
 			CHRG F 1 A_WeaponReady
 			Loop
 		Fire:
+			TNT1 A 0 A_JumpIfInventory("ICD_SatchelAmmo", 1, 1)
+			Goto Ready
+			TNT1 A 0 A_TakeInventory("ICD_SatchelAmmo", 1)
 			CHRG F 12 A_GunFlash("Overlay")
 			CHRG J 4 A_PlaySound("weapons/generic/click")
 			CHRG D 4 A_PlaySound("weapons/satchel/satch2")
@@ -46,14 +50,15 @@ ACTOR ICD_SatchelMechanic : CustomInventory
 	States
 	{
 		Use:
-			TNT1 A 0
+			TNT1 A 1
+			TNT1 A 0 A_TakeInventory("ICD_SatchelMechanic", 1)
 			FAIL
 	}
 }
 
 /*
 Alright, here's the idea. The player uses the detonator. which gives
-the player a token. Missiles automatically target the player. So.
+the player a token. Missiles automatically targets the player. So.
 A_JumpIfInTargetInventory, the token. THEN BOOM!
 */
 

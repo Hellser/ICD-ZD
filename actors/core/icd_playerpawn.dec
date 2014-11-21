@@ -21,10 +21,10 @@ ACTOR ICD_DoomPlayer : PlayerPawn replaces DoomPlayer
 	Player.WeaponSlot 1, ICD_Knife, ICD_Chainsaw
 	Player.WeaponSlot 2, ICD_Pistol, ICD_DualPistol
 	Player.WeaponSlot 3, ICD_Remington, ICD_FlakRemington, ICD_DoubleBarrel
-	Player.WeaponSlot 4, ICD_SingleUzi
+	Player.WeaponSlot 4, ICD_SingleUzi, ICD_DualUzi
 	Player.WeaponSlot 5, ICD_40mm, ICD_GrenadeWeapon
 	Player.WeaponSlot 6, ICD_AssaultRifle, ICD_InfantryRifle
-	Player.WeaponSlot 7, ICD_Beretta, ICD_SawedOff, ICD_Minigun
+	Player.WeaponSlot 7, ICD_Revolver, ICD_Beretta, ICD_SawedOff, ICD_Minigun
 	Player.WeaponSlot 9, ICD_Satchel
 	Player.WeaponSlot 0, ICD_FlareWeapon
 
@@ -65,7 +65,7 @@ ACTOR ICD_DoomPlayer : PlayerPawn replaces DoomPlayer
 			Goto Spawn
 		Death.Drowning:
 			PLAY G 4 A_PlaySound("player/death/drowned", CHAN_ITEM|CHAN_UI)
-			PLAY G 4 
+			PLAY G 4
 			PLAY H 8
 			PLAY I 8
 			PLAY J 8

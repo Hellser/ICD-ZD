@@ -51,7 +51,7 @@ ACTOR ICD_BoxOfShells : ICD_Shells replaces ShellBox
 	}
 }
 
-ACTOR ICD_BoxOfShells1 : Shell
+ACTOR ICD_BoxOfShells1 : ICD_Shells
 {
 	Inventory.PickupMessage "$GOTSHELLBOX" // "Picked up a box of shotgun shells."
 	Inventory.PickupFlash "ICD_BoxOfShells2"
@@ -68,7 +68,7 @@ ACTOR ICD_BoxOfShells1 : Shell
 	}
 }
 
-ACTOR ICD_BoxOfShells2 : Shell
+ACTOR ICD_BoxOfShells2 : ICD_Shells
 {
 	Inventory.PickupMessage "$GOTSHELLBOX" // "Picked up a box of shotgun shells."
 	Inventory.PickupFlash "ICD_BoxOfShells3"
@@ -85,7 +85,7 @@ ACTOR ICD_BoxOfShells2 : Shell
 	}
 }
 
-ACTOR ICD_BoxOfShells3 : Shell
+ACTOR ICD_BoxOfShells3 : ICD_Shells
 {
 	Inventory.PickupMessage "$GOTSHELLBOX" // "Picked up a box of shotgun shells."
 	Inventory.PickupFlash "ICD_BoxOfShells4"
@@ -102,7 +102,7 @@ ACTOR ICD_BoxOfShells3 : Shell
 	}
 }
 
-ACTOR ICD_BoxOfShells4 : Shell
+ACTOR ICD_BoxOfShells4 : ICD_Shells
 {
 	Inventory.PickupMessage "$GOTSHELLBOX2" // "Emptied."
 	Inventory.PickupFlash "ICD_BoxOfShellsEmpty"

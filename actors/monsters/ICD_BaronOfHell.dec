@@ -16,40 +16,41 @@ ACTOR ICD_BaronOfHell replaces BaronOfHell
 	Obituary "$OB_BARON"
 	HitObituary "$OB_BARONHIT"
 	BloodColor "DarkGreen"
+	Scale 1.14
 	States
 	{
 		Spawn:
-			BOSS AB 10 A_Look
+			BOSS AA 5 A_Look
 			Loop
 		See:
-				BOSS AABBCCDD 3 A_Chase
-				Loop
+			BOSS AABBCCDD 3 A_Chase
+			Loop
 		Melee:
-				BOSS E 7 A_FaceTarget
-				BOSS F 6 A_FaceTarget
-				BOSS G 6 A_BruisAttack
+			BOSS E 7 A_FaceTarget
+			BOSS F 6 A_FaceTarget
+			BOSS G 6 A_CustomComboAttack("ICD_BaronBall", 32, (10/2 * random(1, 8)), "baron/melee")
 		Missile:
-				BOSS E 8 A_FaceTarget
-				BOSS F 7 A_FaceTarget
-				BOSS G 6 A_BruisAttack
-				Goto See
+			BOSS E 8 A_FaceTarget
+			BOSS F 7 A_FaceTarget
+			BOSS G 6 A_CustomComboAttack("ICD_BaronBall", 32, (10/2 * random(1, 8)), "baron/melee")
+			Goto See
 		Pain:
-				BOSS H 2
-				BOSS H 2 A_Pain
-				Goto See
+			BOSS H 2
+			BOSS H 2 A_Pain
+			Goto See
 		Death:
-				BOSS I 8
-				BOSS J 7 A_Scream
-				BOSS K 7
-				BOSS L 6 A_NoBlocking
-				BOSS M 5
-				BOSS N 4 
-				BOSS O -1 A_BossDeath
-				Stop
+			BOSS I 8
+			BOSS J 7 A_Scream
+			BOSS K 7
+			BOSS L 6 A_NoBlocking
+			BOSS M 5
+			BOSS N 4
+			BOSS O -1 A_BossDeath
+			Stop
 		Raise:
-				BOSS O 8
-				BOSS NMLKJI 8
-				Goto See
+			BOSS O 8
+			BOSS NMLKJI 8
+			Goto See
 	}
 }
 
@@ -61,7 +62,7 @@ ACTOR ICD_BaronBall replaces BaronBall
 	  Height 16
 	  Speed 15
 	  FastSpeed 20
-	  Damage 8
+	  Damage (8/2*random(1,8))
 	  Projectile
 	  +RANDOMIZE
 	  RenderStyle Add

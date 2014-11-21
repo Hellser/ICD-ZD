@@ -72,7 +72,7 @@ ACTOR ICD_ImpBall replaces DoomImpBall
 	Height 8
 	Speed 10
 	FastSpeed 20
-	Damage 3
+	Damage (3/2*random(1,8))
 	Projectile
 	+RANDOMIZE
 	RenderStyle translucent

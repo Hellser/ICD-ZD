@@ -168,3 +168,38 @@ ACTOR ICD_ChainsawSmoke: ICD_GunSmokeBase
 			stop
 	}
 }
+
+/*----------------------------------------
+ LOOK RYAN! TORCH SMOKE
+----------------------------------------*/
+
+ACTOR ICD_FireSmoke4
+{
+	Height 8
+	Radius 8
+	Scale 0.6
+	Speed 0.05
+	Renderstyle Translucent
+	Alpha 0.3
+	Projectile
+	+NOCLIP
+	+NOBLOCKMAP
+	+MISSILE
+	+NOGRAVITY
+	States
+	{
+		Spawn:
+			TNT1 A 0 NoDelay A_Jump(127, "SpawnJump1")
+			PUF5 E 3
+			PUF5 F 3
+			PUF5 G 4
+		SpawnJump1:
+			TNT1 A 0
+			PUF5 IJ 5
+			PUF5 K 6
+			PUF5 LM 6
+			PUF5 NOP 7
+			Stop
+	}
+}
+			

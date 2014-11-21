@@ -65,6 +65,8 @@ weapons/assaultrifle/clipdrop				DSM4OUT
 weapons/assaultrifle/clipin					DSUZI2
 weapons/assaultrifle/grenfire				DSGREN
 
+$pitchshiftrange 2
+
 //Flare
 weapons/flare/flareignite					DSFLARE2
 weapons/flare/flaresoftignite				DSFLARE2
@@ -91,6 +93,7 @@ weapons/minigun/mini5						DSMINI5
 
 //Uzi
 weapons/uzi/fire							DSUZI1
+weapons/uzi/uzi2							DSUZI2
 weapons/uzi/uzi3							DSUZI3
 weapons/uzi/suzi2							DSSUZI2
 weapons/uzi/suzi3							DSSUZI3
@@ -114,6 +117,12 @@ weapons/satchel/satch2						DSSATCH2
 //Beretta
 weapons/beretta/fire						DSBPIST
 weapons/beretta/slide						DSBSLIDE
+
+//Revolver
+weapons/revolver/fire						DSMAGNM
+weapons/revolver/mout						DSMOUT
+weapons/revolver/mload						DSMLOAD
+weapons/revolver/min						DSMIN
 
 
 $volume weapons/flare/flaresoftignite		0.5

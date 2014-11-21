@@ -29,11 +29,12 @@
 #include "actors/weapons/icd_doublebarrel.dec"
 
 //Slot #4 (Sub-Machine Guns)
+#include "actors/weapons/icd_dualuzi.dec"
 #include "actors/weapons/icd_singleuzi.dec"
 
 //Slot #5 (Michael Bay)
 #include "actors/weapons/icd_grenadeweapon.dec"
-#include "actors/weapons/icd_40mm.dec"
+#include "actors/weapons/icd_40mm.dec" // Reload State needs to be fixed something fierce.
 
 //Slot #6 (Rifles)
 #include "actors/weapons/icd_assaultrifle.dec"
@@ -43,6 +44,7 @@
 #include "actors/weapons/icd_sawedoff.dec"
 #include "actors/weapons/icd_minigun.dec"
 #include "actors/weapons/icd_beretta.dec"
+#include "actors/weapons/icd_revolver.dec"
 
 //Slot #9 (Stuff?)
 #include "actors/weapons/icd_satchel.dec"
@@ -77,3 +79,5 @@
 #include "actors/monsters/icd_shotgunguy.dec"
 #include "actors/monsters/icd_pinkydemon.dec"
 #include "actors/monsters/icd_baronofhell.dec"
+#include "actors/monsters/icd_hellknight.dec"
+#include "actors/monsters/icd_cacodemon.dec"
