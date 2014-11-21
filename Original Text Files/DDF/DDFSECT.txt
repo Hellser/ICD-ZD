@@ -1,0 +1,16 @@
+// 
+// ******************************************************
+//    IMMORAL CONDUCT DDF BY CORY WHITTLE
+//	http://www.doomworld.com/immoralconduct
+// ******************************************************
+
+<SECTORS>
+
+[22]
+USE_COLOURMAP=WATER;
+GRAVITY=0.58; 		//default = 8
+FRICTION=0.88; 	//0.95... less = slidey, more = boggy
+DRAG=0.88; 		//the lower, the "stickier" the liquid (default 0.99)
+VISCOSITY=0.7;  	//1.0 = normal, 0.5 = half speed 2.0 = double speed
+SPECIAL=AIRLESS,SWIM,WHOLE_REGION;
+

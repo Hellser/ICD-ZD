@@ -1,0 +1,134 @@
+ACTOR ICD_TranceColumn : ICD_ObjectTemplate replaces TechPillar
+{
+	Radius 16
+	Height 128
+	States
+	{
+		Spawn:
+			ELEC A 310 NoDelay A_PlaySound("world/ambient/tech")
+			ELEC A 1
+			Loop
+	}
+}
+
+ACTOR ICD_Small_Bollard_Lamp replaces Column
+{
+	Radius 16
+	Height 58
+	Health 30
+	Mass 0x7FFFFFFF
+	DeathHeight 58
+	+SOLID
+	+SHOOTABLE
+	+NOBLOOD
+	States
+	{
+		Spawn:
+			COLU A 2 Light("ICD_YellowLamp") Bright
+			COLU A 52 Light("ICD_YellowLamp") Bright A_PlaySound("world/ambient/yellowlamp", CHAN_BODY, 1, 1)
+			COLU A 2 Light("ICD_YellowLamp") Bright
+			Loop
+		Death:
+			TNT1 A 0 A_StopSound(CHAN_BODY)
+			TNT1 A 0 A_PlaySound("world/ambient/bust")
+			TNT1 A 0 A_ChangeFlag("SHOOTABLE", 1)
+			LAMP A 2
+			TNT1 A 0 A_SpawnItemEx("ICD_Lamp_Smoke_Spawn",0,0,46,0,0,0,0,SXF_NOCHECKPOSITION)
+			LAMP A 100 A_Jump(90, "True.Dead")
+			Goto Death+2
+		True.Dead:
+			LAMP A -1
+	}
+}
+
+ACTOR ICD_Small_Tech_Lamp replaces TechLamp2
+{
+	Radius 16
+	Height 58
+	Health 30
+	Mass 0x7FFFFFFF
+	DeathHeight 58
+	+SOLID
+	+SHOOTABLE
+	+NOBLOOD
+	States
+	{
+		Spawn:
+			TLP2 A 2 Light("ICD_TechLamp2") Bright
+			TLP2 A 53 Light("ICD_TechLamp2") Bright A_PlaySound("world/ambient/techlamp2")
+			TLP2 A 2 Light("ICD_TechLamp2") Bright
+			Loop
+		Death:
+			TNT1 A 0 A_StopSound
+			TNT1 A 0 A_PlaySound("world/ambient/bust")
+			TNT1 A 0 A_ChangeFlag("SHOOTABLE", 1)
+			LAMP C 2
+			TNT1 A 0 A_SpawnItemEx("ICD_Lamp_Smoke_Spawn",0,0,52,0,0,0,0,SXF_NOCHECKPOSITION)
+			LAMP C 100 A_Jump(90, "True.Dead")
+			Goto Death+2
+		True.Dead:
+			LAMP C -1
+			Stop
+	}
+}
+
+ACTOR ICD_Tall_Tech_Lamp replaces TechLamp
+{
+	Radius 16
+	Height 78
+	Health 30
+	Mass 0x7FFFFFFF
+	DeathHeight 78
+	+SOLID
+	+SHOOTABLE
+	+NOBLOOD
+	States
+	{
+		Spawn:
+			TLMP A 2 Light("ICD_TechLamp") Bright
+			TLMP A 67 Light("ICD_TechLamp")  Bright A_PlaySound("world/ambient/techlamp")
+			TLMP A 2 Light("ICD_TechLamp")  Bright
+			Loop
+		Death:
+			TNT1 A 0 A_StopSound
+			TNT1 A 0 A_PlaySound("world/ambient/bust")
+			TNT1 A 0 A_ChangeFlag("SHOOTABLE", 1)
+			LAMP B 2
+			TNT1 A 0 A_SpawnItemEx("ICD_Lamp_Smoke_Spawn",0,0,64,0,0,0,0,SXF_NOCHECKPOSITION)
+			LAMP B 100 A_Jump(90, "True.Dead")
+			Goto Death+2
+		True.Dead:
+			LAMP B -1
+			Stop
+	}
+}
+
+ACTOR ICD_Lamp_Smoke_Spawn
+{
+	Radius 13
+	Height 8
+	+NOINTERACTION
+	States
+	{
+		Spawn:
+			SMK2 A 4 NoDelay A_SpawnItemEx("ICD_Sparks",random(-5,5),random(-5,5),random(-5,5),0,0,0,0,SXF_NOCHECKPOSITION)
+			SMK2 BCDE 4
+			Stop
+	}
+}
+
+ACTOR ICD_Sparks
+{
+	Radius 8
+	Height 16
+	+NOINTERACTION
+	States
+	{
+		Spawn:
+			SPUF A 2 Bright
+			SPUF B 2 Bright A_PlaySound("world/ambient/spark")
+			SPUF C 2 Bright A_Explode(20,32)
+			SPUF D 2 Bright
+			Stop
+	}
+}

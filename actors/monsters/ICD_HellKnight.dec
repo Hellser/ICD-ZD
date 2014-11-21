@@ -1,0 +1,77 @@
+ACTOR ICD_HellKnight : ICD_BaronOfHell replaces HellKnight
+{
+	Game Doom
+	SpawnID 113
+	Health 500
+	-BOSSDEATH
+	SeeSound "knight/sight"
+	ActiveSound "knight/active"
+	PainSound "knight/pain"
+	DeathSound "knight/death"
+	HitObituary "$OB_KNIGHTHIT"
+	Obituary "$OB_KNIGHT"
+	States
+	{
+		Spawn:
+			BOS2 AA 5 A_Look
+			Loop
+		See:
+			BOS2 AABBCCDD 3 A_Chase
+			Loop
+		Melee:
+			BOS2 E 6 A_FaceTarget
+			BOS2 F 6 A_FaceTarget
+			BOS2 G 6 A_CustomComboAttack("ICD_HellKnightBall", 32, (10/2 * random(1, 7)), "baron/melee")
+			Goto See
+		Missile:
+			BOS2 E 8 A_FaceTarget
+			BOS2 F 7 A_FaceTarget
+			BOS2 G 6 A_CustomComboAttack("ICD_HellKnightBall", 32, (10/2 * random(1, 7)), "baron/melee")
+			Goto See
+		Pain:
+			BOS2 H 2
+			BOS2 H 2 A_Pain
+			Goto See
+		Death:
+			BOS2 I 8
+			BOS2 J 8 A_Scream
+			BOS2 K 8
+			BOS2 L 8 A_NoBlocking
+			BOS2 MN 8
+			BOS2 O -1
+			Stop
+		Raise:
+			BOS2 O 8
+			BOS2 NMLKJI 8
+			Goto See
+	}
+}
+
+ACTOR ICD_HellKnightBall
+{
+	  Game Doom
+	  SpawnID 154
+	  Radius 6
+	  Height 16
+	  Speed 15
+	  FastSpeed 20
+	  Damage (8/2*random(1,6.75))
+	  Projectile
+	  +RANDOMIZE
+	  RenderStyle Add
+	  Scale 0.8
+	  Alpha 1
+	  SeeSound "baron/attack"
+	  DeathSound "baron/shotx"
+	  Decal "BaronScorch"
+	  States
+	  {
+	  Spawn:
+			BAL7 A 3 Bright
+			BAL7 B 3 Bright A_SpawnItemEx("ICD_BaronBallTrail")
+			Loop
+	  Death:
+			BAL7 CDE 6 Bright
+			Stop
+	  }
+}

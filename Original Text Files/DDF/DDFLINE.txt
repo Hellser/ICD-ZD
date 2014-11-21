@@ -1,0 +1,21 @@
+// 
+// ******************************************************
+//    IMMORAL CONDUCT DDF BY CORY WHITTLE
+//	http://www.doomworld.com/immoralconduct
+// ******************************************************
+
+<LINES>
+
+[2003]
+TYPE=PUSH;
+ACTIVATORS=PLAYER;
+AUTO=TRUE;
+TRANSLUCENCY=40%;
+LINE_EFFECT=BLOCK_SHOTS;
+
+[406]
+TYPE=PUSH;
+ACTIVATORS=PLAYER;
+AUTO=TRUE;
+EXTRAFLOOR_TYPE=LIQUID,SEE_THROUGH,WATER,FLOODER;
+TRANSLUCENCY=50%;

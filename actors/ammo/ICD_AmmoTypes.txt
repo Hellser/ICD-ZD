@@ -1,0 +1,9 @@
+This is to serve as a name guide for all the ammo types in ICD-SE
+
+BULLETS = ICD_Bullets
+SHELLS	= ICD_Shells
+PELLETS = ICD_SatchelAmmo
+ROCKETS = ICD_RocketAmmo
+NAILS 	= ICD_KnifeAmmo
+CELLS 	= ICD_RifleAmmo
+GAS 	= NYI

@@ -1,0 +1,94 @@
+ACTOR ICD_Cacodemon replaces Cacodemon
+{
+	Game Doom
+	SpawnID 19
+	Health 400
+	Radius 31
+	Height 56
+	Mass 400
+	Speed 8
+	PainChance 128
+	Monster
+	+FLOAT
+	+NOGRAVITY
+	SeeSound "caco/sight"
+	PainSound "caco/pain"
+	DeathSound "caco/death"
+	ActiveSound "caco/active"
+	Obituary "$OB_CACO"
+	HitObituary "$OB_CACOHIT"
+	BloodColor "Blue"
+	States
+	{
+		Spawn:
+			HEAD A 10 A_Look
+			Loop
+		See:
+			HEAD A 3 A_Chase
+			Loop
+		Missile:
+			HEAD BC 5 A_FaceTarget
+			HEAD D 5 Bright A_CustomComboAttack("ICD_CacodemonBall", 32, (10 * random(1, 8)))
+			Goto See
+		Pain:
+			HEAD E 3
+			HEAD E 3 A_Pain
+			HEAD F 6
+			Goto See
+		Death:
+			HEAD G 8
+			HEAD H 8 A_Scream
+			HEAD IJ 8
+			HEAD K 8 A_NoBlocking
+			HEAD L -1 A_SetFloorClip
+			Stop
+		Raise:
+			HEAD L 8 A_UnSetFloorClip
+			HEAD KJIHG 8
+			Goto See
+	}
+}
+
+ACTOR ICD_CacodemonBall
+{
+	Height 8
+	Radius 6
+	Damage (6/2*random(1,8))
+	Speed 18
+	FastSpeed 24
+	RenderStyle Add
+	Alpha 1
+	Scale 0.8
+	Projectile
+	SeeSound "caco/attack"
+	DeathSound "caco/shotx"
+	States
+	{
+		Spawn:
+			PLSS AB 3 A_SpawnItemEx("ICD_XPUFF")
+			Loop
+		Death:
+			// Dynamic Light BS here
+			PLSE B 3 Bright // PlaySound
+			PLSE CD 3 Bright
+			PLSE E 2 Bright
+			Stop
+	}
+}
+
+ACTOR ICD_XPUFF
+{
+	Scale 0.25
+	+NOINTERACTION
+	-SOLID
+	Renderstyle Translucent
+	Alpha 0.60
+	States
+	{
+		Spawn:
+			PLSE A 3 Bright
+			PLSE BCD 3 Bright
+			PLSE E 2 Bright
+			Stop
+	}
+}

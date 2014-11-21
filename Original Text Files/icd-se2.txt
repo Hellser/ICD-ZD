@@ -1,0 +1,3434 @@
+Immoral Conduct Special Edition. A massive Doom-themed gameplay add-on for any and all
+Doom, DoomII, and Final Doom levels.
+For EDGE 1.27. May work in future versions of EDGE, but not earlier.
+
+HOW TO PLAY:
+
+GLEDGE32.exe -file icd-se.wad -iwad doom2.wad
+
+For best results, add any extra wads BEFORE icd-se.wad on the above command line.
+For example:
+GLEDGE32.exe -file requiem.wad icd-se.wad
+
+Also works fine with the software render version of EDGE (EDGE32.exe)
+You need an iwad (main wad file) from any retail or shareware Doom game.
+
+You can download EDGE 1.27 at http://edge.sourceforge.net
+
+
+To play the included test level:
+(Don't get too excited, it's just Map01 with stuff in it)
+
+GLEDGE32.exe -file icd-se.wad icd-tst2.wad
+
+
+
+NOTE:
+Sorry this text file is so damn huge. I combined all the documentation into one file,
+as I'm sure people were getting annoyed at the number of files I was including in the
+zips.
+
+
+
+
+
+
+=========================================================================================
+
+:CHANNEL OPEN:
+
+ Immoral Conduct is designed to be played either as is, or with any of your favorite
+ wads. Immoral Conduct works just as well in Doom1 or Doom2, as well as Tnt or Plutonia.
+
+ I recommend trying your luck at the Hell Revealed wads using Immoral Conduct, as well
+ as Memento Mori 1 and 2, Requiem, Invasion 2, or any other level set you enjoy. Also
+ works very well with 2002ado, Darken, Darken2, Icarus, Biowar, Phoenix, Phobos,
+ Eternal Doom, Alien Vendetta, etc.
+ Hell, it works with any Vanilla or "Lite" Boom level or level set.
+
+ NOTE: Obviously works best with levels that DON'T use a lot of replacement sprites,
+       such as Ultdtv.wad or similar. Definitely won't work with existing conversions
+	 like Hacx or Strain, Aliens TC, etc.
+
+
+-----------------------------------------------------------------------------
+
+Immoral Conduct DDF Readme
+
+Filename: icd-se.wad
+
+Version: 1.2 Special Edition #2
+
+Release: #14
+
+Developer: Cory Whittle
+
+E-mail: cwhittle@isn.net
+
+What this file contains:
+-Credits and thanks
+-Permissions
+-Description of Weapons and Items and Characters (and new stuff)
+-Known Bugs
+
+
+-----------------------------------------------------------------------------
+CREDITS AND THANKS:
+
+Huge Props go to the EDGE coders for their fine work on the engine. I wish
+I could be just half as smart as you guys. I hope you don't mind me abusing the
+hell out of your engine... I've done some stuff I bet you never considered possible :)
+
+(Resources)
+ -id Software
+ -Raven Software
+ -3d Realms			  
+ -Monolith Software
+ -Xatrix
+ -Sierra / Valve
+ -Gearbox Software
+ -Redstorm Entertainment
+ -Lobotamy Software
+(Resources, Feedback, Help, Testing, Criticism etc.)
+ -Mark Quinn (resources)
+ -Doyoon Kim (resources)
+ -Transon Lohk (scripting ideas)
+ -Bad Karma / TNT
+ -Mike Gummelt
+ -Sparky (alpha resources)
+ -Bitstate
+ -Oniko (big ddf help)
+ -J. Wendell Davie / Aftershock (inspiration)
+ -Tarin
+ -Katarhyne
+ -Lee Killough (some beta resources)
+ -Fanatic (ddf help)
+ -Tony Lindberg (ideas, testing)
+ -EDGE Team (I annoyed them with bugs and suggestions)
+ -Anyone else in particular I missed
+
+ Massive credits go out to those who helped me with problems I was having with ddf,
+ and who gave me great ideas to work with, not to mention the great feedback!
+
+
+-----------------------------------------------------------------------------
+* Copyright / Permission *
+
+Please do NOT use any part of this package as a base for your own work.
+You'll notice I did extensive modifications to the sprites I used,
+so if you *must* have the same weapon, get the original and use that instead.
+Contact me if you need help with that (I will not do the work for you).
+
+So do NOT extract stuff from icd-ddf.wad;
+However:
+Please DO create levels/wads that are dependent on icd-ddf.wad to run. This
+means as long as you make your wad so that the user has to download icd-ddf.wad
+or icd-se.wad SEPERATELY, I don't mind at all. Just don't redistribute this package
+or anything within. Please.
+
+-----------------------------------------------------------------------------
+
+
+
+
+DESCRIPTION:
+-----------------------------------------------------------------------------
+ -weapon- (map object that gives weapon)
+
+
+WEAPONS:
+
+==Class 1==
+
+ -Knife- (free, backpack, on Space Marine corpses, dropped by troopers)
+Primary Attack: Slice
+Secondary Attack: Throw
+Ammo Type: Knives
+
+ The combat knife is in your inventory from the start, and is a great
+ melee weapon. You can use this with berserk to deliver massive damage.
+ Primary is a fast yet weak attack, yet you can occaisionally use a wide swipe
+ to cause a lot more damage.
+ NOTE: The closer you are to your target, the more damage you'll do.
+ Use the secondary attack to throw the knife in your hand. You can pick up the knife
+ after you've thrown it, if it hit a creature or bounced off a wall. Be careful not
+ to lose a knife by throwing it into an unreachable area! 
+ You can initially carry 5 to a maximum of 10 SPARE knives, and you have one spare 
+ on you at the start. You cannot throw your last remaining knife.
+ TACTICS:
+ If you have a few knives, throw them instead of slashing. If you have to slash,
+ get in, slash, get out, repeat.
+
+-----------------------------------------------------------------------------
+==Class 2==
+
+ -.45 Pistol- (free)
+Primary Attack: Accurate, aimed shot
+Secondary Attack: Less accurate melee shot
+Ammo Type: Bullets
+
+ You start with a pistol, and it's quite a reliable weapon. Decent
+ rate of fire, good power.
+ Holds 12 rounds.
+ TACTICS:
+ Up close or against a group of enemies, let loose with the the secondary
+ attack. If you need to hit an enemy a long ways away, use primary.
+
+ -Pistols x2- (Green Armour)
+Primary Attack: Fire Left - Right
+Secondary Attack: Aimed double shot
+Ammo Type: Bullets
+
+ Double speed, double capacity, but horrible accuracy.
+ Use the alternate attack to fire off a quick double burst. Accurate, good for
+ sniping, but if you need rate of fire, use primary instead.
+ TACTICS:
+ Great for running and gunning. Open fire on groups of enemies for best results.
+ The closer the better, since the left pistol's shot will be very innaccurate.
+
+-----------------------------------------------------------------------------
+==Class 3==
+
+ -Combat Shotgun- (shotgun)
+Primary Attack: Fire
+Secondary Attack: Quick-toss a hand grenade
+Ammo Type: Shells
+
+ Has a high magazine capacity (8 rounds) and is quite powerful.
+ It's good at medium range too. Takes a moderate amount of time to reload.
+ Use the secondary attack to throw a hand grenade if you have any.
+ TACTICS:
+ The closer to the enemy you are, the better. ALWAYS keep an eye on your ammo,
+ having to reload in the middle of a firefight could spell your doom.
+
+ -Upgraded Combat Shotgun- (BFG9000)
+Primary Attack: Fire Slasher round
+Secondary Attack: Launch fragment grenade
+Ammo Type: Flak Shells
+
+ When you find an upgrade kit, your shotgun will be converted to fire 'Slasher' ammo, which
+ are metal slugs that fragment when exiting the gun's barrel - and spray chunks all over.
+ There isn't much that can survive a point blank shot from this. Secondary attack gives the
+ added comfort of a grenade launcher, firing an un-fragmented round which explodes on
+ contact with any surface. As always, be careful, because the flying metal hurts you as
+ well. The downside to upgrading is that you lose the ability to fire normal
+ shotgun shells, but you still have the double barreled and the sawed-off for that.
+ TACTICS:
+ A VERY powerful weapon. Get up close, fire. Use the secondary to clean out a room
+ full of enemies. Remember, the primary fire can be bounced off of floors and walls,
+ so use this to your advantage.
+ As the gun and related ammo is quite heavier, it takes significantly longer to reload
+ or otherwise operate.
+
+ -Double Barreled Shotgun- (Super Shotgun)
+Primary Attack: Right Barrel, Left Barrel
+Secondary Attack: Both Barrels
+Ammo Type: Shells
+
+ An urban weapon, it can be useful due to it's sheer brute force at close range.
+ Utterly useless at long range, so be wise. Can now be fired a single barrel at a time.
+ TACTICS:
+ Use the primary against small enemies, and the secondary at point-blank against large
+ monsters. As stated, the buckshot spread on this gun is very loose, so get in close to
+ your target.
+
+-----------------------------------------------------------------------------
+==Class 4==
+
+ -Uzi Sub-machinegun- (Chaingun)
+Primary Attack: Machine gun fire
+Secondary Attack: Wide 10-shot melee spread
+Ammo Type: Bullets
+
+ The uzi is a fast, albeit in-accurate weapon, best for close to medium range.
+ It would be a lot wiser to use your double pistols if you want rate-of-fire AND power.
+ Has a 30-round magazine.
+ Use the alternate attack if you find yourself cornered. You can tilt the uzi
+ sideways and sweep the room with a horizontal spread of bullets.
+ TACTICS:
+ The spread of the primary fire goes vertically, so this weapon isn't bad at short
+ to medium range. The horizontal spray of the secondary attack is great for dealing
+ with a group of monsters.
+
+ -Uzi x2- (Invulnerability)
+Primary Attack: Machine gun fire
+Secondary Attack: None
+Ammo Type: Bullets
+
+ Again, double everything. Uses up ammo FAST. Use in situations where you need A TON
+ of lead slung towards your target. Be careful though! It takes a while to reload both
+ weapons.
+ TACTICS:
+ None. Spray n Pray. Get in close to rip your enemies to shreds.
+
+-----------------------------------------------------------------------------
+==Class 5==
+
+ -Hand Grenades- (Box of Rockets)
+Primary Attack: Throw
+Secondary Attack: Drop
+Ammo Type: Grenades
+
+ Pull the pin, throw, and TAKE COVER. These grenades spray fragments of metal
+ everywhere, and it hurts to get stung with it. VERY effective room cleaners.
+ TACTICS:
+ Use in small rooms or hallways for best results. Look upwards to throw farther.
+ 
+ -40mm Grenade Launcher- (CELL PACK)
+Primary Attack: Launch a grenade
+Secondary Attack: Launch a gas bomb
+Ammo Type: Grenades
+
+ This modified tear-gas gun shoots explosive projectiles that bounce and
+ explode. Holds five grenades. Be careful the projectile doesn't bounce back at you!
+ Secondary attack costs two grenades, and fires a cannister of very deadly gas.
+ The tear gas will almost instantly kill any creature with a direct hit.
+ Note that the gas will disperse in a spiral pattern for about 12 seconds, and the gas
+ will drift around a room or corridor until it dissipates. Be careful.
+ TACTICS:
+ Again, both modes of this weapon are most effective within closed spaces or
+ hallways. Look upwards to get maximum distance.
+ Both projectiles will explode on contact with a creature/object.
+
+-----------------------------------------------------------------------------
+==Class 6==
+
+ -M-16a1 Assault Rifle- (Rocket Launcher)
+Primary Attack: 3-Shot Burst / full automatic
+Secondary Attack: M203 grenade launcher.
+Ammo Type: Rifle Ammo
+
+ Practically the most useful weapon in the game. It's decently accurate and
+ high-powered, plus has a large magazine (45 rounds), so go nuts!
+ The grenade launcher is loaded SoF2-style, and fires a fast concussion grenade.
+ Not the best explosives to use, but may come in handy. They will explode on contact
+ with anything. The downside is that the m203 takes a while to reload.
+ TACTICS:
+ Concussion grenades are most effective against smaller enemies. The primary fire
+ is useful against pretty much anything. Against a group of weaker enemies, fire
+ a grenade and save a ton of bullets.
+
+ -M-211 SemiAutomatic Gas-Operated Infantry Combat Weapon (Sig-Cow)- (Plasma Gun)
+Primary Attack: Very Accurate High powered shot.
+Secondary Attack: Stab with Bayonet
+Ammo Type: Rifle Ammo
+
+ This old-fashioned rifle may be dated, but still kicks some. Not as fast
+ as your M-16, but very powerful and accurate. Has a 20 shot clip, and a sharp
+ bayonet attachment, which is handy when you don't need to waste ammo or don't have
+ time to switch guns.
+ NOTE: The closer you are to your target, the more damage you'll do with the bayonet!
+ TACTICS:
+ A good all around weapon. Use the bayonet against close-up enemies, preferrably
+ those without a range attack.
+
+-----------------------------------------------------------------------------
+==Class 7==
+
+ -MiniGun- (#2999 or dropped by Chaingun Guy)
+Primary Attack: Controlled Fire
+Secondary Attack: Rapid Fire
+Ammo Type: Rifle Ammo
+
+ You only get this weapon from fallen Commandos, and it uses rifle ammo. Good,
+ but not the most practical weapon in the game. Uses 100-round belts. Secondary fire allows
+ you to fire quicker bursts, however VERY wildly. It's best to use secondary fire
+ in close quarters battle, whereas primary is better for targeting single enemies.
+ TACTICS:
+ See Uzi x2.
+
+ -Sawed-off Shotgun- (#4444 or dropped by Shotgun Guy)
+Primary Attack: Fire
+Secondary Attack: Quick-toss a marking flare
+Ammo Type: Shells
+
+ This is an old-style wood trimmed shotgun, used extensively by the former
+ soldiers (zombies). It's short barrel makes it quite less powerful than your Combat
+ Shotgun, but more accurate than your double barreled. One of these will do until you find
+ something better, but becomes obsolete once you find a riot gun.
+ Has a six round magazine. You may find this handy because of it's shorter reload time and
+ more predictable buckshot spread.
+ TACTICS:
+ See Shotgun. This weapon has a more horizontal spread pattern, which makes it good
+ for tight groups of enemies. It's thick steel and wood construction make it quite heavy
+ to operate, even with the missing barrel.
+ This weapon is great for hunting in dark corridors - you can easily toss a marking flare
+ without having to put away the weapon.
+
+ -.357 Magnum Pistol- (#4446 or on Space Marine Corpses (extremely rare))
+Primary Attack: Fire
+Secondary Attack: None
+Ammo Type: Bullets
+
+ Select few officers carry these as sidearms, so if you're lucky, you may be able to
+ find one on a corpse. This gun has a pretty stainless-steel finish, but it's all
+ business none-the-less. Almost as powerful as your Sig-Cow Rifle, yet able to fire
+ at a quicker rate. It has a very small capacity (6 rounds), so watch yourself.
+ TACTICS:
+ Aim and fire.
+
+ -9mm Automatic Pistol- (#4445 or on Trooper Corpses (extremely rare))
+Primary Attack: Fire
+Secondary Attack: Burst Fire
+Ammo Type: Bullets
+
+ The old standard-issue sidearms from before the invasion. While a small and lightweight
+ pistol, these tend to have little stopping power. On the plus side though, it's
+ construction allows it to be fired quite rapidly and accurately. Marvel over it's sexy
+ matte black finish... oooh!
+ Use the secondary attack to shoot a very quick burst of 3 shots.
+ TACTICS:
+ This weapon tends to spread it's fire vertically, plus it's only slightly more powerful
+ than the Uzi. It's rate-of-fire and magazine capacity is superior to the .45 however.
+
+-----------------------------------------------------------------------------
+==Class 8==
+
+ -Sentry Turret- (comes in backpack)
+Primary: Set up a turret
+Secondary: Deploy MEDIBOT(TM)
+Ammo Type: Turrets
+
+ This will throw a turret on the ground, which will then deploy and search for targets
+ other than yourself. Beware, it doesn't move, and can easily be disabled, but it 
+ does have great stopping power. Has a somewhat limited range.
+ Note that it will fire shotgun blasts up close, so try to use that to your advantage.
+ 
+ Use the alternate attack to build and deploy a prototype MEDIBOT(TM).
+ The MEDIBOT(TM) is a mobile sentry turret with 2 distinct features. It uses patented
+ ARCHVILE TECHNOLOGY gathered by UAC scientists. This means the bot will ressurect
+ dead monsters, which will ally with the bot to kill hostiles. Be aware, the allied
+ monsters only obey the MEDIBOT(TM) and not other Space Marines (you).
+ Secondly, you can use the detonator supplied with UAC DETPAK SATCHELS(R) to instruct
+ the MEDIBOT(TM) to spawn a fresh medical kit at it's current position. The downside
+ to this is that the bot will consume all it's power doing so, and will explode upon
+ completing the task.
+ The MEDIBOT(TM) is equipped with a single machine gun, and it uses a very unstable
+ prototype power source. Don't be surprised if the bot explodes for no reason!
+ TACTICS:
+ *Sentry Turret: Place around a corner, and lure enemies into it's line-of-fire. This
+ works especially well against larger monsters, since the turret will fire a barrage
+ of buckshot at close enemies rather than weaker bullets at far away enemies.
+ *Medibot: Once the medibot has finished killing targets, use your detonator (9) to
+ make it spawn a medikit. Chances are the medibot will explode soon anyway, might as
+ well get some health in case you need it.
+ Both: Keep in mind you can only carry ONE of these on you at any time. I recommend
+ setting turrets up IMMEDIATELY if you have the detonator (9), this way once you get
+ a new backpack, you won't be losing a turret, as you can disable the previous one
+ and retrieve it later.
+
+ -Gas Powered Chainsaw- (chainsaw)
+Primary: Thrust 'n Chop
+Secondary: Shut it off
+
+ A classic weapon, this one is a slightly enhanced version of the Doom
+ chainsaw. You need to pull start this one, and refuel it occaisionally. A little more
+ powerful and quicker than it's original counterpart, albeit a bit rusty and dirty
+ from previous attacks...
+ If the idle noise bothers you, hold the secondary fire button to kill the engine. When
+ you let go of the button, you will start the chainsaw up again.
+ TACTICS:
+ Tough to use against Spectres. All other enemies are fair game.
+
+-----------------------------------------------------------------------------
+==Class 9==
+
+ -Satchel Charges:- (rocket)
+Primary Attack: Toss a Proximity Charge
+Secondary Attack: Force Detonate an Active Charge
+Ammo Type: Charges
+
+ Activate, throw, and watch the fireworks. These new and improved UAC DETPAK SATCHELS(R)
+ are fully functional remote bombs / proximity mines.
+ They WILL DETONATE if you get too close to an armed one, so watch out!
+ Also, you CANNOT throw them directly at an enemy without them exploding! 
+ A new addition, you can now detonate the satchels ANYWHERE on the current area,
+ regardless of line-of-sight.
+ There are still no safeties applied to armed satchels, so stay clear once you've
+ armed them!
+ TACTICS:
+ Place these near un-provoked enemies, hide and detonate. Or, place them where you
+ know enemies will walk into one. Remember, don't block your path with a satchel! 
+
+ -Sentry Bot Remote- (comes with satchels)
+Primary Attack: Undeploy any active sentry turrets
+Secondary Attack: Cause MEDIBOT(TM) to spawn a medkit
+
+ If there are MEDIBOT(TM) or Sentry turrets deployed somewhere on the current level,
+ use the alternate attack of this detonator to cause the MEDIBOT(TM) to spawn a medikit.
+ you'll hear the bot take 5 seconds to recharge, then your HUD will display an icon
+ telling you the medikit is ready. Unfortunately, the MEDIBOT(TM)'s unstable powersource
+ will likely overload during this procedure, causing the bot to explode.
+ Also, the primary attack will cause any active Sentry Turrets to deactivate, so you
+ can pick it up and move it elsewhere.
+ TACTICS:
+ See Sentry Turret
+ 
+-----------------------------------------------------------------------------
+==Class 0==
+
+ -Silenced .45 Pistol- (free)
+Primary Attack: Accurate aimed shots
+Secondary Attack: Quick un-aimed shots
+Ammo Type: Bullets
+
+ Adding a silencer makes you quite stealthy. Monsters cannot hear you at all.
+ Great for those encounters where you don't want / can't afford to alert all the
+ surrounding baddies. This allows you to deal with one monster at a time.
+ Nicely accurate too, so you can snipe with it if neccessary.
+ TACTICS:
+ If you prefer the "silent but deadly" approach, use this instead of the normal
+ pistol. Great for ambushes. Use the secondary fire to quickly belt off as many shots
+ as you can (for those tight moments).
+
+ -Marking Flares- (free)
+Primary: Light and Throw a flare
+Secondary: None
+Ammo Type: Bullets
+
+ These are bright, and emit a column of smoke, as well as a hissing noise, making them
+ great for marking your path in unfamiliar territory. The flares have a life of about
+ 30 minutes, so you can take your time. Also can be used with GLEDGE and dynamic
+ lighting to brighten your area.
+ Try not to step on a lit flare, as stated before, they burn hot.
+ Sacrifice a bullet every time you use a flare (gamism).
+ TACTICS:
+ Use in a dark room to light your path.
+
+
+
+
+
+-----------------------------------------------------------------------------
+AMMO TYPES:
+
+ammo : map object that gives ammo
+(* = not displayed on the status bar)
+ 
+Bullets : clip, box of ammo, dropped by troopers and dead troopers, dead players
+Shells : shells, box of shells, dropped by dead sergeants
+Grenades : box of rockets
+Rifle Ammo : cell, box of ammo
+*Flak Shells : Upgrade Kit, Invisibility Sphere
+*Turrets : Backpack only
+*Satchel Charges : Rocket
+*Knives : Backpack, dropped by dead players, dropped by troopers (both quite random)
+
+
+-----------------------------------------------------------------------------
+NEW / MODIFIED ITEMS:
+
+
+-Large Medikit: (soul sphere)
+ Large medikits give you 75% health, up to a max. of 150% (in increments of 15)
+ What you don't use, you can retrieve later.
+
+-Health and Armor Bonuses:
+ Give you 2% of each bonus respectively
+
+-Armor:
+ All in-game armor is of the same type, so you can add on to previous armour
+ jackets to a maximum of 200% (does not apply to IDFA armour)
+
+-Box of shells:
+ Gives you 16 rounds (in increments of 4)
+ Again, if you don't use the entire box, come back later to retrieve.
+
+-Berserk Pack:
+ Heals you 100% up to a max. of 200%.
+
+-Combat Pack (backpack)
+ Contains 1 bullet clip, 4 shells, 1 rifle clip, 1 knife, and increases your
+ carrying capacity as well as giving a sentry turret kit, and a 50% armor jacket.
+
+
+
+-----------------------------------------------------------------------------
+NEW / MODIFIED CHARACTERS:
+
+Our Hero:
+ You've learned never to come to these demon infested spaceports and moonbases
+ without some protection. Your new UAC Space Marine Uniform comes equipped with
+ low-level armour plating (30%).
+ Your Heads Up Display Helmet (TM) has been retro-fitted with a new UAC MONSTER
+ DETECTION GRID (TM,(C)), which informs you of which monster species have been 
+ eradicated in a level, also it shows MEDIBOT(TM) status and displays which monsters
+ are NOT on any given level.
+
+Wolf SS:
+ These guys hold uzis now. Get them for your own use! Spot the irony of Nazi soldiers
+ using Jewish weapons! Hoorj! Wait for him to reload his gun, then move in for the kill.
+
+Lost Soul:
+ These annoying guys are now able to make themselves invisible, and they look different
+ now too.
+
+Other Enemies:
+-Zombies now periodically reload their weapons... a good opportunity to strike them.
+-Helper bots also reload.. cover them!
+-Imps have loosened their tolerance on each other and will retaliate if provoked.
+-Barons of Hell have developed a distaste for their weaker cousins the Hell Knights.
+-Most enemies have undergone a growth spurt, honing their attack skills and raising
+  their stamina. Most monsters are prone to attack more frequently as well.
+-The Spider Mastermind got tired of playing second fiddle to the superior Cyberdemon,
+  so it raised the protective abilities of it's platform body.
+-Cyberdemons and Masterminds will attack their brethren if provoked.
+-Don't approach a Mastermind or a Cyberdemon!!! They'll crush you or swat at you up close!
+-Spectres and Demons will gladly chow down on each other given the chance.
+-Pretty much all monsters have evolved gretter strength or tougher attacks. Be careful.
+
+New Enemies:
+
+NOTE:
+  These enhanced zombies only appear in DOOM II or FINAL DOOM. The game uses the
+  HEAVY_WEAPON_DUDE to spawn either a chaingun guy (normal) or one of the following
+  zombies:
+NOTE2:
+  These zombies can be placed manually on a map via their (mobj #). If you want these
+  guys in Doom 1, you'll have to place them manually.
+ 
+Enhanced Trooper (3042):
+ Enhanced troopers can be seen ready to fire at all times. Listen for their tell-tale
+ grunt/yell before they open fire. Be careful, they are armed with full-auto uzis and
+ can mow you down very quickly.
+ WARNING: They have been known to suicide by dropping a live grenade at their feet.
+
+Enhanced Sergeant (3043):
+ Enhanced Shotgun Sergeants carry supershotguns and open up with both barrels. Has
+ a characteristic scream before attacking, and a long reload time... use this wisely.
+
+Enhanced Space Marine Zombie (3044):
+ Listen Soldier.. our own boys are getting reworked in there, so watch out. Zombie
+ Marines typically lose their helmets, so be on the look out. They fire M16s usually,
+ but they have a cache of grenades on them too. We've had reports of zombies dropping
+ grenades and running away, but sometimes they may pull the pin just before they die,
+ leaving you a nasty farewell present.
+
+Chainsaw Space Marine Zombie (3046):
+ More than one Marine has discovered that chainsaws make good weapons... unfortunately,
+ most get reworked. These guys are pretty easy to avoid, but don't let them get anywhere
+ near you! They can cause massive trauma within seconds! They wear some hefty armor too.
+
+
+
+Friendlies:
+
+NOTE: 
+  Don't expect these guys to do all the work for you. They aren't very bright. The best
+  idea is to just fight like normal, and chances are the nearest helper will join you.
+  You can tell who's who by the weapon they carry.
+NOTE2:
+  In Doom II, putting a MEGASPHERE on your map will randomly spawn one of the following.
+  Also, by default, CO-OP PLAYER SPOT #4 also randomly spawns one, although not all
+  the time.
+  To disable the CO-OP spawner, open the DDFTHING lump, scroll to the bottom, and remove
+  or comment out (//) the entire entry titled: [COOP_HELPER_SPAWNER:4]
+NOTE3:
+  These helpers can be placed manually on a map via their (mobj #).
+PROTIP:
+  If you want a helper to follow you, hit them with a pistol or uzi shot (or anything
+  weak). Don't over-do it though, or they'll attack you!
+
+*Friendly Space Marine Corporal (3048):
+ Armed with an Infantry Rifle, she will help out too. A great team-mate.
+ When she gets in close, she'll use her bayonet. Be sure to cover her while she reloads.
+
+*Friendly Space Marine Private (3000):
+ Armed with a supershotgun, these guys will help out until they die, or unfortunately,
+ give up.. the suicide rate for new recruits is on the rise it seems.
+
+*Friendly Space Marine Lieutenant (3045):
+ These fellows watch too many action movies. Their weapon(s) of choice are 2 .45 pistols,
+ one in each hand. 
+
+*Friendly Space Marine Sergeant (3041):
+ This guy will help you with his M-16. Keep him protected and he'll do your
+ dirty work with ease.
+
+
+
+-----------------------------------------------------------------------------
+LEVEL DESIGN STUFF:
+
+
+Included with this release is a sample map. I've included some modified sector types
+and line types for use in a custom map:
+
+-Line Type 2003:
+ -Unbreakable transparent (glass). The middle/normal texture on this line will
+  become 50% translucent and will block projectiles and shots. Explosion damage will still
+  get through though.
+
+-Deep Swimmable Water (Line Type 406, Sector Type 22)
+ -Tag your real sector to a dummy sector (Type 22) with Line Type 406 to achieve deep
+  water. Your dummy sector's floor/ceiling controls the surface of the water, so it's
+  best to make them the same value.
+ -TIP: Don't make the water's surface too far below the ground, as it will become hard
+  for the player to jump out of the water.
+ -PROTIP: Your air capacity is ~25 seconds, and it hurts like a bastard to choke. Use
+  Mlook + jump to quickly swim to the surface for a breath.
+ -PROTIP2: Binding "MOVE UP" and "JUMP" to the same key may be useful, but it can cause
+  you to rocket out of the water if you try too hard. 
+
+
+
+-----------------------------------------------------------------------------
+KNOWN BUGS:
+
+-The Box of Shotgun Shells and Big Medikit have anomalies when respawning
+ items is turned on: If you only partially use either one, it will still respawn...
+ no big deal really. 
+
+-Projectiles CAN be absorbed into walls / other structures if you try hard enough.
+ This applies to weapon effects such as sparks / shells / smoke etc, or other
+ important projectiles like turrets, satchels, grenades and whatnot.
+
+-I upped the hitpoints on some monsters, so regular Doom or Doom2 traps may not be as
+ effective. Case in point: the crusher in map06 of Doom2 takes a lot longer to
+ kill the spider mastermind (if at all). Unfortunately the crusher will stop in it's
+ down position if the creature isn't killed (same with yellow key crusher on e2m5)
+
+-The Turret weapon remote (weapon #9) uses a custom crosshair. 
+ At times, especially after a load game, this will appear far too low on the screen.
+
+-The m203 (grenade launcher on the M16) will reload even if you have no ammo left.
+ It may be a bug with EDGE's SEC_CHECKRELOAD codepointer, or maybe not.
+
+-If you're fast enough, you may be able to cause a dying Sentry Turret to undeploy
+ (using the #9 detonator). This isn't really an issue, but more of a feature.
+ This also applies to the MEDIBOT.
+
+-You can skip the reload sequences of some weapons if you try to select another weapon
+ right before the sequence begins. This is useful for weapons like the Shotguns,
+ which take a long time to reload. A good tip for a heated firefight is to wait until
+ you fire your last round, then hit the button for another weapon. This will skip the
+ reload and switch to a full weapon.
+
+-If you IDKFA or IDFA you won't be able to use all the weapons, since some upgrade others,
+ and won't be available. Also, ID(K)FA gives a different armor type than actual armor
+ pickups, so that is an issue as well.
+
+-If a map has thing #0 on it (unlikely but possible), it will be replaced by a spider bot..
+ not sure why, but count yourself lucky... previous versions spawned a huge explosion
+ (with flak shards) as thing #0.  Weird, eh???
+ I'm not sure why you'd want to place thing #0 on a map... but INVASIO2.wad Map06 is
+ an example.
+
+-For some reason falling damage applies to you if you hit the bottom of a swimmable
+ water area. Also DON'T CROUCH while submerged, or great pain will ensue. The only
+ way to fix this is to remove falling damage altogether, but I don't want to do that.
+
+-If you're drowing close to the surface of water, your air bubbles may escape the surface
+ and float up through the air... kinda cartoonish, but Duke3d did the same :) 
+
+
+
+
+
+:TRANSMISSION ENDS:
+
+
+=========================================================================================
+Immoral Conduct DDF build history
+
+
+Began May 25, 2000
+Version 0.1 released May 27, 2000
+Version 0.2 released June 1, 2000
+Version 0.3 released June 7, 2000
+Version 0.4 released June 18, 2000
+Version 0.5 released June 25, 2000
+Version 0.6 released July 14, 2000
+Version 0.7 released August 28, 2000
+Version 0.8 released December 5, 2000
+Version 0.9 released March 16, 2001
+Version 0.9b released May 18, 2001
+Version 0.9c released August 25, 2001
+Version 1.0 released November 15, 2001
+Version 1.1 released May 1, 2002 (Special Edition)
+
+
+May 25, 2000
+-Began converting the dehacked version into the ddf version
+
+May 27, 2000
+-released the preliminary version
+
+June 1, 2000
+-released a further tweaked version
+
+June 19, 2000
+-edge 1.24 is released
+-need to rename the mod, as there is already an Action Doom, and to
+ avoid copyright issues
+-changed many sounds, (pistol clip in, m4 clip in, sniper fire, all 3 magnum
+ revolver sounds, minigun fire, NV goggles, dsclick, grenade launcher reload)
+-added all SSG frames for compatibility with Ultimate Doom
+-added alternate pistol sounds (ds1911, ds9mm, dspistol)
+-fixed things.ddf, where double uzi's would not let you use only one.. obviously!!
+-fixed things.ddf, where long sounds had been replaced with shorter ones
+ to avoid crashing v1.23
+-made cyberdemon attack a lot harder, with extra explosive missiles (evil grin)
+-toned down the guns a little.. they were way too powerful
+-toned down zombie attacks too... an accurate zombie???
+-made sniper rifle come with 5 rounds instead of 10
+-made sniper rifle not automatic
+
+June 20, 2000
+-made akimbo pistol attack more appropriate (less accurate)
+-tweaked player attacks even more (they're ALL tweaked now)
+
+June 21, 2000
+-added a bunch of new monster sounds, mostly from Doom64
+-adjusted some monster attacks and translucency
+-changed the Cacodemon Lightning ball into one that looks much much cooler
+-made knife attack a little more believable (a short pause between left and
+ right swipe attacks)
+
+June 22, 2000
+-Fixed up some stuff in the Dehacked versions, namely replacing the ugly
+ hand-cannon and making the kick more like the one in the ddf version
+ Contemplated replacing the sword with the knife, but... nah!
+
+June 23, 2000
+-Got some great ideas looking at the ddf files for the QDoom demo..
+-made knife attacks random left/right
+-made shells fade away rather than dissappear suddenly
+-hehehehe.. go gib an imp!
+
+June 24, 2000
+-tweaked imp gibbing a whole lot
+
+June 25, 2000
+-added more sounds
+-added sawed-off shotgun
+-moved the assault rifle a little to the right
+-made barrel death randomly spawn explosion
+-version 0.5 released
+
+June 26, 2000
+-started work on two tactical weapons (single player), namely
+ the Sentry Turret and Proximity Charge
+-finished the art, sounds, and coding of the sentry turret
+ You get one in a backpack, it costs you 5 grenades, and it's in
+ weapon slot 8.
+-started graphic, sound and coding of the Prox Charge
+ works great, but ignores me...
+
+June 27, 2000
+-did a little more work on the proximity charges, still don't work
+ exactly like I want, but they will do.
+-made double pistols NOT fire both if you don't want, so you can shoot
+ with the left, and when you fire later, it will come from the right..
+-fixed weapons firing one more time when new ammo is picked up, like if
+ your shotgun runs dry on the eighth round, and later you pick up more ammo,
+ when you try to shoot it will reload first (rather than firing a shot, then reloading)
+ It's one step closer to realism, at least!
+-reversed Hand-cannon attacks, so secondary=both barrels, primary=right/left
+ more like 'Blood' I guess.
+-tweaked shotgun reloads a little more, so it checks BEFORE you fire rather than
+ after... I like facing down a Baron of Hell, ready my riot gun, <CLICK!!!>.. crap!
+-fiddled with demon and spectre, made spectre bleed appropriately
+
+June 28, 2000
+-did more reload fixing
+-certain user-levels are impossible with this mod, so I gave the player two
+ extra clips at start
+-fixed "dead lost soul" bug, it's now an explosion like normal
+
+June 29, 2000
+-various tiny little tweaks
+-added left/right punch attack, yet to decide on placement, although you automatically
+ select this when you are berserk??
+-adjusted bullet weapon monsters's attack ranges
+-made kick distort view a little
+
+June 30, 2000
+-gave sniper-rifle full zoom, and M16 partial zoom and no others can zoom, 
+ (only if levels.ddf has "LIMIT_ZOOM" special)
+
+July 1, 2000
+-added some more frames to the Uzi reloads - much better now, but longer to reload,    especially akimbo!
+-since shotgun sargeants no longer snipe, I removed extra clips at start
+-put together another shotgun skin, the SPAS-12, VERY tempted to make it a permanent
+ replacement!
+
+July 2, 2000
+-made grenade rounds secondary attack of the shotgun... an all-purpose assault weapon!
+
+July 3, 2000
+-made lost souls painful upon death, so no more close combat with those!
+-Added alternate mode for the shotgun - flak rounds! Not in-game yet (you have to cheat)
+
+July 4, 2000
+-Made Spas-12 permanent replacement for the black generic shotgun.. sorry folks.
+-Made an ALL NEW weapons system, broken into classes (see icd-ddf.txt)
+-gave hand-cannon it's old sound (other sound is still in the wad)
+-removed kick attack from knife... it doesn't fit in single player.
+
+July 5, 2000
+-Started refining:
+-Major tweaks to:
+ Shotgun - made muzzle flash, better reload animation, firing animation, no reload eject
+ Assault Rifle - better firing animation, FIXED firing problem, better now.
+ Akimbo Pistols - fixed very choppy reload
+-Slasher Upgrade replaces Cell Pack, and REPLACES shotgun weapon with the same thing
+ but with slasher rounds as secondary attack rather than grenades, and automatic
+ rather than pump action.
+-Spider Mastermind drops rifle ammo when killed
+-'box o' ammo' gives bullets and a few rifle ammo
+-made shotguns reload speeds random (random pauses reaching for shells)
+-BACKUP
+
+July 7, 2000
+-better sounds for the sawed off shotgun.. the old ones were very annoying
+-quieted the spent cartridges sounds
+-made blood stain the ground (thanks again, QDoom!) (idea from Nightmare Squad)	
+ (sprites from Legacy)
+
+July 9, 2000
+-made barrel death randomly spawn flames (rare)
+
+July 11, 2000
+-made a better pistol icon sprite
+-BACKUP
+ 
+July 12, 2000
+-made pistol and uzi casings much more random (fly in different directions)
+-fixed cacodemon blood puddles (too dark)
+-fixed baron/hell knight blood (too bright)
+-added orange blood for demon (how did I get along before??)
+-fixed fire (too translucent)
+-suddenly realized I can't leave good enough alone... I h8 being a perfectionist
+-BACKUP
+
+July 13, 2000
+-for some reason, added a master keycard, that allows access to all locked (keycard) doors
+-had some problems with imp gibs crashing the game, so I had to go back to an
+ archived version from yesterday (ALWAYS BACK-UP PEOPLE!!!)
+-removed master keycard (due to back-up)
+-made hand cannon virtually perfect
+-made imp gibs fade away after a while
+
+July 14, 2000
+-Version 0.6 released
+
+July 17, 2000
+-added a cleaner version of the Shadow Warrior Explosion (with more frames)
+
+July 18, 2000
+-added secondary gas bomb attack to grenade launcher (had to borrow sprite from
+ AliensTC)
+-finished up coding the gas bomb. Looks wicked! Uses two grenade ammo.
+
+July 19, 2000
+-tried fixing the grenade class switching, but no luck - all 3 weapons *are*
+ selectable though!
+
+July 22, 2000
+-added different modes to the satchel charges, proximity and detonation/shootable
+-also made the sprites more efficient
+-fixed some bugs with the proximity charge
+
+July 23, 2000
+-fixed some problems I had with 40mm not selecting. It's still difficult to
+ select between the explosives, but it is possible.
+ May go with a whole new priority system.
+-The uzi's were pretty useless, so I made them a bit more accurate.
+-whipped up some pretty kick-ass sprites for an m203 grenade launcher,
+ so I put it in... this does not make any other grenade obsolete, though....
+ read the docs!
+-fixed a bunch of stuff mainly involving the strength of the gas bomb
+-removed the laser site from the m16.
+-BACKUP
+
+July 24, 2000
+-made some changes to the blood splats, so there's only one puddle instead of three
+-added another explosion, cause the old one was getting repetative
+-added three new explosion sounds (from half-life)
+-fiddled around with the placement of certain explosions
+
+July 25, 2000
+-12-shot shotgun shells were pretty generous, so I made them more realistic 9-shot
+ don't worry, the shotguns are still quite powerful!
+-got another explosion sound for the m203 (from kingpin)
+-removed the cyberdemon's aiming skills... it was too hard!!
+-added a crappy yet effective fragmentation effect to the hand grenades
+ hopefully someone else will be able to find a better way...?
+-BACKUP
+
+July 26, 2000
+-Added another weapon, the OICW Mark II (with sprites originally by Stephen Browning)
+ About a whole day's work, doing all the sprite modifying, and ddf coding.
+ Read the docs for more info. (Thanks again, Oniko, I used a lot of your ideas!)
+
+July 27, 2000
+-Made the OICW a new thing type, so it will only appear in custom levels. I also
+ tested placing a turret and explosion on a map, and both worked.
+-BACKUP
+
+July 28, 2000
+-made the female helper marine carry an OICW, and she fires it in Mode 1.
+-made OICW mode 1 a little more powerful
+-added muzzle flashes for modes 2 and 4
+-added secondary attack to OICW mode 3
+-made fire (barrels, and laser) randomly last anywhere from forever to a few seconds...
+-added secondary attack to OICW mode 1
+
+July 30, 2000
+-just found out NOW that an attack can have a spare attack... dammit
+ Also, if you do this: ALTERVISIBILITY:#### on a frame with a long duration (100) that
+ frame will slowly, evenly fade out of existence!
+-made fading crap more efficient
+-added bfg attack to OICW mode 4
+
+July 31, 2000
+-Added a chainsaw, a bit better than the original one. (not in-game)
+ IMHO, this chainsaw is damn nifty... look for it in a future project by me.
+-Grrr.... proximity charges are being a bitch and not selecting under the idfa cheat!!!
+ So are a few others: Silenced pistol, upgraded shotgun...   I guess you'll just
+ have to play the game if you want to see all the weapons..
+-Removed compensator holes from pistol silencer
+-Silenced pistol replaces non-silenced when aquired (may be temporary)
+-Fixed up SMOK entries (they now float properly)
+
+August 1, 2000
+-removed FACE_TARGET from zombie attacks, so now they aren't perfectly accurate
+-did a bunch of miscellaneous tweaks to the chainsaw, and added a secondary function.
+-worked on fixing up the auto-pistol from DC2
+
+August 2, 2000
+-did a small test: if you use the chainsaw exclusively, and got 100% kills, you'd be
+ on map04 of Doom2 (UV) before you had to refuel
+-made it so certain sounds can only be heard within a specific distance (casings, silencer)
+-finished up the sprites for the autopistol, and put in in the mod.. man its fast!
+-Put in some marking flares.. in the tools section (sprites from AliensDoom3 beta)
+-made the minigun's secondary fire more useful
+-now the explosive charges (both) won't select!!! I think it has to do with the fact that
+ there is way too many weapons???? Come on... only 28! I think edge could use a 
+ prev/next weapon button that will cycle through ALL aquired entries in weapons.ddf
+-BACKUP
+
+August 3, 2000
+-tried messing around with a flashlight... worked okay, but not great
+-to ease simplicity, combined both proximity and remote charges... now 40mm won't select
+ under idfa cheat!!
+-added 40-some new quit messages... try and guess the sources!
+-added shortcut keys to godmode (g) and night vision (n)
+
+August 4, 2000
+-tried making the casings do a random death (instead of always on their side) but it
+ didn't work... I know it can be done.. 
+-marking flares no longer select under the idfa cheat
+-added laser sight to autopistol (extremely buggy - wakes up monsters, pisses off helpers)
+-fixed hands for turret launcher
+-made grenades a little less easy to throw...
+
+August 5, 2000
+-BACKUP
+
+August 7, 2000
+-3 days... am I losing interest? No, just working on two "other" projects of mine...
+-made muzzle flash for m203
+-gave shotgun reload 1 more frame, so you actually push the shell into the magazine
+
+August 12, 2000
+-added more reload frames for the M16
+-added a skill selection graphic.. so I was bored okay?
+-tried an explosion (for the m203) from hexen.. no luck..
+-now that I'm well under way with another project, I can remove the weapons from
+ this one that were just tests
+
+August 20, 2000
+-added a fuck-load (2 words??) of crosshairs.. now I know why I haven't done it thus far:
+ it looks like shit. Oh well. I wish they would be scaled down like zdoom's crosshairs,
+ but no. Edge seems to not want to display them properly, so screw it. They're there,
+ like 'em or not.
+-the lack of work? when my other project gets released, look at the build history, and
+ you'll find out why!
+-I still can't understand why you can't select some guns when you have them all!
+ The only weapons that have any priority are the ones that replace the default doom
+ slots, so logic would dictate, that I should be able to easily switch between all
+ the others, as they all have -1 priority, right?
+
+August 21, 2000
+-started re-doing the crappy sniper rifle sprites. In retrospect, I should have left well
+ enough alone, as converting ~15 frames from 3d to sprites is a massive Pain in the Ass...
+ Well, at least it will have reload frames now, instead of that gay goldeneye shit.
+-okay.. finished with the sniper rifle. It was about 6:00pm when I started, and now it's
+ 1:00am, and I had supper in there as well. So I just put in about 6 hours of work!
+ Anyway, the gun looks MUCH MUCH better now! I must have used a different technique 
+ when I did the old sprites, but these ones look like they should - a big friggin
+ rifle! Too bad the doom palette has very little green... oh well, just pretend its
+ camouflage!
+
+August 22, 2000
+-did quite a few misc. adjustments - Added a better icon for the sniper rifle,
+ changed the secondary attack of the unsilenced single pistol, made the sniper rifle's
+ attack far less extreme (more or less Oniko Hakubi's armor piercing effect), 
+ made the 'other' shotguns (besides the combat shotgun) a lot more useful.
+
+August 23, 2000
+-added a crappy 8-frame explosion from Quake2
+-changed the documentation to the standard cdrom.com template
+
+August 24, 2000
+-added sort of a ricochet effect to the magnum revolver.. shooting it directly into a wall
+ at point blank isn't a good idea
+-cleaned 8 megs of wasted space from the wad!
+-BACKUP (?)
+
+August 27, 2000
+-decided to play around with the sprite_scale stuff.. I think I went a bit overboard!!!
+ Tons of stuff is now re-sized, ranging from casings to smoke, to things, etc!!
+-reverted everything back to normal, and included the scaled crap as a seperate option.
+-removed the crappy crosshairs and made it a seperate option
+
+August 28, 2000
+-Version 0.7 released
+
+October 13, 2000
+-has it been so long?
+-Got some groovy sprites for a new shotgun, and am in the process of putting them in.
+ EDGE likes to screw up the display of tall sprites... very bad in this case.
+
+October 19, 2000
+-Finished up the new shotgun (about as good as it will get (due to display problem))
+-Added much more ammo capacity (which was bugging me for a long time) 
+
+November 1, 2000
+-added more end quotes
+-removed and shuffled a bunch of stuff - this mod was getting too big.
+
+December 3, 2000
+-finished ddf coding of new shotgun - it replaces the old one fully
+-added another end quote
+
+December 4, 2000
+-removed sniper rifle
+-added infantry rifle (complete - icon, ddf, sprites, sound)
+-added chainsaw to normal gameplay
+-fixed female marine attack (fires infantry rifle)
+-fixed players 2-8 ammo capacity
+-removed OICW - a fine weapon, but didn't fit in at all!
+-updated docs
+
+December 5, 2000
+-removed 3.5 megabytes of unused resources
+-fixed a little bit of ddf code
+- VERSION 0.8 RELEASED
+
+December 6, 2000
+-cleaned up attacks.ddf
+-cleaned up sounds.ddf
+
+December 18, 2000
+-BACKUP
+
+December 23, 2000
+-made some minor adjustments to the sentry turrets
+-increased strength of M-16 a little bit
+-Replaced Lost soul with something a little cooler, the BETA lost soul,
+ and sorta made it a cross between the LS and the wizard from Quake
+-Replaced the combat vest with a full space marine outfit (vest, boots, helmet)
+ Also from the ALPHA doom
+-Cleaned up language.ldf
+
+December 24, 2000
+-Happy birthday to me... 21... legal in 50 states, baby.
+-Added new alt-attack for single pistol (just like unreal).. may be temporary
+-Added better pistol sound (like original IC)
+-Updated icd-ddf.txt (a few parts were out-of-date)
+-Added even MORE end quotes... almost 60 now! (replaced some old ones too)
+
+December 30, 2000
+-Made a couple tweaks to the Sig-Cow.. Weakened it a bit, and strengthened the bayonet,
+ as well as a new sound (I noticed the old one had some distortion at the end)
+-Added a new end quote (#60)
+
+January 1, 2001
+-The new millenium! been on a SoF binge lately...
+-Added tons o' end quotes... now up to 70!
+-Added general sources for all the end quotes in Language.ldf (ddflang)
+
+January 2, 2001
+-Made semi-automatic weapons (pistols, sig-cow) not have a constant fire rate,
+ That way they're not just like slow automatic weapons.
+
+January 8, 2001
+-Removed the magnum revolver, cause I never used it, and it sucked..
+-Added 2 weapons.... Relax, they're cheat-only!
+-Reduced pistol capacity to 12 - more realistic for a 45, and it makes the single
+ uzi more useful, as it can fire 6 more times.....
+
+January 9, 2001
+-Changed most of the casings to spread a little more
+-BACKUP
+
+January 13, 2001
+-Changed cheater rifle into a real semi-auto
+
+January 14, 2001
+-Added new shotgun reload frames.. more like SoF or Infiltration.....
+
+January 18, 2001
+-Fixed some stray grey pixels on the new shotgun reload
+
+January 19, 2001
+-BACKUP
+
+January 20, 2001
+-Fixed the length of the arms (was too short) on shotgun reload
+-Added an alternative reload to the hand cannon - you now randomly just open
+ the breech and dump the shells out.
+-Made double pistols slide action one at a time (like Bruce Willis / LMS)
+-Added a couple more end quotes
+
+January 21, 2001
+-fixed animation for random SSG reload
+-Added a new explosion for the satchel charges (should be bigger...)
+
+January 24, 2001
+-commented out the random imp gibbage - I got bored with it.
+-fixed cheater rifle (was always accurate)
+-removed (for the time being) the proximity effect of the satchel charges
+ (it sucked anyway, cause it wouldn't recognize you, and I'd always get blown up in
+  close quarters anyway...)
+
+January 27, 2001
+-made alt SSG reload less likely to occur
+-made big medikit heal up to 150%
+-Removed said cheater weapons
+-reverted proximity on satchel charges (made 'smaller' too, hopefully fix wall exploding)
+
+January 30, 2001
+-made some very minor adjustments (sprites and DDF wise)
+-removed alternate SSG reload
+-made SSG reload more like original Doom - shells fall out when you open
+ the breech.. contemplated removing left/right and only having both simultaneous fire, but
+ left the attacks like they are... for now.
+
+February 3, 2001
+-radically changed the upgraded shotgun - now it's more like UT's flak cannon, which was
+ what I was going for in the first place.
+-added a great big explosion for the satchel charges..
+-made m203 actually useful
+
+February 7, 2001
+-replaced the crappy '5-rifle bullets' with a clip instead.
+-made zombie shotgun a little more like the original doom one (attack wise)
+-made muzzle flashes on all pistols much better
+
+February 12, 2001
+-Ever so slightly adjusted the direction of the SSG flashes
+-Changed all three shotgun icons just a little (amazing how much a few pixels can do!)
+
+February 13, 2001
+-Made a slight adjustment to the pistol's locked slide frames.. more proportionate now.
+-Made grenade fragment effects vastly improved (super easy fix too! I'm an idiot)
+-Made Gas bomb perfect (with same technique as above)
+-Added new blood type.. bright green
+-BACKUP
+
+February 14, 2001
+-Removed fist weapon (no point really)
+-Changed the knife around - now you control how to attack, rather than random
+-Removed shortcut cheats 
+
+February 16, 2001
+-Added a couple more end quotes and fixed a related bug
+-Added marking flares to backpack instead of free
+-Vastly improved the left hand on the M16 - still a little weird, but much
+ better than the old one.
+-Added a reload sequence to the M16 (cocking the bolt back)
+-Cleaned *10 MEGS* from the wad in unused resources! ouch!
+
+February 17, 2001
+-Recompiled the wad with Deutex, sorted all the resources, etc. May even run better
+ on slower machines now?
+-Inadvertantly fixed the bug where you couldn't select the upgraded shotgun under the
+ IDF(K)A cheat, as well as the silenced pistol... must have to do with the sorting?
+-Fixed area on hands (turret weapon) to be more smooth where I removed the brass knuckles
+-Reverted old pistol alt-attack, and enhanced it some
+
+February 18, 2001
+-Made the minigun belt-fed instead of drum-fed.. now people will hopefully stop confusing
+ it with the Shadow Warrior shotgun
+-A couple more end quotes
+-Changed the pickup messages all around
+
+February 19, 2001
+-BACKUP
+
+February 20, 2001
+-Changed the minigun icon to match weapon (belt fed)
+
+February 21, 2001
+-Added a suppressor to the single uzi.. now I just have to figure out how
+ to put it in the game (probably comes with a silencer kit, but how??)
+-Changed some old sounds, most relating to the uzis and pistol reload
+
+February 22, 2001
+-reverted Uzi's back to normal, made suppressed uzi have all the new sounds,
+ and is currently only available as a cheat.
+-fixed up the shape of the uzi suppressor
+-fixed a few pixels that were out of place on one of the pistol frames
+-Darkened the knife handles on the sig-cow bayonet
+-Added reload frames for the sig-cow (polishing them took many hours, dammit)
+
+February 23, 2001
+-BACKUP
+
+February 24, 2001
+-Made the knife more beefy looking, sort of like either Opposing Force or SoF,
+ and reverted the old random style attack (while maintaining the secondary) 
+-Brought back the fist, but called it [unarmed], and is different
+ than before (only right punch)
+-Unfortunately, doing so (plus adding the suppressed uzi) again broke the selection
+ of the custom shotgun and the silenced pistol...
+-commented out the [unarmed] weapon, to fix the selection bug (20 weap max??)
+-made the custom shotgun a touch more accurate, so it's useful inside 10 feet now..
+-sorted out the contents of the backpack
+-added 2 more backpacks (see description)
+
+February 27, 2001
+-Fixed some issues with the m203 flash 
+-Found and exploited a cool bug.. the chainsaw is now a one-use deal.. use or throw,
+ no saving for later!
+-Cleaned up my crappy code (spawner) with Oniko's good code (dropper) Re: Chainsaw
+-Fixed pistols animation going into reloads.. now the slides lock back as they should
+
+February 28, 2001
+-Made the chainsaw startup sequence rather kickass..
+-minor adjustment to chainsaw pickup messages
+-Tried same technique as chainsaw on minigun, but need to iron out some issues..
+
+March 2, 2001
+-BACKUP
+
+March 6, 2001
+-Fiddled around with a "down the barrel" mode for the uzi
+
+March 14, 2001
+-Minor Weapons.ddf tweaks
+-Made chainsaw vibrate screen when throttled 
+
+March 15, 2001
+-made chainsaw vibrate screen when idling too
+-made seperate wad with no reloads
+-removed redundant code from silenced pistol
+-Fixed bayonet stab to be nearly perfect
+-Fixed a minor glitch with the sig-cow flash
+-For some reason player width was set to 15 - changed back to correct 16
+
+March 16, 2001
+-Worked on the dehacked version (ZDoom only), and created a Skulltag version
+-Cleaned 8 megabytes from icd-ddf.wad
+- VERSION 0.9 RELEASED (BACKUP)
+
+March 25 - 27, 2001
+-removed chainsaw dropping
+-added Beretta 92fs
+-re-added sniper rifle
+-added stock M-16
+-added many new sounds
+-STARTED ONE YEAR AGO!
+
+March 28, 2001
+-fixed some ddf
+
+April 3, 2001
+-Screwed around with a scope for the m40a1... may go back to the DC3 style
+
+April 26, 2001
+-temporarily made trooper drop beretta
+-reduced damage inflicted by shotgun sargeants (temporarily)
+-BACKUP (I love having a CD-R!!!!!)
+-fixed a minor glitch with the chainsaw leftover from 03/16/01
+
+May 18, 2001
+-Fixed (Hopefully) grenade fragmentation
+-Gave all weapons unique priority
+-added boot to fist weapon (doesn't work how I want it to)
+-removed scope from sniper rifle
+-Cleaned 5 megabytes from icd-ddf.wad
+- VERSION 0.9b RELEASED
+
+August 25, 2001
+-Worked on getting it running with EDGE 1.26... whatta bitch.
+-Finished actually getting it to work sans errors
+-Fixed some stuff (workarounds, etc.)
+-Removed unarmed and beretta weapons.
+-Removed some monster attacks that I'll put back in later.
+VERSION 0.9c RELEASED
+
+September 1, 2001
+-Took a break from DC1 to tweak ICD for a bit...
+-Fixed many problems with weapons.ddf, i.e. upgrade and selection issues
+-Tweaked double-uzi's attack
+-temporarily removed silenced uzi and stock m-16
+-tweaked shotgun guy attack (was set way too powerful for some reason)
+
+September 9, 2001
+-Reverted old Baron / Imp / Caco / Revenent attacks
+-Completely managed Dynamic Light and Shadows for those that use them.
+-Fixed wad offsets of some things so they no longer sink into the
+ floor.. still haven't figured out how to fix the things that
+ are SUPPOSED to sink into the floor - EDGE's fault :)
+-Pseudo-fixed satchel explosion.. it uses a scaled-up version of the flak grenade one.
+-Sorta fixed minigun icon.. just shortened the bullet chain - I liked it better before.
+
+September 10, 2001
+-Fixed revenant fireball light
+-increased radius of flare's light
+-Weakened Shotgun guy attack again (less pellets- as it was, 2 shots would
+ kill you quite badly... realistic but highly unfair.. I prefer the player to have
+ the advantage)
+
+September 13, 2001
+-Tweaked gas bomb
+-Tweaked Flare
+ 
+September 15, 2001
+-Fiddled around with a flashlite type attachment to the custom shotgun - commented out
+ in weapons.ddf for the moment, but may be put back in later.
+ For the time being I'll leave the flares as the only portable light source.
+-Added more ammo types for different weapons, so no more unorthodox ammo-sharing and multi
+ ammo usage.. the only drawback is you can't see the new types on the status bar..
+
+September 22, 2001
+-BACKUP
+
+September 29, 2001
+-A few minor tweaks to weapons
+-Tweaked weapon movement
+-Improved the Spider Mastermind attack, more chaingun-ish
+
+October 24, 2001
+-Tweaked player up-down movement
+-fiddled with casing sounds
+-tried to get casings to NOT slow the game down
+-fixed the status bar.. I'd like to change it entirely, but haven't been
+ able to find (or make) one that looks good enough
+-Fixed chainsaw sounds
+-Made flares free again
+-Removed all 100 end quotes.. they were getting old.
+-Removed smoke from minigun shells
+-Added specific crush states to each monster.. didn't have time to test though
+-managed zombies dropping stuff (only if not exploded)
+
+November 9, 2001
+-reverted doomguy face, no need for it to be invisible in edge version
+ (the dehacked version comes with a female skin, so I muted the face)
+-spent all day giving all weapon sprites a 5 pixel buffer.. what a pain in the ass.
+
+November 14, 2001
+-Got a hold of EDGE 1.27
+-Fixed some stuff up, added scope to sniper rifle
+-Made sniper rifle given with backpack
+-Fixed some stuff regarding shells (nothing major)
+-Moved the double pistols slightly closer together
+
+November 15, 2001
+-Reverted ammo sharing between pistols and uzi's
+-Made SSG shell ejections more to my liking I suppose.
+-Slowed double pistols by just a fraction, making the random ROF more obvious
+-Made minigun casings not shoot out half a mile. Also they disappear faster.
+-Gave sniper rifle a ZOOM_FOV value, but edge seems to ignore it (always zooms the same)
+VERSION 1.0 RELEASED
+
+March 1, 2002
+-resumed planning SPECIAL EDITION and harvesting resources.
+
+March 11, 2002
+-resumed harvesting and minor ddf stuff
+-removed sniper rifle
+-did preliminary revisions of stock shotgun and single uzi
+-added new uzi shells
+
+March 12, 2002
+-removed test bots (returned to old thing ##'s)
+-completely revamped shells and casings to new DC series code
+-added the extra reload frames from the dc2 shotgun
+-changed the shell color on the above frames
+-tweaked a certain uzi reload frame
+-removed some useless ddf leftover from a few versions ago
+
+March 13, 2002
+-added all new and cool looking gun smoke effects
+-added smoke effects for enemies too
+-tweaked 40mm grenade
+-tweaked minigun attacks
+
+March 15, 2002
+-Added a bunch of stuff from DC series (lamps and trees)
+-Added better chainsaw effects
+-Fixed turret shells
+-Misc tweaks
+
+March 16, 2002
+-Added more stuff from DC series (health)
+-Made all relevant weapons automatically reload if needed
+-Fixed some single uzi related frames
+-Added secondary attack to the single uzi
+-Began making frames for the double uzis
+-added box of shells from DC series
+-began giving items their own pickup sounds
+
+March 17, 2002
+-added double uzis and relevant attacks/effects
+-totally redid the gas bomb effects and they kick ass.
+-added new pump animation for shotgun
+-removed RIFLE_PACK
+-changed ammo counts for box of ammo
+-changed some pickup noises
+-tried making the frag grenades spawn frags more efficiently...
+ don't see too much of a difference.
+-Changed how fragmentation explosions work - they now work like they should, as
+ they are TOTAL ROOM CLEANERS now :)
+-Removed all the extraneous frag spawners, in effect making the frag explosions
+ more efficient, in that they're only spawning ONE projectile MANY times instead
+ of MANY different projectiles MANY times
+-changed the shotgun icon to reflect the stock appearance
+-changed the recoil animations for the black shotgun(s)
+-completely re-did everything TURRET related... everything!
+-tweaked the 40mm grenades
+-tweaked shell casings
+-gave the chainsaw a pickup noise
+
+March 18, 2002
+-went through attacks.ddf removing comments and caps locking everything
+-removed the debris spawners from the tree "blood"
+-fixed a missing sprite error
+-fixed offset alignment of lost soul sprites
+-fixed non-existant attack animation for lost souls
+-tweaked death animation of lost souls
+-tested gas bomb and hand grenades against boss creatures - very effective and
+ doesn't cause crashes anymore!
+ (HG may be TOO effective - took out a Spider Mastermind with 2 grenades!)
+-changed the way the gas grenade spawns - should be foolproof now.
+-tweaked a whole lot of hitscan animations
+
+March 19, 2002
+-Added innaccuracy to most projectiles
+-Tweaked turret weapon animation and deployment properties
+-Added sparks to chainsaw hitscan
+-Added smoke to shotgun hitscan
+-tweaked knife animations big time
+-removed selection noise of turret weapon
+-changed a few of the explosion animations
+-fixed some DLIGHT stuff here and there
+-changed the behaviour of the health and armour bonuses
+-added more of a kick to the chainsaw
+-toned down maximum damage of zombie's minigun attack
+-reduced amount of ammo given with minigun
+-tweaked armor percentages and stuff
+
+March 20, 2002
+-Fiddled with new grenade sounds a bit
+-tweaked attack of Sig-Cow (2 shots instead of 4)
+-reduced maximum rifle ammo capacity
+-fixed shotgun click noise
+-tightened the spread on the uzi alt-attack
+-fixed the M16 pickup (gives no grenades)
+-fixed the bullet casing sprites
+-added more bullet and shell casing noises (from Half-Life)
+-completely tweaked the hell out of the bullet casings - they now 
+ randomly stop in all 4 frames (previously only 2), as well as
+ being scaled to proper sizes (rifle, .45, 9mm).
+-added misc. tweaks to other properties of the bullet casings, as well
+ as another frame (for resting on the ground)
+-made grenade bounce emit sparks
+-added shell casings to the 40mm grenades
+-tweaked the 40mm shells quite a bit
+-Added reload sequence to the M16's m203 - may do a full animation later...
+-changed gameplay by giving the silenced pistol to the player at the start, and
+ replacing the silencer pickup with flak shells
+-fixed missing thing type 80 error message.. I'm a dunce...
+
+March 21, 2002
+-gave the Male Space Marine helper a super shotgun
+-Made the Female space marine able to run while shooting
+-tweaked priority for a couple weapons
+-removed STDISK
+-worked on replacing the status bar - I got all the digits recolored, and a new STBAR
+ itself... infortunately, the BMP I used looked better in theory than it did in practice.
+ Made the numerals look like a more compact digital readout, similar to the ones
+ in INVASION2...
+
+March 22, 2002
+-Fiddled around with a scripting system
+
+March 23, 2002
+-Swapped DEAD_LOSTSOUL with UNSTABLE_BARREL to prevent uncompatibility in maps
+ that included the dead lost soul near the player at first...
+-Ran into an anomaly:
+ If a map contains THING # 0, it will substitute a very high yield explosion
+ WITH fragmentation, so chances are it will kill the player if he's anywhere
+ near (invasion2 map06). I tried to write a non harmful thing 0 entry for things.ddf,
+ but edge ignored it.
+
+March 24, 2002
+-Added scripts for monster kill percentages (displays graphic for each monster)
+-Added scripting for satchels instead of old method (idea by Transon Lohk)
+ As an added bonus, the satchels now explode if *you* touch them (as intended)
+-Changed attack for flares - you hold onto them to light your way then throw them
+-Added smoke to flames
+-Added smoke to flaming barrel
+-Made dead zombies and green player decorations drop ammo
+-Removed kill script for wolfenstein SS in all levels except 31 and 32
+-fixed wolfSS soldiers not following you with their uzis
+-Added neccessary scripts for Doom1
+-Added bullet puff debris and sparks
+-Added new blood splats
+-Added another shotgun shell death frame
+-Added debris to shotgun puff
+-Added gun sparks to shotgun monsters
+-Added alternate rocket trail
+-Gave radiation suit a different pickup sound
+-Removed other backpacks... I never intended to use them anyway
+-Fixed more bizarre priority issues
+-Made blood less translucent
+-Fixed a grammatical error in one of the pickup texts
+-Gave keys new pickup sounds
+-Made the new flares somewhat hurt when you hold them, as well as hurt a bit
+ when you walk on them
+-Gave player 50 armor at startup
+-Added a MUCH better menu header graphic
+-Started tweaking a bunch of monsters
+
+March 25, 2002
+-Added new grenade crosshair (may put it back to the old one later)
+-Added the new grenade sounds to the HG alt attack
+-Removed the knife and bayonet hitscan and replaced it with the chainsaw's
+-Changed the grenade box pickup
+-Scaled grenade box
+-Tweaked caco death animation
+-reduced beginning armour to 30
+-Continued to tweak monsters
+-Added huge explosions to boss creatures' death animations
+-Cleaned 35 megabytes out of the main wad
+-Cleaned 7 megabytes out of the secondary wad
+-added all new hand grenade weapon sprites and projectile sprites
+-added better M_SKULL entries
+-Added new grenade icons to crate sprite
+-WELL WELL - THE TWO-YEAR MARK!!!
+
+March 26, 2002
+-Reduced damage radius on flares
+-Fixed cyberdemon pain and active sounds
+-Added random stimpack death
+-Changed mancubus fireballs
+-Fixed the M16 icon
+-fiddled around with some blood settings... tried to get the cacodemon blood
+ to float softly to the ground, but it didn't work, which seems odd, seeing as
+ I got the shotgun hitscans to do it.
+-Added new blood effects, but it's a bit too much like my zombies remix... I'll try to
+ make it less gorey
+
+March 27, 2002
+-reduced gore on the blood effects
+-tried valiantly again to get the caco blood to float slowly downwards, but I only
+ managed to get it to float slowly UPWARDS... quite perplexing.
+-Added a new attack to the turret shooter
+-worked on the medibot
+-added new explosion animation from Strife
+-tweaked turret casings
+-tweaked boss explosions
+-tweaked satchels (no longer can throw them THROUGH things)
+-added smoke to flying fragments
+-tweaked cacodemon fireball death and trail
+-put the caco death animation back to normal
+-added a test script for the medibot
+
+March 28, 2002
+-added further test scripts for the medibot
+-Added medibot scripts and lost soul scripts to all Doom2 levels
+-further bug squishing and tweaking of the medibot
+-made demons and imps able to attack each other
+-made medibot and helpers able to teleport and open doors
+-tweaked burning barrel and barrel fire / smoke
+-made more ordinary stuff block shots / no shadow / climbable
+-removed shadows from hanging stuff
+
+March 29, 2002
+-Tweaked data for hanging stuff (dimensions)
+-Added a "fizzle-out" animation for the bonuses
+-Added preliminary THROWING KNIVES...
+-Made throwing knives an alternate attack of the slash knife
+-worked on and perfected the thrown knife attacks
+-tweaked the wolf SS soldier a bit (can kill each other now)
+ too bad they don't have rotations for their attack frames
+-fixed some minor perspective errors on the knife weapon sprite
+
+March 30, 2002
+-tweaked SSG and sawed off attacks
+-reverted old attack for female marine
+-added an alternate attack for the double pistols
+-added BNG4 explosion for the alternate hand grenade
+-fixed mistakes in the pistol and silenced pistol animations
+-added a custom crosshair to the turret weapon
+-fixed some ddflang stuff
+-added remaining monsters and changed some of their settings
+-cleaned 20 megs from the main wad
+-BACKUP
+
+March 31, 2002
+-fixed a glaring error with the SSG and sawed-off shells
+-fixed the minigun spin-down animation for it's different attacks
+-gave the turret it's own shotgun shell ejection (that fades quickly)
+-added better generic smoke animation from Heretic, and repositioned it
+ to line up with the revenant/cyberdemon missile trail
+-made the skewered and twitching skewered guy shootable
+-made ALL the hanging gore killable, including the DoomII stuff
+-Tweaked some of the Icon of Sin stuff, including making it
+ fire faster and play the sounds a little more normally (EDGE still has trouble
+ with BOSSMAN sounds it seems)
+-Did some extensive playtesting, playing through the first third of both Requiem
+ and Memento Mori
+
+April 1, 2002
+-Continued playtesting, playing through 2 thirds of Invasion 2
+
+April 2, 2002
+-Added better sounds from Hexen to the bonus pickups
+-Swapped the flak mod and the 40mm weapon pickups... may be temporary.
+-gave torches a slight damage radius and also an ambient noise
+-reverted the lamp smoke to the old black sprites
+-tweaked the scale of the generic explosion
+-fixed some spectre animation
+-adjusted priority of class 7
+-tweaked the bonus pickup sound
+-fiddled with some new methods for the SSG
+
+April 3, 2002
+-Made ssg alt-attack slightly more powerful than primary
+-Weakened the maximum sig cow rifle damage just a hair
+-Fixed the highly bizarre 40mm launcher animations
+-Made the 40mm shells spread more upon ejection
+-aligned the m203 flash frames (about as good as it's gonna get)
+-managed the reload for the m203 a bit
+
+April 4, 2002
+-Removed all the modified BOSS BRAIN stuff, as it appeared to cause anomalies..
+ Left the proper spawn animation in though.
+-tweaked the physical dimensions of the hand grenades, blood squirts, shotgun shells,
+ 40mm shells
+-tweaked animations of cacodemon attack, archvile death
+-gave pain elemental it's own unique action sound
+-did some serious tweaking to make weapon reloads much less painful
+-went through ALL the ddf files and removed comments, unneccessary line breaks,
+ capitalized everything, and did some formatting.
+-tweaked demon and cacodemon bite attacks
+-fixed PE action sound
+-weakened thrown knife just a bit
+-finally added the medibot scripts to Doom1 maps
+-made player corpses randomly drop a knife (30% of the time)
+-"fixed" some stuff regarding the m16 and m203
+
+April 5, 2002
+-made trooper extremely rarely drop a knife when killed
+-re-added boss brain death explosion (modified sound)
+-uncompiled and recompiled the wad with deutex, sorted entries, got rid
+ of unused sprites and sounds
+-tweaked 40mm casings a bit
+-removed some unused stuff from ddfsfx
+-Added a preliminary "reusable turret" type of deal, but I may rework it.
+-put the silenced pistol back in class #2 for the time being
+-Added a possible "weapon" for the turrets/medibot scripts
+
+April 6, 2002
+-Put the silenced pistol back in class 9. I do this because I don't like having
+ more than 2 weapons bound to any one key.
+-Tweaked thrown knife animation
+-Made it more likely that you can pick up a thrown knife
+-Added the new weapon for the sentry bots
+-Added sentry bot scripts to all levels
+-Scaled the M16 icon down a little
+-Added the turret/bot crosshair to the #9 detonator to distinguish it from the
+ satchel detonator
+-Removed the script calls from the satchel detonator
+-Fixed (sort of) the off-center spawning of the pickupable turret
+-Fixed a priority issue with the two detonator weapons
+-Added a "twirly" animation to the knife just as it comes out of your hand. It doesn't
+ keep twirling, but it spins around once, then goes into it's "dart" mode.
+-Successfully rigged the Silenced pistol and the normal pistol to be the very same
+ weapon (alt attack attaches the silencer) - just like Counter-Strike :)
+ I doubt I'll keep this, but what the hell - it can't hurt to try.
+
+April 7, 2002
+-Added seperate sound for the armour bonus
+-Added player effects to helper bots
+-Removed above script experiment, and reverted weapons to their previous behavior
+-Fixed a minor perspective error on the knife (again)
+-Started working on a new set of sprites for the satchel (to get rid of the OpFor
+ hand). Tried using the ones from Blue Shift as a base, but that turned out all wrong.
+ Started replacing the opfor hand on the existing sprites with the Doom hands, and
+ it looks good so far.
+
+April 8, 2002
+-Added Doom hands to the satchels + detonator. It turned out better than I thought
+ it would, but there's still some minor stuff I don't feel like fussing over.
+-Cleaned 6 megs of space from the wad
+
+April 9, 2002
+-made blood splats pause a little before their puddle frame
+-reverted hand grenades to their previous dimensions, as the new ones where
+ causing problems.
+-removed the kill icons in an alternate RSCRIPT to include with the release
+
+April 27, 2002
+-Added a cool mushroom cloud type effect to the 40mm grenade launcher
+-Fixed the solid hanging gore that stayed solid when it died
+-Tweaked turret and medibot shells
+-Tweaked the mushroom explosion a bit
+-Tweaked SSG shells
+-Fiddled around with Cacodemon blood and got some good effects going, but reverted
+ it. I'll need to work on it more some other time.
+-Increased reach for baron and knight (so they can scratch each other to death)
+
+May 1, 2002
+-RELEASED
+
+June 2, 2002
+-Nice little month vacation there...
+-Added a couple uzi frames (tilted sideways for transition effects)
+-Removed a bunch of redundant reload checks on the uzi alt attack
+-Changed the Status Bar Ammo counters to generic descriptions to keep the
+ retarded gun nuts away from me
+-OOPS! Forgot to add smoke to the silenced pistol alt attack.. heh.
+-Improved recoil effect for #3 shotguns
+-Greatly improved the smoke/sparks effects for all the shotguns
+-I must have been on crack when I wrote the ddf for the shotguns, so I fixed
+ that just now.. still rough, but a lot better than it was.
+-Tweaked bullet debris effects
+-Tweaked SSG Shells
+-Tweaked all shotgun shells... seems to be what I spend the majority of my time doing..
+-Fixed some shitty spelling in language.ldf
+-Misc. Tweaks
+-Toyed around with the cacodemon attack
+
+June 3, 2002
+-Fixed recoil animation of custom shotgun
+
+June 4, 2002
+-Fixed minor perspective error on tilted uzi sprites
+
+June 6, 2002
+-Fixed Bobbing for down-the-barrel weapons
+-Fixed Sawed-off recoil animation
+-Finalized (I think) the new Status bar method (pictures for ammo area)
+-Ever so slightly tweaked the scale of bullet casings
+-Fixed the minigun smoke
+
+June 10, 2002
+-Been screwing around with some better blood splat effects... not going as smooth
+ as hoped
+
+June 11, 2002
+-Applied what blood effects I have done so far to all the blood. I'm seriously beginning
+ to dislike DDF for the simple fact that it's so damned inefficient.
+-Tweaked the generic smoke trail quite a bit
+-Fixed faulty animation and brightness of arachnotron plasma
+-Tweaked enemy smoke
+
+June 16, 2002
+-Reduced dimensions of blood splashes
+-Added ammo belt spacers to minigun shells (kinda crappy for now, but we'll see)
+-Added random tracers to all uzis
+-Added a couple more different sparks for bullet puffs
+-Added more debris and sparks to the shotgun hitscans
+-Tweaked probability of hitscans spawning certain stuff
+-Added tracer to M16
+-added faint smoke to rifle shells
+-gave spider mastermind it's own shell spawn
+-gave spider and cyberdemon orange blood
+
+June 17, 2002
+-Scaled down the knife sprites just a touch
+-Made knife always gettable after a missed throw
+-Tweaked delay of missed knife spawning
+-Tweaked animation of minigun spacers
+-Added tracers to minigun attacks
+
+June 21, 2002
+-Gave tracers to chaingun guy and spider mastermind
+-Gave death smoke and slight damage to all tracers
+-Made cyberdemons kill each other if provoked
+-added more trail smoke to imp fireball
+-fixed off-center arachnotron plasma
+-Cleaned 18 megabytes from the main wad
+
+June 23, 2002
+-Added hand grenade components (dropped pin and handle)
+-Reduced scale of hand grenades a little
+
+June 24, 2002
+-Enhanced chainsaw smoke quite a bit
+-Reduced vibration of chainsaw idle by a little bit
+-Found a nice compromise for the blood splats
+-Did a massive amount of tweaking of decorations:
+ -Made shadows lighter/darker per thing
+ -added block_shots to more stuff
+ -tweaked dynamic lighting for stuff
+ -misc. fixes / improvements
+ -now EVERY DOOM THING is modified in some way :)
+-added ambient sound to heart column
+-tweaked loudness of ambient fire and tech noises
+-(if you're wondering what prompted this massive tweak attack, I created a
+  level with everything possible in it, so I can easily see what needs what).
+-did some major tweakage to the dynamic light settings... should look awesome
+ on a wicked video card
+
+June 25, 2002
+-removed animation from doom2's tech lamps
+-did some additional tweakes to the dynamic light system
+-replaced the crappy flame sprites with better ones from Hexen
+-tweaked dyn. light for flames (flickers)
+-did some major adjustments to the barrels.. better animation and ambient
+ sound, tweaked death animation, added leftover bits from the explosion
+-added fire flicker to torches
+-Added all new reload animation for the 40mm grenade launcher
+-Added some new sounds for the 40mm and m203 grenade launchers
+-Vastly improved the look of the sideways pistol hand and animation
+
+June 27, 2002
+-made the spider masterminds able to kill each other
+-made the belt spacers fade out quicker
+-enhanced the initial animation of the tear gas attack of the 40mm
+-ever so slightly quickened the animation of the shotgun reloads
+-Fixed the flak shotgun alt-attack not spawning frags up against walls
+ or enemies. Very deadly now, even though it spawns only half the frags a
+ hand grenade does.
+-made the hand grenade and flak grenade spawn their frags in a perfect circle
+ save for innaccuracy in the frags themselves. My math must have sucked before...
+
+June 30, 2002
+-reduced distance of casings and other ambient sound
+-changed some messages in ddflang
+
+July 3, 2002
+-managed respawning for stuff.
+-Improved visuals of the respawn, teleport, and item respawn flashes.
+-Removed shadows from spawn flashes / teleport flash
+-Adjusted heights for all torches and burning barrel. Purely asthetic, so you can't
+ see hitscans above a certain point.
+-Adjusted animation for fire... still looks a little "jumpy" though.
+
+July 4, 2002
+-enhanced the uzi pickup srite greatly... much better now, less monochrome
+-added the standard "box pickup" effect to the flak mod package
+-added mushroom explosion to barrel death (very random... makes map23 crawl otherwise)
+
+July 5, 2002
+-cleaned 10 megabytes out of the main wad
+-adjusted weapon bobbing / swaying based on perceived weight / position
+-BACKUP
+
+July 10, 2002
+-added a crude preliminary explosion smoke effect
+-tweaked gas bomb smoke a bit
+-tweaked fire
+
+July 11, 2002
+-added some slightly better explosion smoke sprites... still undecided
+-fixed the original explosion smoke sprites, so I'll use them instead.
+ -still needs some tweaking though.
+
+July 12, 2002
+-Got the explosion smoke effects good for the time being.
+-added a generic pickup sound to the knife
+-tweaked NV Goggles scale
+-removed berserk and replaced it with an enhanced version of the Doom berserk pack
+ -added better pickup sounds to the berserk pack
+
+July 13, 2002
+-Fixed bayonet from causing inanimate things to bleed
+-Tweaked reload effects (ie timing, and added audible chamber clicks where missing)
+-Changed SigCow rifle recoil behavior
+-Reverted m203 to reload BEFORE firing... better this way I think...
+-totally re-did the way flames and burning barrels smoke... what a ball breaker.
+-tweaked the chainsaw smoke effects
+-Fixed Doom2's crappy off-center rotation for the Flaming Barrel
+
+July 14, 2002
+-Tweaked SSG reload animation
+-Added new sounds for the knife attacks
+-Added unique knife pickup sound
+-made the chainsaw look all rusty and well-used
+-added new chainsaw sounds (resampled Doom ones)
+-Made the "spikey stump" shootable like the trees are
+-made shotgun shells a little less likely to stop standing upwards
+-added new chainsaw icon
+-replaced silencer noise with the one from Counter-Strike
+-Added a much better (but still iffy) reload sequence to the chainsaw
+-Cleaned 10 megs out of the wad
+
+July 15, 2002
+-Enhanced the chaingun guy's attack animation
+-added very preliminary zombie reloads
+-added reload for shotgun guy
+-added reload for Wolfenstein SS
+
+July 16, 2002
+-Further enhanced the enemy reloading
+-Added reload and bayonet attacks for Female Helper Marine
+-Replaced the fire animation with a better one... not sure where I got
+ the first one, but the new one was pretty much the same, just with a
+ better loop transition. 
+
+July 17, 2002
+-Replaced the M16 cocking sound
+-Fixed helper bots not being able to cross lines
+-Tweaked Female Marine
+-Did some major modifications to the Male SSG Marine:
+ -Added shotgun in hands (sprites by Mark Quinn)
+ -Removed throat grab on suicide
+ -Added blood squirt from suicide wound
+ -General tweakage
+-Replaced Camo Marine with standard Doom Marine
+ -Changed attack (3-shot M16)
+ -Added extras (tracers, smoke, etc)
+ -Added reload
+-Added enhanced versions of the Trooper and Sergeant
+-Fixed player pain noise overlapping itself
+-Added M16 zombie player (sprites by Doyoon Kim)
+-Bunch of miscellaneous tweaks:
+ -cut down the amount of frames the helpers use in their idle state
+ -tweaked zombie and player deaths (they were too fast)
+ -tweaked revenant death
+ -removed the shadows from the icon of sin death cubes
+ -tweaked enemy shell and bullet casings considerably
+ -reverted SSG pickup to regular Doom2 style (no extra shells)
+ -fixed the heads on the M16 Zombie sprites
+ -got tired of "hand cannon" so I changed the SSG pickup text
+-Fixed M16 zombie death sprites
+-Made chainsaw startup sound a little better
+-removed the camo marine resources (sprites and sounds)
+-cleaned 9 megs out of the wad
+-updated ddfdesc2.txt
+
+July 18, 2002
+-Spent the last 2 and a half hours converting Mark Quinn's "Pistol Marine"
+ into an "Akimbo Pistols Marine"... let's hope it looks good in the game.
+-Added the double pistols marine, and surprisingly it looks pretty badass!
+-updated ddfdesc2.txt
+-updated design_notes.txt
+-went through a lot of the gettable items and scaled them accordingly... things were
+ a little too big in contrast to characters/things.
+-Added a random helper bot in place of the coop start #2
+-Added fleshy impact noises to blood splats
+
+July 19, 2002
+-Made thrown knife NOT splatter troopers and other low HP enemies
+ -Also made most bullet attacks not splatter enemies (except minigun)
+-Made it impossible for thrown knives to detonate barrels
+-Made it impossible for not sparking attacks (knife slash1 and null bayonet attacks) to
+ detonate barrel
+-Fixed the rifle icon, .45 and 9mm clip icons re: smoothing in GL
+-Added bullet detail to dropped 9mm clip
+
+July 20, 2002
+-Was fucking around with the VOLUME command earlier, so I had to revert everything.
+ The Doom engine (and hence Edge) just can't seem to do ambient sounds properly. I find
+ that in Edge, sounds carry their volume too far, as opposed to Vanilla Doom or ZDoom...
+-Made helper Marine spawner sometimes (rarely) not spawn anything at all.
+-Made blood sound a little "fleshier"
+-Fixed more sounds.. seems the VOLUME command makes the wavs sound horrible
+-There was a bug with the new way I had the m203 reloading, so I reverted back
+ to reload after every shot.
+-Added the armor vest pickup sound from DC
+-Spent the better part of the night pasting Doyoon Kim's Player heads onto Mark Quinn's
+ Chainsaw Marine... also had to do some fancy work on the death frames, again
+ using both authors' work as quides.. here's to hoping it looks good in game. I have
+ eye-strain now, so I'm going to bed. Or at least away from the computer...
+
+July 21, 2002
+-Got the chainsaw Marine into the game, and I must say it looks good. It works quite
+ well also. I had to fix the attack frames... the graphics I had to start with were
+ non-animated.
+
+July 24, 2002
+-Cleaned 9 megs of space out of the wad
+-BACKUP - because I'm going to try something that I know is gonna break a lot of stuff..
+-okay, managed to NOT fuck everything up. Got the Kill Icons to work as well with
+ randomly spawned zombies... I mean, it's not perfect.. it appears EDGE only has 30
+ available RTS tip slots (the docs say it has 40...). Anyway, the kill scripts aren't
+ perfect, but it's better than nothing. I'm not sure just yet how this spawning will
+ affect the kill tally at the end of the level just yet, so I'll have to do some play-
+ testing.
+-replaced the mega sphere (which was previously the space marine corporal), with a random
+ helper generator (like the #4 co-op spot)
+
+July 25, 2002
+-Scaled the imp attack down just a fraction... it looked odd before, even though I scaled
+ the imp itself UP...
+-Added a sprite buffer around the 40mm casings. Damn, I hope future versions of EDGE
+ will be able to blend the edges of sprites better... think of all the wasted space in
+ the wad I've had to add.
+-Tweaked the stock shotgun... I was always unimpressed by it, as it was so slow (but it
+ sort of had to be for the animation to look right), so I said screw it, and made it
+ actually useful (albeit quite unrealistically fast). Now to add an alt-attack :)
+-Changed (slightly) the behaviour of the double pistol attacks
+-Added a somewhat cool alt-attack to the shotgun, but removed it. No use for it.
+-Out of NOWHERE I completely re-did the pistol and silenced pistol reload sprites...
+-Removed the clip from the pistol and silenced pistol weapon bmp's and used the actual
+ projectile clips instead.
+-Tweaked animation and properties of the spent pistol clips
+
+July 26, 2002
+-Put spectres' blood back the way it was before (totally spectre-ish)
+-Added a MUCH better "Pistol Clip In" sound
+-Added another blood noise
+-Added a gooey sound for the Knife Stab attack
+-Made zombie spawner less likely to spawn a boring old chaingun guy
+-enhanced the double pistols reload animation
+-nulled and/or removed unused pistol frames in the wad
+
+July 27, 2002
+-Fixed some closecombat issues:
+ -Female Marine thrusts towards enemies while using bayonet
+ -Player bayonet pushes enemies away
+ -Chainsaw pulls player/enemies together
+ -Knife does not push enemies away (nor does it pull)
+-Fixed MEDIC BOT from not being able to cross monster lines
+-Added hammer cock sounds to pistol and double pistols 
+-changed the silencer attach noise and the pistol slide return noise...
+ (guess I'm bored with the old ones)
+-Added slight delay in selecting the silenced pistol
+-Added a holster sound for small arms (pistols, grenades, other hand-held stuff)
+-Changed behaviour of hand grenades on screen.. no big change, just so you
+ can see them on the screen now
+-Added selection noises to ALL weapons
+
+July 28, 2002
+-AARRGH... for the last 2 days I've been trying to find a GOOD pistol slide noise.
+ -Tried the ones from CS, but I can't filter out the background noise/echo effect
+ -The one from Kingpin/RtCW is *perfect* but it's too short (and sounds crappy in-game)
+ -Modified one from AHL4 but it sounds horrible in the game and normal in Windows...
+ -Tried making a few myself via cut-n-paste (again, good except in-game)
+ -If EDGE could play sounds other than 11025kHz/8 bit/mono I'd be the freakin mayor
+-Added player and male helper coughing effect for gas bomb
+-changed around a lot of the weapon slots (silenced, satchel, detonator), tweaked
+ weapons priority accordingly
+-Removed PUFFB0 from knife impact smoke
+-Sort of fixed 40mm shells from moving so much (also increased chances of stopping
+ in different positions)
+-Got the pistols' reloads down to a satisfying speed
+-Tweaked some casings/clips stuff... doubled the amount of time clips stay on-screen
+-Changed the double pistols' alternate attack to fire simultaneously
+-Changed the pistol sound (possibly temporarily) to a more bassy one
+-Added the remaining RSCRIPTS to the other Doom II maps
+-Decided to use the Kingpin/RtCW pistol slide sound after all... hell, I'll get used to it
+-Cleaned 12 MB out of the wad
+
+July 29, 2002
+-Added the beginnings of the neccessary stuff for swimming/drowning
+-Added another cough sound for the gas bomb
+-Reduced player's lung capacity by a few seconds
+-Perfected (I hope) the water behaviour
+-Added a cool bubble effect when the player drowns... God I'm l337
+-Added a more "Doomish" air-meter. Might do a percentage one instead
+-slowed down the animation of most of the casings
+
+July 30, 2002
+-Fixed the animation of the sawed-off shells
+-Added a bonus weapon: the beretta.. yes, it was in previous versions, but this
+ one has an enhanced animation and reload sequence, as well as all new matte black
+ finish. It's going to be rare as hell anyway, even if it is kinda useless.
+-Added the revolver from DC1 (sort of, I made it chrome looking...)
+-Added sounds and effects for the new weapons
+-Made sure double pistols' alt-attack was properly loud
+
+July 31, 2002
+-Added a new sound for the sawed-off shotgun
+-Added unique sounds for each shotgun's racking noise
+-Tweaked beretta sounds
+
+August 1, 2002
+-Fixed animation of the shotgun shells (added frames, tweaks, etc)
+-Tweaked beretta/revolver smoke
+-Added a better looking icon for the SSG
+-Tweaked shotgun smoke
+-Finally got the flash/recoil of the flak shotgun to my liking
+-Changed icon for the 1911
+-Added beretta icon
+-Added revolver icon
+-Added new flak shell casings.. they are dark grey as opposed to black
+ (Also changed ammo pickups accordingly)
+-Fixed almost all of the sawed-off's frames:
+ -Lengthened the slide distance
+ -Shrunk the forearm
+ -Got rid of bright side of gun
+ -Added better reload animation from DC1
+ -Fixed icon to look more like the gun itself
+
+August 2, 2002
+-Really cleaned up the revolver animation.. looks real good now.
+-Added smoke and sparks to the revolver
+-Changed revolver's attack to roughly the same accuracy as the pistol: if
+ refire_innaccurate didn't affect smoke/sparks I'd use it instead.
+-Implemented the revolver and the beretta into the game. Suffice it to say,
+ unless you put them on the map yourself they're VERY rare
+-Added 3-shot burst to beretta alt-attack
+-Changed the silenced pistol alt-attack
+-Added the proper priorities to the revolver and beretta
+-Updated ddfdesc2.txt
+-Cleaned 12 megs out of the wad
+
+August 3, 2002
+-Fixed (I think) a sound bug with the shotgun cocking
+-Changed the shotgun guy's attack to the sawed-off sounds
+-Fixed shells dropped by sergeant corpse only giving 2
+-tweaked fire trans.
+-fixed a loud clicking noise in DSSRACK
+
+August 4, 2002
+-Made beretta primary fire slower - it looked goofy w/ low framerate
+-Changed the blood effects YET AGAIN... this time a true amalgamation between
+ the DC series' particle effect and the Zombies effects...
+
+August 5, 2002
+-Added cw tag to sawed off and beretta
+-Gave less particles to blood
+-Made blood less likely to splash
+-Made chainsaw just slightly easier to start
+-Updated Design_notes.txt
+-Added a new sound for the flak shotgun cocking
+-Added a sound to the blood splashes
+
+August 8, 2002
+-Fixed crappy dimensions of BOSS BRAIN back to dehacked standards
+-Made a minor adjustment to the status bar ammo pictures
+-Scaled down the remaining Doom2 gore (puddles, brains, etc.) to match other
+ stuff
+-removed coughing from helpers as it sounded different than their speech (radio)
+-Tweaked Double Pistols to reload just a fraction faster
+-Reverted Double pistol's attacks to be more accurate (hence useful at range)
+-VERY slightly weakened the M16 attack
+-Adjusted the spread pattern of the M16
+-Fixed the kill scripts in maps 32 and 31 (broke them when I added the random zombies)
+-Adjusted the recoil of the M16... looks much better now
+-Changed all the shotguns to have unique sounds so standard pwads that have replacement
+ sounds don't screw things up
+-Made the Flak shotgun's sounds come from the gun rather than the projectiles
+-Cleaned up the Kill Icons 2 D XTREEEEEEM.... that is, they all line up perfectly now
+-Just for kicks I made an alternate weapons.ddf that removes all the reloads...
+ needless to say the game is WAYYYYY too easy when you don't have to reload!... also
+ you tend to go through a lot more ammo. Weird.
+-Made player's hitscan attacks closer to the crosshair (was too low before)
+-Tweaked the hell out of the shotgun attacks (spread, damage, pellets, etc)
+-Made the uzi alt-attack just slightly stronger than primary
+-Fixed the revolver's random rate of fire
+-Changed the way the Double Uzis check for reloads
+-Nerfed the Sawed-off shotgun because it was NOT supposed to be better than the standard
+ shotgun
+-Weakened the minigun attacks a bit, as it was almost as powerful as the M16
+ 
+August 12, 2002
+-Added experimental alternate attacks to the shotgun and sawed-off shotgun
+
+August 15, 2002
+-Damn, it's hot out.
+-Made all monsters with human-based weapons infight if provoked
+-Changed the Arachnotron attack slightly (sound, etc)
+-Made arachnotron and revenant weaker (I HATE these 2 enemies...)
+-Reverted the cacodemon fireball to use the electricity death sound
+-Gave all enemy projectiles a slight inaccuracy
+
+August 19, 2002
+-Got sunburnt all to hell playing in a golf tournament yesterday...
+-Made flares' dynamic light a random intensity
+-Changed animation of flare on the ground
+-Changed the way the flak shards make their sounds (temporary)
+-Toned down hand grenade fragments to be a little less deadly to the player
+-weakened flak shotgun just a hair
+-changed flak grenade explosion sound
+-fixed my own mistake re: arachnotron plasma
+-made chainsaw zombie walk/run faster
+
+August 20, 2002
+-Added impact noises for bullets and buckshot hitscans
+-Added a better fire sound
+-Tweaked flak shards, added new sounds
+-added a magical hum to colored torches
+-added better flare sounds
+
+August 24, 2002
+-Arrgh, for some reason I started about 50 tweaks all at once, and it's fucking
+ me up... too many things to keep track of!
+-Made electric lamp sounds perfect
+-Changed behaviour of Uzi shells
+-Added a bounce sound to the buckshot debris particles
+-made the twitching gore plead for death up close
+-tweaked sawed-off shells
+-tweaked pistol casings... made them feel heavier
+-tweaked brightness of gun sparks
+-Started on completely re-doing the way flares look/work
+
+August 25, 2002
+-Completed the new flare effects
+-Removed the ability to hold onto a flare while it's lit...
+-Added a completely new flare animation (strike and throw)
+-Slightly changed the sawed-off's flare attack animation
+-Changed one of the hands on the hand grenade animation
+-Improved Flare throw animation, and resting on the ground sprites
+
+August 26, 2002
+-Gave both red torches a random smoke puff
+-Added a computer-ish hum to the technical columns
+-Finished tweaking all the .45 and 9mm casings
+-Added new sprites for the rifle casings
+-Gave certain enemies rifle casings
+-made some casings only seldom play sounds... should speed up some weapons
+-Cleaned THIRTY TWO megabytes from the wad!!! [img - holyshitdude]
+
+August 28, 2002
+-Improved flare death animation
+-Reduced flares to only last 5 minutes
+-tweaked dimensions of the candelabra
+-tweaked the animation for the rifle casings
+-changed the animation for the bayonet thrust
+-added sounds to the bayonet thrust
+-changed player pain sound to be more random
+-replaced player "noway" sound
+
+August 29, 2002
+-Added the percentage air meter (since I'll use the other one in DC1)
+-Tested the game in a lower resolution - the kill icons seem a little
+ cramped, but nothing else too extreme
+-replaced the player "oof" sound
+-Made a jump sound for the player.... not sure if I like it just yet
+-Got rid of some of the Doom64 sounds I used (mostly the ones that were used
+ in conjunction with normal Doom sounds)
+-Enhanced the animation of Doom's "black candle object"
+
+September 8, 2002
+-Been working on Don's Challenge of all things...
+-Fixed an error with the cacodemon bite
+
+September 15, 2002
+-Fixed candle animation
+-Fixed redundant M4IN / UZI2 sounds
+-Gave player 24 bullets to start with (enhanced monsters are harder to kill)
+-Made enemy projectiles a little less innaccurate
+-Gave turret rifle casings instead of pistol
+-Made explosion smoke rise upwards a little more
+
+September 19, 2002
+-Made revolver use normal bullets instead of rifle ammo
+-Tried some fixes re: bots shooting trees and stumps
+-Got rid of useless old flame animation sprites
+-moved the double pistols a tiny bit closer together... Also, in order
+ to fix EDGE's shitty offset bug I had to add a crapload of dead space
+ around one of the reload frames so it would animate properly
+
+September 22, 2002
+-nulled a duplicate pistol sprite
+-Added smoke and sparks to the sentry turret
+-Made helper spawner less likely to spawn anything
+-Added cw tag to remaining sprites
+-Increased flare duration to 10 minutes
+-Fixed flak particles from making noise too early
+-Adjusted .45 casings a bit
+-Adjusted helper bot speech behaviour
+-Made cyberdemon and spider mastermind "stomp" you if you get too close
+-increased bayonet speed (it was too slow to be useful)
+
+September 23, 2002
+-Perfected the bayonet, for now at least
+-For shits-n-giggles I made most of the weapon flashes translucent. Some
+ couldn't be done, so I may revert them all to solid sometime...
+-While doing the above, I fixed a lot of badly timed flash animations
+-Made the sawed-off and 40mm have independent flash frames
+-tweaked the shotgun smoke a little
+-updated design_notes.txt
+-updated ddfdesc2.txt
+-removed all traces of an unused sound
+-made sure all zombies' death animation sync'd with the dropping of items
+-tweaked grenade droppers (less likely of a failed grenade drop)
+
+September 24, 2002
+-Fixed turret casings' death (got screwed up when added CAS7 and CAS3 rotation)
+
+September 25, 2002
+-Decreased amount of tracers the single uzi produced (matches double)
+
+September 29, 2002
+-Added random hard landing sounds
+-made broken lamps spark more
+-Added HUD sounds to turret and medibot icons
+-made human/zombie corpses and gibs randomly spawn flies (kinda like quake2)
+-fixed faulty rotation of turret base
+-added flies to all former humans + helper deaths, although very random
+-Cleaned 10 megs from the main wad
+-BACKUP
+
+October 1, 2002
+-made flies less likely on trooper and sergeant deaths
+-tweaked Uzi firing animation / recoil
+-removed hammer sound from Revolver recoil
+
+October 2, 2002
+-fixed inefficient bullet tracer death
+-made flies even less likely on all monsters
+-removed player's suicide animation for now
+
+November 20, 2002
+-added the extra shotgun flash frames from the new dehacked version
+ -had to slightly alter the animations of the shotguns in the process
+-made all the shotgun racking noises a little quieter
+-fixed the wierd looking knife bounce animation
+-slightly decreased the radius of the bonuses dynamic light
+-made shotgun and ssg zombies a little more threatening
+-made sawed-off's muzzle flash a little more translucent
+-tried some new effects for the chainsaw but didn't like them
+-completely changed the way flies make noises.. A LOT better now.
+
+November 21, 2002
+-Changed the sprites and behaviour of the cacodemon fireball
+-Updated design_notes.txt
+-Fixed knife bounce animation even more
+
+November 24, 2002
+-Added animation to candelabra
+-Re-added alternate flare attack (hold on)
+-been experimenting with new clip sprites, esp. for the uzi
+-reduced sig-cow clips to hold 20, since it's such a powerful weapon
+-made alternate attack of flares a little slower than primary
+-made twitching hanging dudes drip blood sometimes
+-Finished new uzi clips, although I think they may be a little TOO detailed
+ in relation to the other clips...
+
+November 25, 2002
+-Began trying out some stuff for the old style lost souls
+-reduced duration of Chaingun guy shells
+-reduced duration of Mastermind shells
+-Gave cyberdemon and mastermind their own blood type, and it doesn't last as long
+ to reduce slowdowns during cyber/mastermind infighting
+-Added better bubble sprite
+-Enhanced the pistol clips a little to match the new uzi clips
+
+November 26, 2002
+-Added new pain, attack and idle sounds to the old lost soul
+
+November 28, 2002
+-for some reason I started using Immoral Conduct as a test bed to try some shootable
+ glass techniques I need for DC1... It's hard to get something that is a good
+ compromise between functionality and asthetics... I can get one or the other, but
+ not both. Hmm.
+-For kicks, I ran the wad using the software version of EDGE. It looks pretty cool, the
+ new particle effects stand out a LOT more, so firing the shotguns looks more violent :)
+
+November 29, 2002
+-got my glass working okay, so I put all the data where it should be - with DC1
+-cleaned 11.5 megabytes of wasted space out of the wad
+
+December 1, 2002
+-tweaked some stuff (casing smoke, flare smoke)
+-removed test versions of the old lost soul and some stuff I did to the pain elemental
+
+December 2, 2002
+-Made the head-on-a-pike killable, as well as the skewered skulls.
+-Tried some new attacks for the lost soul, but didn't like it enough to bother making it
+ look better.
+-Did some touch-up work on the SSG 'a' sprite (and flash).. not very noticeable, but
+ a lot better looking if you look closely.
+-Added the Doomguy hands to the 40mm grenade launcher (finally!!), and tweaked it's
+ on-screen position a bit.
+-Ever so slightly weakened the M16.
+-Slowed down the revolver attack speed.
+-reduced reload probability for zombies and helpers.
+
+December 13, 2002
+-Cleaned 5.6 megs out of the wad
+-BACKUP
+
+December 22, 2002
+-Added some minor improvements I discovered developing DC1 recently.
+
+December 27, 2002
+-Cleaned some space from the wad. Getting ready for release!
+
+=========================================================================================
+=========================================================================================
+=========================================================================================
+=========================================================================================
+=========================================================================================
+=========================================================================================
+=========================================================================================
+=========================================================================================
+
+Icd-ddf Design Notes:
+
+This is here for public interest and my own documentation really. Maybe
+you're interested in the finer details of what went into making this mod.
+
+
+SPRITE MODIFICATIONS:
+In order of appearance in the main wad:
+
+
+PIST
+GPIS
+SPIS
+PISG
+Original Source:
+-Duke Nukem 3d (pistol sprites)
+-Doom (hands)
+Modifications:
+As you can tell, I had to modify these sprites A LOT considering their main source.
+I originally needed these sprites for the pistol in Don's Challenge 2 (way back).
+UPDATE: Shortened the arms on some of the frames.
+
+BFGG
+HGN1
+Original Source:
+-Powerslave (grenade and projectile)
+-Doom (hands)
+Modifications:
+Although a shitty game in itself, Powerslave offers a few good resources. I had to
+enlarge the tiny grenade icon to make the grenade you hold in your hand, and I also
+had to shrink the projectile sprites to about 45%.
+
+GREN
+GRNF
+Original Source:
+-Shadow Warrior
+Modifications:
+I had to remove the gay Shadow Warrior arm band from the hands.
+
+GRNL
+Original Source:
+-Doom
+Modifications:
+If you look close enough, this is a very cut-down version of the Doom rocket
+sprite.
+
+GASL
+Original Source:
+-Justin Fisher's AliensTC
+Modifications:
+None.
+
+SHT2
+Original Source:
+-Doom2
+Modifications:
+I added a bigger hand to the idle frame. Copied the firing frames onto the weapon
+itself, and used a cut-down version of the firing frames for the left-right barrel
+animation.
+Also, I made alternate reload sequences with existing Doom hands and some parts
+from scratch.
+
+SAWD
+Original Source:
+-Doom
+Modifications:
+I removed the sight on the idle frame, and cut the barrel back on the action
+frames. I copied the muzzle flash onto the weapon, used the barrel reflection from
+the supershotgun, and resized the recoil frame. I used Doom hands to make the
+reload animation.
+UPDATE: Used some sprites I made for DC1 and re-did almost all the SAWD frames. I
+lengthened the slide travel, shrunk the hand, removed the bright glare on the side of
+the gun, and enhanced the reload animation.
+
+CHRG
+Original Source:
+-Opposing Force
+-Doom (hands)
+-Doom (projectile)
+Modifications:
+Added Doom hands to the satchel and detonator (modified punch hand)
+Added a little red and yellow LCD light to the detonator.
+The projectile sprites are heavily modified backpack sprites from Doom.
+
+CHGG
+Original Source:
+-TNT Team's PlatoonTC
+-Doom
+Modifications:
+I added the m203 grenade launcher, heavily modified some Doom hands and used them
+for the support arm and cocking animations.
+I also enhanced the reload animation quite a bit. The original had none.
+
+M203
+Original Source:
+-Doom
+Modifications:
+These used to be Doom's rocket explosion frames. I pasted them onto the M16, then
+cut out the unused part to make a muzzle flash for the m203.
+
+SAWG
+Original Source:
+-Doom
+-An old gore wad I played a long time ago
+Modifications:
+I added the pull string animation and the missing hand for the reload, recolored the chain
+teeth so it looks rusty, cut-n-pasted some blood onto the blade sides.
+
+FLRG
+Original Source:
+-Doom
+Modifications:
+Basically just a Doom hand, with a black line coming out of it. I added the "M-94"
+text after seeing the flares Ripley used in Aliens.
+I also used a tilted, enlarged portion of Doom's "small red torch" for the
+burning animation.
+
+FLAR
+Original Source:
+-Michael Gummelt's Aliens3beta
+Modifications:
+I recolored the flare part black, and made the sprite look like it was lying horizontal
+rather than on an angle.
+
+SHTG
+SHTF
+REMG
+Original Source:
+-Duke Nukem 3d
+-Doom
+-Half Life
+Modifications:
+Obviously I added heavily modified Doom hands (to the SHTG), and moderately
+modified Doom pistol hands (to the REMG), and topped it off with a muzzle flash
+from Half-Life.
+I had to build the slide handle from scratch (for the REMG reload frames).
+
+RIFL
+RIFF
+BAYG
+RIFR
+Original Source:
+-Doom Alpha 4
+-Doom
+Modifications:
+I added the bayonet to the idle frame (A4 had it seperate), then I recolored the
+handles of the knifes, added a modified shotgun muzzle flash, and tilted the idle
+frames (and removed the original hand, added a different hand) to create the 
+reload frames.
+
+UZIG
+UZ2G
+UZI2
+Original Source:
+-Shadow Warrior
+-Doom
+-Blood
+Modifications:
+Added Doom hands to ALL frames, including some very modified ones for the reload
+animation. Used muzzle flashes from Blood instead of the crappy ones from SW.
+A lot of repetative work went into these, but I'm proud of the way they turned out.
+
+KNIF
+THRW
+KNFE
+Original Source:
+-Doom
+Modifications:
+Just Doom's punch hands, with a scratchbuilt knife. I used the knife from 
+Twilight Warrior as a guide to get the metal shine to look right, but that's all.
+The projectile (also used for M_SKULL1 and M_SKULL2), where done from scratch.
+
+MING
+MINF
+Original Source:
+-Shadow Warrior
+-TNT Team's PlatoonTC
+Modifications:
+Removed the drum from the Shadow Warrior shotgun, added the chain of bullets from
+PlatoonTC's M-60. Slightly modified the firing animation and removed the opening
+chamber port.
+
+TGUN
+Original Source:
+-Doom
+Modifications:
+I removed the brass knuckles from the Doom punch sprites, and copied them into a
+mirror position.
+
+SHOT
+Original Source:
+-Doom
+Modifications:
+Just a modified version of Doom's SHOTA0 sprite.
+
+SGN2
+Original Source:
+-William Sullivan
+Modifications:
+None.
+
+GLNC
+Original Source:
+-Shadow Warrior
+Modifications:
+Resized it I think.
+
+PLAS
+Original Source:
+-Doom
+Modifications:
+A heavily modified SHOTA0 sprite (used to be the shotgun icon)
+
+USMG
+Original Source:
+-Shadow Warrior
+Modifications:
+Resized, cut and pasted, recolored, as the originals were very monochrome.
+
+MGUN
+Original Source:
+-TNT Team's PlatoonTC
+Modifications:
+Retouched the top of the gun, redid the clip
+
+HGUN
+Original Source:
+-From scratch
+
+FLMD
+Original Source:
+-Doom
+Modifications:
+Modified Rocket Crate and recolored shotgun shell icons
+
+MINN
+Original Source:
+-Doom
+Modifications:
+Very chopped up Doom chaingun sprite, with a portion of the chaingun guy's ammo belt
+added to it.
+
+SAWDK
+SHEL
+Original Source:
+-Doom
+Modifications:
+Simple modifications of Doom sprites
+
+BFUG
+Original Source:
+-PlatoonTC
+-Powerslave
+Modifications:
+The crate itself came from PlatoonTC and the grenades from Powerslave
+
+CLIP
+SBOX
+AMME
+STIM
+MEDI
+Original Source:
+-Doom
+Modifications:
+Simple modifications to Doom sprites, except CLIPB0, which is for the most
+part from scratch
+
+PVIS
+Original Source:
+-Duke Nukem 3d
+Modifications:
+None.
+
+ARM1
+Original Source:
+-Doom Alpha 4
+Modifications:
+Added the marine helmet.
+
+SMKE
+Original Source:
+-Blood
+Modifications:
+None
+
+SMOK
+Original Source:
+-Heretic
+Modifications:
+None
+
+SMK2
+Original Source:
+-Unknown
+Modifications:
+These are recolored versions of the Heretic sprite above. These may have come
+from Doom Legacy (rocket trail)?
+
+PUF2
+Original Source:
+-Counter-Strike
+Modifications:
+None, except for converting all THIRTY frames to the Doom palette, 
+and changing the background from black to cyan which is a pain :)
+
+SPUF
+Original Source:
+-Duke Nukem 3d
+Modifications:
+None
+
+PART
+Original Source:
+-From scratch
+
+RLSR
+FRAG
+Original Source:
+-from scratch
+
+CAS2
+CAS3
+CAS4
+CAS6
+Original Source:
+-Doom
+-Shadow Warrior
+Modifications:
+CAS2 are very shrunk down SW sprites, whereas CAS3, CAS4 are just modified Doom
+sprites. CAS6 are modified SW sprites.
+
+BAL2
+Original Source:
+-Doom v0.99
+Modifications:
+None
+
+BBLD
+GBLD
+OBLD
+NBLD
+SPLR
+SPLB
+SPLG
+SPLN
+SPLO
+Original Source:
+-Doom
+Modifications:
+Just recolored versions of Doom's BLUD* sprites, and the SPL* are modified Doom
+sprites as well.
+
+BFE1
+EXPL
+EXP3
+BNG4
+Original Source:
+-Shadow Warrior
+-Half Life
+-Strife
+Modifications:
+None, but the Half-Life sprites needed a lot of work to become Doom compatible.
+
+GAS1
+Original Source:
+-Duke Nukem 3d
+Modifications:
+Recolored. I may have done more, but I don't remember. I think the initial frames were
+resized.
+
+CLP1
+CLP2
+CLP3
+CLP4
+Original Source:
+-Doom
+-From Scratch
+Modifications:
+Just modified versions of previous sprites
+
+LAMP
+Original Source:
+-Werner Spahl's Theme17
+Modifications:
+I added small bullet holes and marks
+
+ACLO
+ACLP
+Original Source:
+-Hexen
+Modifications:
+I recolored the ACLP frames to make them green. The blue ones are unmodified.
+
+GIBB
+Original Source:
+-Doom
+Modifications:
+Recolored versions of various Doom gib sprites
+
+RIPL
+Original Source:
+-Michael Gummelt's Aliens3beta
+Modifications:
+None. I originally used these sprites for a skin (for the dehacked version)
+and eventually used them here instead.
+
+PLAK
+Original Source:
+-Doom
+-Mark Quinn
+-Doom pre-release
+Modifications:
+Modified a standard Doom player frame. This was going to be used in an OLD project
+of mine based on the Doom storyline.
+UPDATE: Added the shotgun from one of Mark's skins, and added the "no-choke" death
+from the Doom pre-release. 
+
+SKLL
+Original Source:
+-Doom Press Release Beta
+Modifications:
+None.
+
+TURR
+Original Source:
+-Duke Nukem 3d
+-Doom
+Modifications:
+Pasted the Duke3d turret head onto a modified version of Doom's COLUA0 sprite
+
+SPDA
+Original Source:
+-Strife
+Modifications:
+None.
+
+POL1B
+POL6C
+GOR
+HDB
+Original Source:
+-Doom
+Modifications:
+Just modified versions of most of the Doom gore sprites.
+
+SMPF
+Original Source:
+-Shadow Warrior
+Modifications:
+Just rotated the base image 90 degrees for each frame.
+
+UZI3
+Original Source:
+-Shadow Warrior
+-Doom
+Modifications:
+Big time modification here. I pushed the pixels of the SW Uzi sprite around to get a
+"down the barrel" look, then I tilted the sprite, and added it to a tilted and tweaked
+Doom hand. A lot of work for such a minor sprite.
+
+SPL*
+Original Source:
+-Doom
+-Scratch
+Modifications:
+These are distorted versions of Doom's BLUD* sprites and Doom2's puddle of blood.
+
+SPCR
+Original Source:
+-Scratch
+
+RING
+Original Source:
+-PowerSlave
+Modifications:
+Just clipped the handle and ring parts of of the base hand grenade icon.
+
+BEXPF
+Original Source:
+-Doom
+Modifications:
+Clipped away the explosion of the barrel to leave the metal remains behind
+
+BAR1C
+Original Source:
+-Doom
+Modifications:
+Removed the bubble from the barrel's ooze.
+
+FFLG
+Original Source:
+-Hexen
+Modifications:
+None.
+
+GREL*
+Original Source:
+-Shadow Warrior
+Modifications:
+Removed the hand, removed the grenades in the chambers
+
+PUF5
+Original Source:
+-Half-Life
+Modifications:
+It took a fair bit of recoloring to get the darkness/contrast right, but luckily
+it wasn't many frames. I wish EDGE had alpha/tinting abilities.
+
+PSTR*
+Original Source:
+-Doom
+Modifications:
+Opened up the berserk box sprite (like the medikits)
+
+FCAN*
+Original Source:
+-Doom2
+Modifications:
+No physical modifications, but I changed the offsets in the wad so the sprites
+pivot on the middle of the barrel instead of on the edge.
+
+CSAWA0
+Original Source:
+-Doom
+Modifications:
+Made the blade rusty colored, and added dried up blood
+
+CPOSU*
+Original Source:
+-Doom2
+Modifications:
+Removed the muzzle flash from the chaingunner's chaingun.
+
+PLA3
+Original Source:
+-Mark Quinn's Skins Pack
+Modifications:
+None
+
+PLA4
+Original Source:
+-Doyoon Kim's DOYWEAP.wad
+Modifications:
+Fixed the head on the firing animation, and fixed the head on the death animation
+as well.
+
+PLA2
+Original Source:
+-Mark Quinn's Skins Pack
+Modifications:
+Cut-n-pasted the second arm up there for the firing animation, and added a second
+gun to the walking/pain animation. 2 1/2 hours worth of work.
+
+PLA8
+Original Source:
+-Mark Quinn's Skins Pack
+-Doyoon Kim's DOYWEAP.wad
+Modifications:
+Added the head from doyweap, added enhanced attack frames, had to make almost all the
+death frames myself (with cut-n-paste).
+
+PISR
+DPST
+Original Source:
+-Same as pistol sprites
+-Doom
+Modifications:
+Added a better hand sprite I used for DC1.
+
+BUBBA0
+Original Source:
+-Duke Nukem 3d
+Modifications:
+None.
+
+BERF
+BERT
+Original Source:
+-William Sullivan's D2Enh.wad
+-Doom2
+Modifications:
+Recolored the pistol (got rid of the green tint), made some small changes to the
+slide action frames, had to change the hammer on a few frames as well. Added an extra
+hand for the reload frames.
+
+REVG
+Original Source:
+-Powerslave
+-Doom2
+Modifications:
+Added Doom2 pistol hand, had to change the handle part pretty bad, recolored the gun
+to look shiny / stainless steel. Changed the hammer for parts of the animation.
+
+RHND
+Original Source:
+-Doom2
+Modifications:
+Not much. Had to add the small arm bits I think.
+
+HGUNB
+Original Source:
+-From scratch
+
+HGUNC
+Original Source:
+-Powerslave
+Modifications:
+-Recolored the hande, shrunk the sprite down quite a bit.
+
+SPL*D0
+Original Source:
+-Doom2
+Modifications:
+-Just recolored and resized Doom2 POB2A0 sprite
+
+FLR2
+Original Source:
+-Doom
+-Previously used sprite (see FLRG)
+Modifications:
+-Added the second doom hand
+
+FLARD0
+FLARE0
+FLARF0
+Original Source:
+-Previously used sprite (see FLAR)
+Modifications:
+-made the diagonal flare stick look better (45 degree angle), and for F0, just
+ removed the flame part.
+
+CAS7
+Original Source:
+-Previously used sprites (see CAS2)
+Modifications:
+-Added some pixels to the ends of the casing to make it look like a rifle cartridge
+
+CAND
+Original Source:
+-Doom
+Modifications:
+-Used the flicker animation from Doom's "Eye in Symbol" decoration
+
+FLY1
+Original Source:
+-From Scratch
+
+PLSS
+PLSE
+Original Source:
+-A very old version of the Doom64 mod Tony Lindberg and I worked on
+Modifications:
+-I fixed the shape of the projectile (plssa0, plssb0), and I removed a ton of
+ gray pixels from the death animation.
+
+CBRA
+POL4
+POL2
+Original Source:
+-Doom
+Modifications:
+-I applied the candle animation to the candelabra, and modified the head on a stick and
+ skull skewers to look destroyed / destoyable.
+
+
+
+All the rest not mentioned here are probably just used to make sure all the sprites
+show up when playing Doom 1 (i.e. FBXP, POB1A0, BAL7, etc.)
+
+======================================================================================
+SOUND MODIFICATIONS
+Some of these I'm not sure of (marked with a '?' or 'unknown'), because I have a 
+MASSIVE collection of sounds that goes way back. Luckily I can recognize most of
+them, but generic "woosh" or "tink" sounds are hard to pinpoint.
+
+
+DSSKULLS : Hexen
+
+DSFLY1 : I got the base sound from Nigel Rowands njzd2001.wad, and pasted the
+DSFLY2 : individual sounds as their own files.
+DSFLY3
+DSFLY4
+DSFLY5
+
+DSBOOTS1 : Unknown (Hexen?)
+DSBOOTS2 : Duke Nukem3d, resampled
+
+DSDET01 : Shadow Warrior
+DSDET02 : Shadow Warrior
+
+DSSWING1 : SoF2 MP Demo
+DSSWING2 : SoF2 MP Demo
+
+DSBRETH5 : All these are modified from Doom's PLPAIN sound
+DSBRETH4
+DSBRETH3
+DSBRETH2
+DSBRETH1
+DSGRUNT2
+DSGRUNT1
+
+DSTECH : Either Quake or Half-Life
+
+DSSPLAT2 : Unknown
+DSSPLAT1 : Hexen
+
+DSDUST : RtCW (I think)
+
+DSKILLME : Mike Gummelt's Aliens3beta
+
+DSFIRE4 : Unreal 1 (I think)
+
+DSFLARE2 : Unreal 1
+DSFLARE1 : Unreal 1
+
+DSLHUM3 : Probably Quake
+
+DSTIN4 : Unreal Tournament
+DSTIN3 : Unreal Tournament
+DSTIN2 : Quake
+
+DSFIRE3 : Quake portal sound embedded over DSFIRE1
+DSFIRE1 : Unknown
+
+DSIMPC1A : All from RtCW or Half-Life (most are modified)
+DSIMPC1B
+DSIMPC1C
+DSIMPC1D
+DSIMPC1E
+DSIMPC1F
+
+DSPLASMA : Unknown (Strife?)
+
+DSBSLIDE : Counter-Strike
+DSBPIST : SoF2 Multiplayer Demo
+
+DSCOUGH1 : Powerslave (modified)
+DSCOUGH2 : Powerslave (modified)
+DSGURGL1 : Powerslave
+DSGURGL2 : Powerslave
+DSPGASP : Powerslave (modified (I think))
+DSDRWN : Powerslave
+
+DSHOLSTR : SoF (Modified from DSWEAPUP)
+
+DSHAMMR : Soldier of Fortune
+DSHAMMR2 : Modified from above sound
+
+DSBLOOD1 : Half-Life
+DSBLOOD3 : Half-Life
+DSBLOOD4 : Return to Castle Wolfenstein
+
+DSKNF1 : SoF or SoF2
+DSKNF2 : Powerslave (clipped from original)
+DSKNF3 : SoF or SoF2
+DSKNF4 : SoF or SoF2 ??? Counter-Strike?
+
+DSBARRL : Unknown (Hexen maybe?)
+
+DSHEART : Duke Nukem 3d or Shadow Warrior
+
+DSSUZI2 : Soldier of Fortune
+DSSUZI3 : Soldier of Fortune
+DSSUZI4 : Soldier of Fortune
+
+DSBAY2 : AQ2?
+DSSMACK : AQ2?
+
+DSM211 : Soldier of Fortune
+DSBOLT2 : Opposing Force
+DSSNREL : Opposing Force
+
+DSBAREXP : Resampled Doom sound
+DSBOOM1 : Half Life
+DSBOOM2 : Half Life
+DSBOOM3 : Half Life
+DSBOOM4 : Half Life
+
+DSHISS : Duke Nukem 3d?
+DSGAS1 : Shadow Warrior
+DSGAS2 : Shadow Warrior
+DSGAS3 : Shadow Warrior
+
+DSSATCH1 : Half Life
+DSSATCH2 : Half Life
+
+DSTURR1 : Half Life
+DSTURR2 : Half Life
+DSTURR3 : Half Life
+
+DSGREN2 : Kingpin
+DSGREN3 : Shadow Warrior (mix of 2 seperate sounds)
+DSGREN4 : Kingpin
+
+DSMINI1 : Quake 2
+DSMINI2 : Quake 2
+DSMINI3 : Quake 2
+DSMINI4 : Rainbow 6
+DSMINI5 : Opposing Force
+
+DSKNIFE1 : Unknown
+DSKNIFE2 : Unknown
+DSKNIFE3 : Unknown
+
+DSHURT : Quake 2 ??
+
+DSITEM1 : AQ2 or AHL
+DSITEM2 : Counter-Strike (modified)
+DSITEM3 : AQ2 or AHL
+DSITEM4 : Soldier of Fortune
+
+DSDBCLS : AHL?
+DSDBLOAD : Unknown
+DSDBOPN : AHL?
+DSDSHTGN : Doom2 SSG embedded over Duke3d shotgun
+DSSHOTGN : Duke Nukem 3d
+DSSHTGN2 : Duke3d shotgun with cock sound embedded
+DSSHOTG2 : Some unknown Half Life mod
+
+DSRICH1 : Half Life
+DSRICH2 : Half Life
+DSRICH3 : Half Life
+
+DSTHROW : Unknown
+
+DSASSLT : Some unknown Duke Nukem 3d mod
+DSM4OUT : AQ2
+DSM4IN : AQ2
+DSM162 : An old version of Infiltration (UT)
+
+DSUZI1 : Shadow Warrior
+DSUZI2 : Shadow Warrior
+DSUZI3 : Shadow Warrior
+
+DSSAWED3 : Doom
+
+DSCLICK : Shadow Warrior
+DSCLICK2 : An old version of Infiltration (UT)
+
+DS1911 : Return to Castle Wolfenstein
+DSPSLIDE : Return to Castle Wolfenstein (Modified)
+DSPOUT : Return to Castle Wolfenstein (Modified)
+DSPIN : Return to Castle Wolfenstein (Modified)
+DSSILENC : Counter-Strike
+
+DSRLAUNC : All of these are from a Doom64 sound wad on cdrom.com
+DSPEPAIN
+DSPESIT
+DSPEDTH
+DSSGTAT2
+DSBGAC2
+DSBGDTH4
+DSBGDTH5
+DSCGSACT
+DSCGDTH1
+DSCGPAIN
+DSCGSIT1
+DSCGSIT2
+DSDEMPN
+DSDEMACT
+DSSKEATK
+DSCACDT2
+
+DSCFBALL : Opposing Force
+DSCFEXPL : Opposing Force
+
+DSSKLDTH : Quake
+DSSKLPN : Quake
+DSSKLACT : Quake
+DSSKLSIT : Quake
+DSSKLATK : Quake
+
+DSMMDTH : All these are from Tom Clancy's Rainbow Six
+DSMMPN1
+DSMMPN2
+DSMMPN3
+DSMMACT1
+DSMMACT2
+DSMMACT3
+DSMMSIT1
+DSMMSIT2
+DSFESIT1
+DSFESIT2
+DSFESIT3
+DSFESIT4
+DSFEDTH
+DSFEACT1
+DSFEACT2
+DSFEACT3
+DSFEACT4
+DSFEACT5
+DSFEPN1
+DSFEPN2
+DSFEPN3
+DSFEPN4
+
+DSSPSIT : Strife
+DSSPWLK : Strife
+DSSPDTH : Strife
+
+SUICIDE : Combo Doom sounds and a Shadow Warrior sound
+
+DSSQUISH : Shadow Warrior
+DSFLESH : Duke Nukem 3d
+
+DSKEYS : Combo Hexen Key noise and Doom powerup noise
+DSKEY1 : Quake 2
+DSBONUS : Hexen
+DSARMOR : Hexen
+
+DSSHELL1 : Half Life
+DSSHELL2 : Half Life
+DSSHELL3 : Half Life 
+DSCASING : Half Life
+DSCASIN2 : Modified Shadow Warrior (end part of CASIN4)
+DSCASIN3 : Half Life
+DSCASIN4 : Shadow Warrior
+
+DSHGREN1 : Powerslave (worst game ever)
+DSHGREN2 : Powerslave
+DSHGREN3 : Powerslave
+
+DSHEALTH : Soldier of Fortune
+DSWEAPUP : Soldier of Fortune
+DSWEAPU2 : Soldier of Fortune (reversed from above)
+
+DSCLP1A : Modified this from a very old CS add-on weapon model
+
+DSLHUM2 : Half Life
+DSLHUM1 : Half Life
+
+DSFIRE2 : Quake ??
+
+DSBUZZ : Duke Nukem 3d
+DSBUST : Duke Nukem 3d
+
+DSGREN : Soldier of Fortune 2 MP Demo
+
+DS40OPN : Doom2
+DS40CLS : Doom2
+DS40LOAD : Doom2
+
+DSSAWGAS : All are resampled Doom sounds
+DSSAWUP
+DSSAWIDL
+DSSAWFUL
+DSSAWHIT
+
+DSFRACK : Strife (modified)
+DSSRACK : Soldier of Fortune (modified)
+
+DSSAWED1 : SoF2 Multiplayer Demo 
+DSSAWED2 : Counter-Strike (modified)
+
+DSMOUT : Half-Life
+DSMIN : Half-Life
+DSMLOAD : Half-Life
+DSMAGNM : AHL4 ???
+
+
+
+==============================================================================
+MISCELLANEOUS SOURCES
+
+AIRBAR* : Used the Doom font .bmps
+
+TITLEPIC : Some picture I found on the internet (added text)
+
+M_DOOM : Modified Doom's M_DOOM, added text
+
+STTNUM* : Based on guidelines from INVASIO2.WAD by Paul Fleschute
+
+STBAR : Based on a picture I found on the Internet, with Doom stuff.

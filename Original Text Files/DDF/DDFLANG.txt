@@ -1,0 +1,80 @@
+//
+// ******************************************************
+//    IMMORAL CONDUCT DDF BY CORY WHITTLE
+//	http://www.doomworld.com/immoralconduct
+// ******************************************************
+
+<LANGUAGES>
+
+// ------ English Language Definition File ----------
+
+[ENGLISH]
+
+// POWERUPS and ITEMS
+// powerups: "simple description."
+// items: "Picked up a ... ." 
+GotArmourHelmet="Picked up an armor bonus.";
+GotMegaArmour="Picked up a kevlar vest!";
+GotGear="Picked up New Combat Gear!";
+GotStim="Used a Small Medikit.";
+GotMedi="Used a Medium Medikit.";
+GotSoul="Used a Large Medikit.";
+GotSoul2="Emptied a Large Medikit.";
+GotSuit="Radiation Shielding Suit.";
+GotMap="Computer Area Map.";
+GotNight="Nightvision goggles.";
+
+// AMMO
+// "Picked up ..."
+GotClip="Picked up .45 ammo.";
+Got9mmClip="Picked up 9mm ammo.";
+GotClipBox="Emptied a box of ammo.";
+GotShells="Picked up a pack of 4 shotgun shells.";
+GotShellBox="Picked up some shotgun shells.";
+GotShellBox2="Emptied a box of shotgun shells.";
+GotRocketBox="Picked up a crate of 5 grenades!";
+GotCell="Picked up rifle ammo.";
+GotCellPack="Picked a box of rifle ammo.";
+GotFlakShells="Picked up a belt of slasher ammo!";
+GotBackpack="Picked up a Combat Pack!";
+
+// WEAPONS
+// "You got the ...!"
+GotArmour="You got the .45 pistol!";
+GotInvulner="You got the double uzis!";
+GotInvis="You got the pistol silencer!";
+GotRocket="You got the hand grenade!";
+GotFlakPack="You got the shotgun upgrade kit!";
+Got40mm="You got the 40mm Grenade launcher!";
+GotSawedOff="You got the Sawed-off shotgun!";
+GotSatchel="You got the Satchel charge!";
+GotBFG="Picked up 5 frag grenades!";
+GotKnife="Picked up the knife!";
+GotTurret="Picked up the sentry turret!";
+GotChainGun="You got the uzi!";
+GotDoubleBarrel="You got the scatter-gun!";
+GotRocketLauncher="You got the assault rifle!";
+GotPlasmaGun="You got the Infantry rifle!";
+GotShotgun="You got the shotgun!";
+GotMinigun="You got the minigun!";
+GotBeretta="You got the 9mm pistol!";
+GotMagnum="You got the magnum!";
+
+// OTHER
+GotBlueCard="found the blue keycard.";
+GotYellowCard="found the yellow keycard.";
+GotRedCard="found the red keycard.";
+GotBlueSkull="found the blue skull key.";
+GotYellowSkull="found the yellow skull key.";
+GotRedSkull="found the red skull key.";
+
+Notice=
+ "=============================================================\n"
+ "\n"
+ "Immoral Conduct DDF - Special Edition\n"
+ "\n"
+ "By Cory Whittle, 2002\n"
+ "http://www.doomworld.com/immoralconduct\n"
+ "\n"
+ "=============================================================\n";
+

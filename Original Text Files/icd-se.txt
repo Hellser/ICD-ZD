@@ -1,0 +1,89 @@
+===========================================================================
+Archive Maintainer      : This should probably go in the Combos directory
+Update to               : New file from scratch
+Advanced engine needed  : EDGE 1.27 or later
+Primary purpose         : No levels included
+===========================================================================
+Title                   : Immoral Conduct SE
+Filename                : ICD-SE.WAD, ICD-TST2.WAD
+Release date            : January 10th, 2005 (originally released around
+                          2002)
+Author                  : Cory Whittle
+Email Address           : cwhittle@isn.net
+Other Files By Author   : (Too lazy to look these up. -WW)
+Misc. Author Info       : The apparent master of the weapons mod.
+                          -WildWeasel
+
+Description             : The ultimate weapons mod. This here is the only
+                          reason you need to get a copy of EDGE. Cory has
+                          attained the perfect gameplay balance, allowing
+                          this mod to quite literally make a new spin on
+                          Doom without making things too difficult or too
+                          easy.
+
+Additional Credits to   : See ICD-SE2.txt - it's FAR too long!
+===========================================================================
+* What is included *
+
+New levels              : None
+Sounds                  : Yes
+Music                   : Yes
+Graphics                : Yes
+Dehacked/BEX Patch      : No
+Demos                   : No
+Other                   : Includes necessary DDF files and RTS scripts.
+Other files required    : Nothing!
+
+
+* Play Information *
+
+Game                    : Doom 2
+Map #                   : N/A
+Single Player           : Designed for
+Cooperative 2-4 Player  : No
+Deathmatch 2-4 Player   : No
+Other game styles       : EDGE's netplay has yet to be implemented
+Difficulty Settings     : As with all weapon mods, depends on the map
+
+
+* Construction *
+
+Base                    : New from scratch
+Build Time              : Two years according to ICD-SE2.txt
+Editor(s) used          : I have no clue
+Known Bugs              : It's possible to skip the reload sequences on
+                          the shotguns, and to pick up an Upgraded Shotgun
+                          kit without having the regular Shotgun.
+May Not Run With...     : Works fine on EDGE 1.27 and above (even 1.29 beta
+                          1)
+
+
+* Copyright / Permissions *
+
+From ICD-SE2.TXT:
+"Please do NOT use any part of this package as a base for your own work.
+You'll notice I did extensive modifications to the sprites I used,
+so if you *must* have the same weapon, get the original and use that instead.
+Contact me if you need help with that (I will not do the work for you).
+
+So do NOT extract stuff from icd-ddf.wad;
+However:
+Please DO create levels/wads that are dependent on icd-ddf.wad to run. This
+means as long as you make your wad so that the user has to download icd-ddf.wad
+or icd-se.wad SEPERATELY, I don't mind at all. Just don't redistribute this
+package or anything within. Please."
+
+I'm not sure if Cory Whittle had anything against people redist'ing
+his WAD file, because there was nothing in the text file about it,
+and he did not reply to my email after three days of sending. I
+(WildWeasel) think that Immoral Conduct is the best weapons mod to date,
+and it deserves far better honor than to be stuck on 3D Downloads with
+its download queues.
+
+But just to be safe, don't redistribute this file past uploading it
+to the IDGames archives - just in case Cory gets mad at me.
+
+* Where to get the file that this text file describes *
+
+The Usual: ftp://archives.3dgamers.com/pub/idgames/ and mirrors
+Web sites: http://www.doomworld.com/immoralconduct
