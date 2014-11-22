@@ -19,13 +19,46 @@ Original Mod By Cory Whittle
 	   like Hacx or Strain, Aliens TC, etc.
 
 :END TRANSMISSION:
+
 :INCOMING TRANSMISSION FROM HELLSER, NOVEMBER 20th, 2014:
 
  I see that you wish to continue the work of Immoral Conduct, as made by Cory Whittle
  and to that, I thank you. The following list is the things that I've done. However,
  the decorate folder (actors) is a bit of a mess. I'll try to guide you.
 
- actors
+ If you work on this, please include me in the credits. That'll mean a lot. For personal
+ credits, I have to give credit to Ryan Cordell for the base actor code he taught me
+ and Wild Weasel, for his [albeit modified] casing code.
+
+ Most importantly as well - thank you everyone on the ZDoom Forums. Ya'll been amazing.
+
+ Decorate Actors:
+
+ actors/ammo						Various Ammos used in ICD-ZD, view ICD_AmmoTypes.txt
+									for further information
+
+ actors/core						Base actors and PlayerPawn. The base actors are used
+									everywhere in the mod.
+
+ actors/effects						Various effects such as bulletpuffs, smoke and
+ 									tracers
+
+ actors/monsters					Do I need to tell you what this is?
+
+ actors/other						Barrels, hell and tech world actors/objects
+
+ actors/weapons						These things makes monsters dead.
+
+ Sound Info:
+
+ sndinfo.txt						Generic sound effects
+
+ sndinfo.weapons					Weapon sound effects
+
+ sndinfo.world						Explosions, ricochets, the like
+
+ sndinfo.player						Player grunts, gasps, deaths.
+ :END TRANSMISSION:
 =========================================================================================
 
 ToDo list:
